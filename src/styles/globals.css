@@ -40,8 +40,8 @@ body {
 
 
 .roulette-container {
-  height: clamp(24rem, 27vw, 35rem);
-  width: clamp(24rem, 27vh, 35rem);
+  height: clamp(26rem, 28vw, 35rem);
+  width: clamp(26rem, 28vh, 35rem);
   background: #EA8200;
   position: relative;
   border-radius: 50%;
