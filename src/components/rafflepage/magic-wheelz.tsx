@@ -8,6 +8,7 @@ import { useSWRConfig } from "swr";
 import { gamesKey } from "@/utils/utils";
 import { chargeAddress, paymentAddress, AdaWagerCharge, oneLoveLace, xmaxWagerCharge, xmaxAssetId, xmaxPolicyId } from "@/utils/services";
 import axios from "axios";
+import useAddressCus from "@/utils/useAddress";
 import { GlobalWheelz, WheelzDetails } from "./boxes";
 import { AssetExtended } from "./header";
 import Prize from "./prize";
@@ -48,7 +49,7 @@ export default function MagicWheelz() {
     const { connected, wallet } = useWallet()
     const assets = useAssets() as AssetExtended
 
-    const address = useAddress()
+    const address = useAddressCus()
 
     const { mutate } = useSWRConfig()
 
@@ -70,7 +71,7 @@ export default function MagicWheelz() {
                         break;
                     case WHEELZ.hundred:
                         amount = 100 * oneLoveLace
-
+                        break;
                     default:
                         amount = 10 * oneLoveLace
                         break;
@@ -105,7 +106,7 @@ export default function MagicWheelz() {
                         break;
                     case WHEELZ.onethousandfive:
                         amount = 1500
-
+                        break;
                     default:
                         amount = 500
                         break;
@@ -132,12 +133,12 @@ export default function MagicWheelz() {
                 return txHash
             }
 
-            else {
-                return null
-            }
+            console.log(wheelz);
+
+            return null
 
         } catch (error) {
-            // console.log(error);
+            console.log('transaction error', error);
             swal("Error", error as string, "error");
 
             return null
@@ -231,8 +232,21 @@ export default function MagicWheelz() {
 
             }
 
-        } catch (error) {
-            swal("Error", error as string, "error");
+        } catch (error: any) {
+
+
+            const errMessage = error.split(':')
+
+            console.log('spin guy', errMessage);
+
+            if (errMessage.includes(`"User declined to sign the transaction."}.') is invalid`)) {
+                swal("Error", 'Declined to sign the transaction', "error");
+            } else if (errMessage.includes(` Insufficient input in transaction. shortage`)) {
+                swal("Error", 'Insufficient balance to complete transaction.', "error");
+            }
+            else {
+                swal("Error", 'Something went wrong...', "error");
+            }
         }
 
 

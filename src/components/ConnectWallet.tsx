@@ -1,5 +1,6 @@
 import { BrowserWallet } from '@meshsdk/core';
 import { useWalletList, useWallet, useAddress } from '@meshsdk/react';
+import useAddressCus from '@/utils/useAddress';
 import { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
@@ -334,20 +335,9 @@ const ConnectButtonMobile = () => {
 
 const ButtonConnected = () => {
   const { disconnect, name, connected } = useWallet()
-  const address = useAddress()
-  const [eternlAddress, setEternlAddress] = useState<null | string>(null)
+  const address = useAddressCus()
 
-  const eternl = async (name: string) => {
-    const wallet = await BrowserWallet.enable(name)
-    setEternlAddress(await wallet.getChangeAddress())
 
-  }
-
-  useEffect(() => {
-    if (!address && connected) {
-      eternl(name)
-    }
-  }, [name, address])
 
 
   return (
@@ -361,8 +351,12 @@ const ButtonConnected = () => {
             address ? (
               `${address.slice(0, 5)}...${address.slice(-4)}`
             ) : (
-              eternlAddress &&
-              `${eternlAddress.slice(0, 5)}...${eternlAddress.slice(-4)}`
+              <svg
+                className="spinner-ring [--spinner-color:var(--blue-12)] spinner-sm"
+                viewBox="25 25 50 50"
+                strokeWidth="5">
+                <circle cx="50" cy="50" r="20" />
+              </svg>
             )
           }
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
