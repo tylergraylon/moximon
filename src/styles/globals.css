@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  min-height: 100vh;
+}
+
+.xmax-text-bg {
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  opacity: 1;
+  /* left: 50%;
+  right: 50%; */
+  /* margin: 0 auto; */
+}
+
+.roadmap-text-bg {
+  color: transparent;
+  -webkit-text-stroke: 2px #00FFFF;
+  opacity: 0.6;
+  /* left: 50%;
+  right: 50%; */
+  /* margin: 0 auto; */
+}
+
+.roulette-ring {
+  padding: 2rem;
+  border-color: transparent;
+  border-radius: 50%;
+  border: 5px solid skyblue;
+  position: relative;
+}
+
+
+
+.roulette-container {
+  height: clamp(24rem, 27vw, 35rem);
+  width: clamp(24rem, 27vh, 35rem);
+  background: #EA8200;
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roulette-middle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 8px #111,
+    0 0 0 15px #E98100,
+    0 0 0 18px #111;
+}
+
+.roulette-wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #333,
+    0 0 0 15px #F9E37D,
+    0 0 0 18px #111;
+  /* transition: all 6s cubic-bezier(0, 0, 0.001, 1); */
+}
+
+.wheel-spinner-timer {
+  transition: all 6s cubic-bezier(0, 0, 0.001, 1);
+}
+
+.roulette-spin {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: bottom right;
+  clip-path: polygon(0 0, 41% 0, 100% 100%, 0 41%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.roulette-pointer {
+  position: absolute;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  border: 12px solid #05002B;
+  background: #A61746;
+  top: -37px;
+  right: 37.6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roulette-pointer::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 20;
+  bottom: -20px;
+  border-radius: 50%;
+  background: #E22E6B;
+  clip-path: polygon(51% 100%, 3% 0, 98% 0);
+}
+
+.roulette-holder {
+  background:
+    radial-gradient(circle at 0 50%, rgba(204, 0, 0, 0) 40%, #E22E6B 10%),
+    radial-gradient(circle at 100% 50%, rgba(204, 0, 0, 0) 40%, #E22E6B 10%),
+    radial-gradient(circle at 100%, rgba(204, 0, 0, 0) 40%, #E22E6B 10%),
+    radial-gradient(circle at 0, rgba(204, 0, 0, 0) 40%, #E22E6B 10%);
+
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  bottom: -30px;
+  right: 28%;
+  padding: 10%;
+  padding-left: 22%;
+  padding-right: 22%;
+  position: absolute;
+}
+
+.background-rounder {
+  background-image: url('/wheelz/background-wheelz.svg');
+  background-size: 1200px 1000px;
+  background-position: center top;
+}
+
+@keyframes blinkingBorderRing {
+  0% {
+    border-color: #FF00FF;
+  }
+
+  25% {
+    border-color: #0000FF;
+  }
+
+  50% {
+    border-color: #ef0a1a;
+  }
+
+  75% {
+    border-color: #254878;
+  }
+
+  100% {
+    border-color: #00FFFF;
+  }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .background-rounder {
+    background-size: 700px 700px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .roulette-container {
+    height: clamp(19rem, 22vw, 35rem);
+    width: clamp(19rem, 22vh, 35rem);
+  }
+
+  .roulette-pointer {
+    right: 35%;
+  }
+
+  .background-rounder {
+    background-size: 600px 600px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .roulette-container {
+    height: clamp(17rem, 20vw, 35rem);
+    width: clamp(17rem, 20vh, 35rem);
+  }
+
+  .roulette-pointer {
+    right: 33.5%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .roulette-container {
+    height: clamp(12rem, 15vw, 35rem);
+    width: clamp(12rem, 15vh, 35rem);
+  }
+
+  .roulette-pointer {
+    width: 5rem;
+    height: 5rem;
+    right: 34%;
+  }
+
+  .roulette-holder {
+    bottom: -20px;
+  }
+}
