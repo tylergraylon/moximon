@@ -133,13 +133,10 @@ export default function MagicWheelz() {
                 return txHash
             }
 
-            console.log(wheelz);
-
             return null
 
         } catch (error) {
-            console.log('transaction error', error);
-            swal("Error", error as string, "error");
+            swal("Error", 'Something went wrong', "error");
 
             return null
         }
@@ -234,10 +231,10 @@ export default function MagicWheelz() {
 
         } catch (error: any) {
 
-
+            error = `${error}`
             const errMessage = error.split(':')
 
-            console.log('spin guy', errMessage);
+
 
             if (errMessage.includes(`"User declined to sign the transaction."}.') is invalid`)) {
                 swal("Error", 'Declined to sign the transaction', "error");
