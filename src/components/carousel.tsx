@@ -1,15 +1,11 @@
 
 import useSWR from "swr"
 import { AxiosResponse } from "axios"
-import { fetcher, gamesKey } from "@/utils/utils"
+import { fetcher } from "@/utils/utils"
 
 export default function Carousel() {
     const { data, isLoading } =
-        useSWR<AxiosResponse<{ data: { address: string, name: string, outcome: string }[] }>>('/api/leaders',
-            fetcher, {
-            revalidateOnReconnect: false,
-            revalidateOnFocus: false,
-        })
+        useSWR<AxiosResponse<{ data: { address: string, name: string, outcome: string }[] }>>('/api/leaders', fetcher)
 
     return (
         <div
