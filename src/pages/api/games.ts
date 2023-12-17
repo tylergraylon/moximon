@@ -26,10 +26,23 @@ export default async function handler(
         }
       })
 
+      if ((name as string).toLocaleLowerCase() === 'whitelist') {
+        const checkWhitelist = await db.whitelist.findUnique({
+          where: {
+            address: address as string
+          }
+        })
+
+        if (checkWhitelist) {
+          await db.whitelist.create({
+            data: {
+              address
+            }
+          })
+        }
+      }
+
       return res.status(200).json({ message: 'Data added' })
-
-
-
 
     } else if (req.method === 'GET') {
 

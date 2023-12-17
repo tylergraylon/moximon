@@ -76,13 +76,12 @@ export default function ConnectWallet({ mobile }: { mobile?: boolean }) {
 
 
 const ConnectButton = () => {
-  const wallets = useWalletList()
-  const { connect, connecting, connected } = useWallet()
+  const { connecting, connected } = useWallet()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
 
-  const uninstalledWallets = WalletList.filter(wallet => !wallets.map(item => item.name.toLowerCase()).includes(wallet.name.toLowerCase()))
+
   return (
     <div className=''>
       <label className="btn btn-sm sm:btn-md bg-transparent  border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-2">
@@ -117,88 +116,7 @@ const ConnectButton = () => {
         <label className="modal-overlay" htmlFor="modal-2"></label>
         <div className="modal-content flex flex-col gap-5 w-96 sm:w-[25.8rem]">
           <label htmlFor="modal-2" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
-          <h2 className="text-xl">Connect Wallet</h2>
-          <div className='mt-4'>
-            {
-              wallets.length > 0 && (
-                <nav className="menu bg-gray-2 p-4 rounded-md">
-                  <section className="menu-section">
-                    <span className="menu-title">Installed Wallets</span>
-                    <ul className="menu-items">
-                      {wallets.map((wallet, i) => (
-                        <li
-                          className="menu-item justify-between"
-                          key={i}
-                          onClick={async () => {
-                            await connect(wallet.name)
-                            sessionStorage.setItem(concord, wallet.name)
-                          }}
-                        >
-                          <span className='text-xs'>{wallet.name}</span>
-                          {
-                            !wallet.icon.startsWith('data') ? (
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-blue-600">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
-                              </svg>
-
-                            ) : (
-                              <Image
-                                src={wallet.icon}
-                                alt={wallet.name}
-                                width={25}
-                                height={25}
-                              />
-                            )
-                          }
-
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                  <div className="divider my-0"></div>
-                </nav>
-
-              )
-
-            }
-
-            {
-              uninstalledWallets.length > 0 && (
-                <nav className="menu bg-gray-2 p-4 rounded-md">
-                  <section className="menu-section">
-                    <span className="menu-title">Uninstalled Wallets</span>
-                    <ul className="menu-items">
-                      {
-                        uninstalledWallets.map((wallet, i) => (
-                          <li
-                            className="menu-item justify-between"
-                            key={i}
-                            onClick={() => {
-                              window.open(wallet.link, '_blank')
-                            }}>
-                            <span className='text-xs'>{wallet.name}</span>
-                            <div className='flex items-center'>
-                              <span className="badge badge-md badge-flat-primary mr-3 text-[0.55rem]">Not Installed</span>
-                              <Image
-                                src={wallet.image}
-                                alt={wallet.name}
-                                width={28}
-                                height={28}
-                              />
-                            </div>
-
-                          </li>
-                        ))
-                      }
-
-                    </ul>
-                  </section>
-                </nav>
-              )
-            }
-
-
-          </div>
+          <ConnectWalletBody />
         </div>
       </div>
     </div>
@@ -206,12 +124,10 @@ const ConnectButton = () => {
   )
 }
 const ConnectButtonMobile = () => {
-  const wallets = useWalletList()
-  const { connect, connecting, connected } = useWallet()
+
+  const { connecting, connected } = useWallet()
 
   const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const uninstalledWallets = WalletList.filter(wallet => !wallets.map(item => item.name.toLowerCase()).includes(wallet.name.toLowerCase()))
   return (
     <div className=''>
       <label className="btn btn-sm sm:btn-md bg-transparent border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-3">
@@ -243,88 +159,54 @@ const ConnectButtonMobile = () => {
         <label className="modal-overlay" htmlFor="modal-3"></label>
         <div className="modal-content flex flex-col gap-5 w-96 sm:w-[25.8rem]">
           <label htmlFor="modal-3" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
-          <h2 className="text-xl">Connect Wallet</h2>
-          <div className='mt-4'>
-            {
-              wallets.length > 0 && (
-                <nav className="menu bg-gray-2 p-4 rounded-md">
-                  <section className="menu-section">
-                    <span className="menu-title">Installed Wallets</span>
-                    <ul className="menu-items">
-                      {wallets.map((wallet, i) => (
-                        <li
-                          className="menu-item justify-between"
-                          key={i}
-                          onClick={async () => {
-                            await connect(wallet.name)
-                            sessionStorage.setItem(concord, wallet.name)
-                          }}
-                        >
-                          <span>{wallet.name}</span>
-                          {
-                            !wallet.icon.startsWith('data') ? (
-                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-blue-600">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
-                              </svg>
+          <ConnectWalletBody />
+        </div>
+      </div>
+    </div>
 
-                            ) : (
-                              <Image
-                                src={wallet.icon}
-                                alt={wallet.name}
-                                width={25}
-                                height={25}
-                              />
-                            )
-                          }
+  )
+}
 
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                  <div className="divider my-0"></div>
-                </nav>
+export const ConnectButtonWheel = ({ isModalOpen, setIsModalOpen }: { isModalOpen: boolean, setIsModalOpen: (is: boolean) => void }) => {
 
-              )
+  const { connecting, connected } = useWallet()
 
-            }
+  return (
+    <div className=''>
+      <label
+        className="btn btn-sm sm:btn-md bg-transparent  rounded-none text-white min-w-[150px]"
+      >
+        {
+          (isModalOpen && !connected) || connecting ? (
+            <svg
+              className="spinner-ring [--spinner-color:var(--blue-12)] spinner-sm"
+              viewBox="25 25 50 50"
+              strokeWidth="5">
+              <circle cx="50" cy="50" r="20" />
+            </svg>
+          ) : (
+            <span className="text-xs lg:text-sm">
+              Connect Wallet
+            </span>
 
-            {
-              uninstalledWallets.length > 0 && (
-                <nav className="menu bg-gray-2 p-4 rounded-md">
-                  <section className="menu-section">
-                    <span className="menu-title">Uninstalled Wallets</span>
-                    <ul className="menu-items">
-                      {
-                        uninstalledWallets.map((wallet, i) => (
-                          <li
-                            className="menu-item justify-between"
-                            key={i}
-                            onClick={() => {
-                              window.open(wallet.link, '_blank')
-                            }}>
-                            <span>{wallet.name}</span>
-                            <div className='flex items-center'>
-                              <span className="badge badge-md badge-flat-primary mr-3">Not Installed</span>
-                              <Image
-                                src={wallet.image}
-                                alt={wallet.name}
-                                width={28}
-                                height={28}
-                              />
-                            </div>
+          )
+        }
+      </label>
 
-                          </li>
-                        ))
-                      }
-
-                    </ul>
-                  </section>
-                </nav>
-              )
-            }
-
-
-          </div>
+      <input
+        className="modal-state"
+        id="modal-10"
+        checked={isModalOpen}
+        type="checkbox"
+        onChange={(e) => {
+          setIsModalOpen(e.target.checked)
+        }}
+      />
+      <div className="modal w-screen ">
+        <label className="modal-overlay" htmlFor="modal-10"></label>
+        <div className="modal-content flex flex-col gap-5 w-96 sm:w-[25.8rem]">
+          <label htmlFor="modal-10" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</label>
+          <ConnectWalletBody />
         </div>
       </div>
     </div>
@@ -333,11 +215,8 @@ const ConnectButtonMobile = () => {
 }
 
 const ButtonConnected = () => {
-  const { disconnect, name, connected } = useWallet()
+  const { disconnect } = useWallet()
   const address = useAddressCus()
-
-
-
 
   return (
     <>
@@ -391,6 +270,99 @@ const ButtonConnected = () => {
             </div>
           </button>
         </div>
+      </div>
+    </>
+  )
+}
+
+
+const ConnectWalletBody = () => {
+  const wallets = useWalletList()
+  const { connect } = useWallet()
+  const uninstalledWallets = WalletList.filter(wallet => !wallets.map(item => item.name.toLowerCase()).includes(wallet.name.toLowerCase()))
+  return (
+    <>
+      <h2 className="text-xl">Connect Wallet</h2>
+      <div className='mt-4'>
+        {
+          wallets.length > 0 && (
+            <nav className="menu bg-gray-2 p-4 rounded-md">
+              <section className="menu-section">
+                <span className="menu-title">Installed Wallets</span>
+                <ul className="menu-items">
+                  {wallets.map((wallet, i) => (
+                    <li
+                      className="menu-item justify-between"
+                      key={i}
+                      onClick={async () => {
+                        await connect(wallet.name)
+                        sessionStorage.setItem(concord, wallet.name)
+                      }}
+                    >
+                      <span className='text-xs'>{wallet.name}</span>
+                      {
+                        !wallet.icon.startsWith('data') ? (
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-blue-600">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
+                          </svg>
+
+                        ) : (
+                          <Image
+                            src={wallet.icon}
+                            alt={wallet.name}
+                            width={25}
+                            height={25}
+                          />
+                        )
+                      }
+
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <div className="divider my-0"></div>
+            </nav>
+
+          )
+
+        }
+
+        {
+          uninstalledWallets.length > 0 && (
+            <nav className="menu bg-gray-2 p-4 rounded-md">
+              <section className="menu-section">
+                <span className="menu-title">Uninstalled Wallets</span>
+                <ul className="menu-items">
+                  {
+                    uninstalledWallets.map((wallet, i) => (
+                      <li
+                        className="menu-item justify-between"
+                        key={i}
+                        onClick={() => {
+                          window.open(wallet.link, '_blank')
+                        }}>
+                        <span className='text-xs'>{wallet.name}</span>
+                        <div className='flex items-center'>
+                          <span className="badge badge-md badge-flat-primary mr-3 text-[0.55rem]">Not Installed</span>
+                          <Image
+                            src={wallet.image}
+                            alt={wallet.name}
+                            width={28}
+                            height={28}
+                          />
+                        </div>
+
+                      </li>
+                    ))
+                  }
+
+                </ul>
+              </section>
+            </nav>
+          )
+        }
+
+
       </div>
     </>
   )

@@ -22,7 +22,7 @@ model Game {
 
 model Whitelist {
   id      String @id @default(auto()) @map("_id") @db.ObjectId
-  address String
+  address String @unique
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

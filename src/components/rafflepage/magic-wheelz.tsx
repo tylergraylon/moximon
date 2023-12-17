@@ -13,6 +13,7 @@ import { GlobalWheelz, WheelzDetails } from "./boxes";
 import { AssetExtended } from "./header";
 import Prize from "./prize";
 import swal from 'sweetalert';
+import { ConnectButtonWheel } from "../ConnectWallet";
 
 
 export enum WHEELZ {
@@ -42,6 +43,7 @@ export default function MagicWheelz() {
 
     const [prizeOpener, setPrizeOpener] = useState<boolean>(false)
     const [currentPrize, setCurrentPrize] = useState<{ outcome: string, name: string }>()
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const wheel = useRef<HTMLDivElement>(null)
 
@@ -138,8 +140,18 @@ export default function MagicWheelz() {
 
             return null
 
-        } catch (error) {
-            swal("Error", 'Something went wrong', "error");
+        } catch (error: any) {
+            error = `${error}`
+            const errMessage = error.split(':')
+
+            if (errMessage.includes(`\"User declined to sign the transaction.\"}.`)) {
+                swal("Error", 'Declined to sign the transaction', "error");
+            } else if (errMessage.includes(` Insufficient input in transaction. shortage`)) {
+                swal("Error", 'Insufficient balance to complete transaction.', "error");
+            }
+            else {
+                swal("Error", 'Something went wrong...', "error");
+            }
 
             return null
         }
@@ -238,6 +250,7 @@ export default function MagicWheelz() {
             const errMessage = error.split(':')
 
 
+            console.log(errMessage);
 
             if (errMessage.includes(`"User declined to sign the transaction."}.') is invalid`)) {
                 swal("Error", 'Declined to sign the transaction', "error");
@@ -273,6 +286,12 @@ export default function MagicWheelz() {
         }
 
     }, [])
+
+    useEffect(() => {
+        if (connected) {
+            setIsModalOpen(false)
+        }
+    }, [connected])
     return (
         <main
 
@@ -326,15 +345,20 @@ export default function MagicWheelz() {
 
                     <div className="roulette-holder flex justify-center ">
                         <button
-                            onClick={spinWheel}
-                            disabled={disable}
+                            onClick={() => connected ? spinWheel() : setIsModalOpen(true)}
+                            disabled={(disable)}
                             className={`absolute h-14 w-[120%] border-4 border-black 
                                         bg-gradient-to-r
                                          ${(connected && address && !disable) ? spin : not_spin} 
                                         flex justify-center items-center
                                          -bottom-9 rounded-tl-3xl rounded-tr-3xl`}>
                             <span className="text-center text-3xl select-none">
-                                {connected && address ? 'SPIN' : <span className="text-xs lg:text-sm">CONNECT WALLET</span>}
+                                {connected && address ? 'SPIN' : (
+                                    <ConnectButtonWheel
+                                        isModalOpen={isModalOpen}
+                                        setIsModalOpen={setIsModalOpen}
+                                    />
+                                )}
                             </span>
                         </button>
                     </div>
