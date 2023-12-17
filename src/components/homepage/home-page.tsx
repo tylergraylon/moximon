@@ -5,12 +5,15 @@ import Collection from "./collection"
 import Footer from "./footer"
 import roadmap_rect from "../../../public/roadmap-rect.svg"
 import roadmap from "../../../public/roadmap-sketch.svg"
+import { lazy } from "react"
+const Carousel = lazy(() => import('@/components/carousel'))
 
 
 export default function HomePage() {
     return (
         <main className="h-full">
             <Header />
+            <Carousel />
             <section className="bg-[url('/xmax-hero.png')] bg-no-repeat bg-cover
              h-[38rem] px-10 flex justify-center items-center">
 

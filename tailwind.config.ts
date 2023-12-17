@@ -19,7 +19,8 @@ const config: Config = {
       },
       animation: {
         ringBlinker: 'blinker 1s infinite',
-        wheelzSlider: 'slideInList 0.5s 1'
+        wheelzSlider: 'slideInList 0.5s 1',
+        skyWalker: 'walker 13s linear infinite'
       },
       keyframes: {
         blinker: {
@@ -46,6 +47,11 @@ const config: Config = {
         slideInList: {
           '0%': { marginLeft: '-36px', opacity: '0' },
           '100%': { marginLeft: '0', opacity: '1' }
+        },
+
+        walker: {
+          '0%': { left: '0' },
+          '100%': { left: '-100%' }
         }
 
       }
