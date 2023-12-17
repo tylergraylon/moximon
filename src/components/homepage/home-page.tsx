@@ -3,6 +3,10 @@ import Header from "./header"
 import Image from "next/image"
 import Collection from "./collection"
 import Footer from "./footer"
+import roadmap_rect from "../../../public/roadmap-rect.svg"
+import roadmap from "../../../public/roadmap-sketch.svg"
+
+
 export default function HomePage() {
     return (
         <main className="h-full">
@@ -15,14 +19,14 @@ export default function HomePage() {
                     <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-serrat font-extrabold"> XMAX</h1>
 
                     <p className="font-conthrax">
-                        Bringing the Thrill of Roulette Directly to You. Our platform, XmaxADA, simplifies the online
-                        roulette experience for both experienced players and newcomers to the game, making it accessible
-                        for all.
+                        Experience the thrilling excitement of casino gaming on a decentralized platform.
+                        XMAX simplifies the online gaming experience for both experienced players and newcomers
+                        to the game, making it accessible for all.
                     </p>
 
                     <div className="flex space-x-8 md:space-x-12 justify-center mt-10">
                         <button className="btn btn-md whitespace-nowrap text-xs bg-transparent border border-white hover:text-[#00FFFF] rounded-none text-white">
-                            <Link href="#" className="">
+                            <Link href="#roadmap" className="">
                                 View Roadmap
                             </Link>
 
@@ -39,7 +43,9 @@ export default function HomePage() {
 
             </section>
 
-            <section className="mt-14 grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12">
+            <section
+
+                className="mt-14 grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12">
 
                 <div className="order-last lg:order-none text-center lg:text-start">
                     <h1 className="text-[8vw] md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
@@ -83,7 +89,7 @@ export default function HomePage() {
 
             </section>
 
-            <section className="mt-14 px-4 md:px-12">
+            <section className="mt-14 px-3 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-9  border border-white/40 rounded-2xl">
                     <div className="self-center space-y-4 order-last lg:order-none text-center lg:text-start">
                         <h1 className="text-[8vw] md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
@@ -157,13 +163,14 @@ export default function HomePage() {
 
             </section>
 
-            <section className="mt-14">
+            <section
+                className="mt-14" id="roadmap">
 
-                <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  py-16 flex flex-col items-center justify-center">
+                <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
 
                     <h1
-                        className="roadmap-text-bg text-[8vw]
-                        text-transparent bg-clip-text font-extrabold bg-gradient-to-r">
+                        className="roadmap-text-bg text-[8vw] text-[#00FFFF]
+                        bg-clip-text font-extrabold bg-gradient-to-r">
                         <span className="xmax-text-bg">RO</span>ADMAP
                     </h1>
 
@@ -171,9 +178,49 @@ export default function HomePage() {
                         $XMAX, BRINGING SOMETHING GREAT TO CARDANO
                     </p>
 
+                    <Image
+                        src={roadmap_rect}
+                        alt="roadmap"
+                        className="my-2"
+                    />
+
                 </div>
 
-                <div className="h-[20rem]">
+                <div className="h-min bg-[url('/xmax-hero.png')] bg-no-repeat bg-cover py-10 flex flex-col items-center">
+
+                    <div className="-mt-5 pt-16 px-5">
+
+                        <Image
+                            src={roadmap}
+                            alt="roadmap"
+                        />
+
+                        <div
+                            className="bg-clip-text bg-gradient-to-r from-[#00FFFF]
+                                to-[#FF7CFF] text-transparent text-[0.58rem]
+                                  float-right -mt-9 sm:-mt-20
+                                ">
+                            <span className="flex items-center gap-2">
+                                <span className="dot bg-[#00FFFF]"></span>
+                                <span>Building Mobile App</span>
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <span className="dot bg-[#00FFFF]"></span>
+                                <span> MVP Release Of XMAX App </span>
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <span className="dot bg-[#00FFFF]"></span>
+                                <span>CEX Listing</span>
+                            </span>
+                            <span className="flex items-center gap-2">
+                                <span className="dot bg-[#00FFFF]"></span>
+                                <span>More Coming...</span>
+                            </span>
+
+                        </div>
+                    </div>
+
+
 
                 </div>
 

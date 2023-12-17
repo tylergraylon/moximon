@@ -1,7 +1,6 @@
-import { BrowserWallet } from '@meshsdk/core';
-import { useWalletList, useWallet, useAddress } from '@meshsdk/react';
+import { useWalletList, useWallet } from '@meshsdk/react';
 import useAddressCus from '@/utils/useAddress';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 
@@ -179,7 +178,7 @@ const ConnectButton = () => {
                             }}>
                             <span className='text-xs'>{wallet.name}</span>
                             <div className='flex items-center'>
-                              <span className="badge badge-md badge-flat-primary mr-3 text-[0.62rem]">Not Installed</span>
+                              <span className="badge badge-md badge-flat-primary mr-3 text-[0.55rem]">Not Installed</span>
                               <Image
                                 src={wallet.image}
                                 alt={wallet.name}
@@ -374,7 +373,7 @@ const ButtonConnected = () => {
           </div>
           <div className="divider my-0"></div>
 
-          <div
+          <button
             className="flex items-center px-3 py-1 rounded-lg ease-in-out hover:bg-gray-5 focus-visible:ring-opacity-50"
             onClick={() => {
               disconnect()
@@ -390,7 +389,7 @@ const ButtonConnected = () => {
             <div className="ml-4">
               <p className="text-sm font-medium text-content1">Disconnect</p>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </>

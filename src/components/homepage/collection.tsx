@@ -27,7 +27,7 @@ export default function Collection() {
         setTimeRange(e.target.value)
     }
     return (
-        <section className="pt-20 mt-14 px-6 md:px-12">
+        <section className="pt-8 mt-14 px-6 md:px-12">
 
             <h1
                 className="text-[4.6vw] md:text-[2.6vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r

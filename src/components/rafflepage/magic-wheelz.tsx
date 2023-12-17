@@ -94,7 +94,10 @@ export default function MagicWheelz() {
 
             }
             else if (wheelz === WHEELZ.fivehundred || wheelz === WHEELZ.onethousand || wheelz === WHEELZ.onethousandfive) {
-                if (!(assets && assets.filter((item) => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId)).length > 0)) return null
+                if (!(assets && assets.filter((item) => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId)).length > 0)) {
+                    swal("Error", 'No Xmax token. Please buy some tokens', "error");
+                    return null
+                }
 
                 let amount: number;
                 switch (wheelz) {
