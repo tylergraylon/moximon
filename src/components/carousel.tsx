@@ -15,12 +15,12 @@ export default function Carousel() {
             <div className="flex items-center absolute left-0 w-[200%] h-full text-xs sm:text-sm font-extralight gap-x-5 animate-skyWalker">
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
-                    {!isLoading && data &&
+                    {!isLoading && data?.data.data &&
                         <p className="uppercase font-medium text-base">
                             Leaderboard
                         </p>
                     }
-                    {!isLoading && data && (
+                    {!isLoading && data?.data.data && (
                         data.data.data.map((item, i) => {
                             return (
                                 <p key={i} className="">
@@ -33,12 +33,12 @@ export default function Carousel() {
                 </div>
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
-                    {!isLoading && data &&
+                    {!isLoading && data?.data.data &&
                         <p className="uppercase font-medium text-base">
                             Leaderboard
                         </p>
                     }
-                    {!isLoading && data && (
+                    {!isLoading && data?.data.data && (
                         data.data.data.map((item, i) => {
                             return (
                                 <p key={i}>
