@@ -27,7 +27,7 @@ export default function HomePage() {
                         to the game, making it accessible for all.
                     </p>
 
-                    <div className="flex space-x-8 md:space-x-12 justify-center mt-10">
+                    <div className="flex space-x-8 md:space-x-12 justify-center mt-10 mx-5">
                         <button className="btn btn-md whitespace-nowrap text-xs bg-transparent border border-white hover:text-[#00FFFF] rounded-none text-white">
                             <Link href="#roadmap" className="">
                                 View Roadmap
