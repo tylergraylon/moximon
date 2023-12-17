@@ -16,7 +16,7 @@ export default function Carousel() {
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
                     {!isLoading && data?.data.data &&
-                        <p className="uppercase font-medium text-base">
+                        <p className="uppercase font-medium text-sm sm:text-base">
                             Leaderboard
                         </p>
                     }
@@ -34,7 +34,7 @@ export default function Carousel() {
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
                     {!isLoading && data?.data.data &&
-                        <p className="uppercase font-medium text-base">
+                        <p className="uppercase font-medium text-sm sm:text-base">
                             Leaderboard
                         </p>
                     }
