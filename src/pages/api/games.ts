@@ -33,7 +33,7 @@ export default async function handler(
           }
         })
 
-        if (checkWhitelist) {
+        if (!checkWhitelist) {
           await db.whitelist.create({
             data: {
               address
