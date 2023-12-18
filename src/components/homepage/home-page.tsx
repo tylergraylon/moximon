@@ -27,7 +27,7 @@ export default function HomePage() {
                         to the game, making it accessible for all.
                     </p>
 
-                    <div className="flex space-x-8 md:space-x-12 justify-center mt-10 mx-5">
+                    <div className="flex space-x-5 md:space-x-12 justify-center mt-10 mx-5">
                         <button className="btn btn-md whitespace-nowrap text-xs bg-transparent border border-white hover:text-[#00FFFF] rounded-none text-white">
                             <Link href="#roadmap" className="">
                                 View Roadmap
@@ -51,7 +51,7 @@ export default function HomePage() {
                 className="mt-14 grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12">
 
                 <div className="order-last lg:order-none text-center lg:text-start">
-                    <h1 className="text-[8vw] md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                    <h1 className="text-[8vw] md:text-[3vw] hidden lg:block font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                         OUR MISSION
                     </h1>
 
@@ -76,15 +76,21 @@ export default function HomePage() {
 
                 </div>
 
+
+                <h1 className="text-[8vw] md:text-[3vw] justify-self-center lg:hidden font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                    OUR MISSION
+                </h1>
+
                 <div className="flex lg:justify-end justify-center">
+
+
 
 
                     <Image
                         src="/game-controller.svg"
-                        width={500}
-                        height={400}
+                        width={400}
+                        height={300}
                         alt="discord"
-
                     />
 
 
@@ -95,7 +101,7 @@ export default function HomePage() {
             <section className="mt-14 px-3 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-9  border border-white/40 rounded-2xl">
                     <div className="self-center space-y-4 order-last lg:order-none text-center lg:text-start">
-                        <h1 className="text-[8vw] md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                        <h1 className="text-[8vw] hidden lg:block md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                             TOKENOMICS
                         </h1>
 
@@ -105,7 +111,11 @@ export default function HomePage() {
                         </p>
                     </div>
 
-                    <div className="flex flex-col items-center mb-12 lg:mb-0">
+                    <h1 className="text-[8vw] justify-self-center lg:hidden md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                        TOKENOMICS
+                    </h1>
+
+                    <div className="flex flex-col items-center mt-5 mb-12 lg:mb-0">
 
                         <Image
                             src="/total-supply.svg"
@@ -114,9 +124,9 @@ export default function HomePage() {
                             alt="discord"
                         />
 
-                        <div className="mt-9 space-y-3 flex flex-col items-center">
+                        <div className="mt-9 space-y-3 flex flex-col items-center justify-center text-xs sm:text-base">
 
-                            <div className="flex items-center gap-3 flex-wrap">
+                            <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
                                     <span className="dot dot-secondary"></span>
                                     <span>55% Pre-sale</span>
@@ -128,7 +138,7 @@ export default function HomePage() {
 
                             </div>
 
-                            <div className="flex items-center gap-3 flex-wrap">
+                            <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-blue-700"></span>
                                     <span>10% Team</span>
@@ -144,7 +154,7 @@ export default function HomePage() {
 
                             </div>
 
-                            <div className="flex items-center gap-3 flex-wrap">
+                            <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-[#FE9800]"></span>
                                     <span>3% CEX Listing & Partnership</span>
@@ -177,7 +187,7 @@ export default function HomePage() {
                         <span className="xmax-text-bg">RO</span>ADMAP
                     </h1>
 
-                    <p className="text-xl tracking-widest text-center">
+                    <p className="text-sm md:text-xl tracking-widest text-center opacity-80">
                         $XMAX, BRINGING SOMETHING GREAT TO CARDANO
                     </p>
 

@@ -151,15 +151,15 @@ export default function Collection() {
                                                             src="/ada-symbol.svg"
                                                             loading="eager"
                                                             alt="ada"
-                                                            width={20}
-                                                            height={20}
+                                                            width={14}
+                                                            height={14}
                                                             className="mr-[0.1rem]" />
 
                                                         <span>{item.floor_price ?? '--'}</span>
 
                                                     </div>
 
-                                                    <div>
+                                                    <div className="text-[0.65rem]">
                                                         {
                                                             typeof item['1dChange'] === 'number' && Math.sign(item['1dChange']) === 1 ? (
                                                                 <span className="text-green-500">+{item['1dChange'].toFixed(2)}%</span>

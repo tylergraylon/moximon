@@ -26,7 +26,7 @@ body {
   .roadmap-text-bg {
     color: transparent;
     -webkit-text-stroke: 2px #00FFFF;
-    opacity: 0.6;
+    opacity: 0.9;
 
   }
 }
@@ -145,6 +145,7 @@ body {
   background-image: url('/wheelz/background-wheelz.svg');
   background-size: 1200px 1000px;
   background-position: center top;
+  margin-top: -20px;
 }
 
 @keyframes blinkingBorderRing {
