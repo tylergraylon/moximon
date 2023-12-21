@@ -177,12 +177,12 @@ export default function HomePage() {
             </section>
 
             <section
-                className="mt-14" id="roadmap">
+                className="mt-[5rem]" id="roadmap">
 
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
 
                     <h1
-                        className="roadmap-text-bg text-[8vw] text-[#00FFFF]
+                        className="roadmap-text-bg text-[5.7vw] text-[#00FFFF]
                         bg-clip-text font-extrabold bg-gradient-to-r">
                         <span className="xmax-text-bg">RO</span>ADMAP
                     </h1>
