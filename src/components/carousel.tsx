@@ -2,11 +2,17 @@
 import useSWR from "swr"
 import { AxiosResponse } from "axios"
 import { fetcher, leadersKey } from "@/utils/utils"
+import { useEffect, useState } from "react"
 
 export default function Carousel() {
+    const [envy, setEnvy] = useState(false)
     const { data, isLoading } =
         useSWR<AxiosResponse<{ data: { address: string, name: string, outcome: string }[] }>>(leadersKey, fetcher)
 
+    useEffect(() => {
+        setEnvy(true)
+    }, [])
+    if (!envy) return null
     return (
         <div
             className="relative overflow-hidden w-full h-10 

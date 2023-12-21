@@ -1,7 +1,10 @@
 import Header from "@/components/rafflepage/header"
 import MagicWheelz from "@/components/rafflepage/magic-wheelz"
 import { lazy } from "react"
-const Carousel = lazy(() => import('@/components/carousel'))
+import dynamic from 'next/dynamic'
+
+const Carousel = dynamic(() => import('@/components/carousel'), { ssr: false })
+
 
 
 
