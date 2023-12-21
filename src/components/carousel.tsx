@@ -18,7 +18,7 @@ export default function Carousel() {
             className="relative overflow-hidden w-full h-10 
                     bg-gradient-to-r from-[#FF7CFF] via-[#00FFFF] to-[#00FFFF]">
 
-            <div className="flex items-center absolute left-0 w-[200%] h-full text-xs sm:text-sm font-extralight gap-x-5 animate-skyWalker">
+            <div className="flex items-center absolute left-0 w-[200%] h-full text-xs sm:text-sm font-thin gap-x-5 animate-skyWalker">
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
                     {!isLoading && data && data?.data?.data &&
@@ -29,7 +29,7 @@ export default function Carousel() {
                     {!isLoading && data && data?.data?.data && (
                         data.data.data.map((item, i) => {
                             return (
-                                <p key={i} className="">
+                                <p key={i} className="font-serrat">
                                     {item?.address.slice(0, 5)}...{item?.address.slice(-4)}
                                 </p>
                             )
@@ -47,7 +47,7 @@ export default function Carousel() {
                     {!isLoading && data && data?.data?.data && (
                         data.data.data.map((item, i) => {
                             return (
-                                <p key={i}>
+                                <p key={i} className="font-serrat">
                                     {item?.address.slice(0, 5)}...{item?.address.slice(-4)}
                                 </p>
                             )
