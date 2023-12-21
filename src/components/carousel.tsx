@@ -1,11 +1,11 @@
 
 import useSWR from "swr"
 import { AxiosResponse } from "axios"
-import { fetcher } from "@/utils/utils"
+import { fetcher, leadersKey } from "@/utils/utils"
 
 export default function Carousel() {
     const { data, isLoading } =
-        useSWR<AxiosResponse<{ data: { address: string, name: string, outcome: string }[] }>>('/api/leaders', fetcher)
+        useSWR<AxiosResponse<{ data: { address: string, name: string, outcome: string }[] }>>(leadersKey, fetcher)
 
     return (
         <div

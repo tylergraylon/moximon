@@ -2,6 +2,7 @@ import axios from 'axios'
 
 
 export const gamesKey = '/api/games'
+export const leadersKey = '/api/leaders'
 
 export const fetcher = async <T>(url: string) => await axios.get<T>(url)
 
