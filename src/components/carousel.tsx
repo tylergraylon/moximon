@@ -15,16 +15,16 @@ export default function Carousel() {
             <div className="flex items-center absolute left-0 w-[200%] h-full text-xs sm:text-sm font-extralight gap-x-5 animate-skyWalker">
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
-                    {!isLoading && data && data?.data.data &&
+                    {!isLoading && data && data?.data?.data &&
                         <p className="uppercase font-medium text-sm sm:text-base">
                             Leaderboard
                         </p>
                     }
-                    {!isLoading && data && data?.data.data && (
+                    {!isLoading && data && data?.data?.data && (
                         data.data.data.map((item, i) => {
                             return (
                                 <p key={i} className="">
-                                    {item.address.slice(0, 5)}...{item.address.slice(-4)}
+                                    {item?.address.slice(0, 5)}...{item?.address.slice(-4)}
                                 </p>
                             )
                         })
@@ -33,16 +33,16 @@ export default function Carousel() {
                 </div>
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
-                    {!isLoading && data && data?.data.data &&
+                    {!isLoading && data && data?.data?.data &&
                         <p className="uppercase font-medium text-sm sm:text-base">
                             Leaderboard
                         </p>
                     }
-                    {!isLoading && data && data?.data.data && (
+                    {!isLoading && data && data?.data?.data && (
                         data.data.data.map((item, i) => {
                             return (
                                 <p key={i}>
-                                    {item.address.slice(0, 5)}...{item.address.slice(-4)}
+                                    {item?.address.slice(0, 5)}...{item?.address.slice(-4)}
                                 </p>
                             )
                         })
