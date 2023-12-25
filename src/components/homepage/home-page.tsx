@@ -100,7 +100,7 @@ export default function HomePage() {
 
             </section>
 
-            <section className="mt-14 px-3 md:px-12">
+            <section className="mt-16 px-3 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-9  border border-white/40 rounded-2xl">
                     <div className="self-center space-y-4 order-last lg:order-none text-center lg:text-start">
                         <h1 className="text-[8vw] hidden lg:block md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
@@ -179,12 +179,12 @@ export default function HomePage() {
             </section>
 
             <section
-                className="mt-[5rem]" id="roadmap">
+                className="mt-[6rem]" id="roadmap">
 
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
 
                     <h1
-                        className="roadmap-text-bg text-[5.7vw] text-[#00FFFF]
+                        className="roadmap-text-bg text-[6vw] md:text-[7vw] text-[#00FFFF]
                         bg-clip-text font-extrabold bg-gradient-to-r">
                         <span className="xmax-text-bg">RO</span>ADMAP
                     </h1>

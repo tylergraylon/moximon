@@ -196,7 +196,8 @@ export default function MagicWheelz() {
                             const res = await axios.post('/api/games', {
                                 address,
                                 outcome: win.outcome,
-                                name: win.name
+                                name: win.name,
+                                wager: wheelz
                             })
 
                             if (res.status === 200) {

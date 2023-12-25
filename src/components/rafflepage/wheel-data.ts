@@ -474,24 +474,364 @@ export const AdaWheelz = {
         out: [
             {
                 name: 'Whitelist',
-                outcome: 'WIN',
+                outcome: OUTCOME.WIN,
                 code: 180
             },
             {
                 name: 'Crashed',
-                outcome: 'LOSE',
+                outcome: OUTCOME.LOSE,
                 code: 60
             },
             {
                 name: '2X ADA',
-                outcome: 'WIN',
+                outcome: OUTCOME.WIN,
                 code: 150
             },
 
             {
                 name: 'Crashed',
-                outcome: 'LOSE',
+                outcome: OUTCOME.LOSE,
                 code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '10000 $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 270
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '200 ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '10000 $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 270
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '200 ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
             },
         ]
 
@@ -585,23 +925,429 @@ export const AdaWheelz = {
         out: [
             {
                 name: 'Whitelist',
-                outcome: 'WIN',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '20000 $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 90
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
                 code: 180
             },
             {
                 name: 'Crashed',
-                outcome: 'LOSE',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
                 code: 330
             },
             {
                 name: 'Crashed',
-                outcome: 'LOSE',
-                code: 330
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
             },
             {
                 name: '3X ADA',
-                outcome: 'WIN',
+                outcome: OUTCOME.WIN,
                 code: 210
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '400 ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Royalty Card',
+                outcome: OUTCOME.WIN,
+                code: 270
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: '20000 $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 90
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: '200 ADA',
+                outcome: OUTCOME.WIN,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Whitelist',
+                outcome: OUTCOME.WIN,
+                code: 180
             },
 
         ]

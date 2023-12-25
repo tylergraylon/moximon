@@ -18,7 +18,7 @@ export default function Carousel() {
             className="relative overflow-hidden w-full h-10 
                     bg-gradient-to-r from-[#FF7CFF] via-[#00FFFF] to-[#00FFFF]">
 
-            <div className="flex items-center absolute left-0 w-[200%] h-full text-xs sm:text-sm font-thin gap-x-5 animate-skyWalker">
+            <div className="flex items-center absolute left-0 w-[200%] h-full text-xs sm:text-sm font-normal gap-x-5 animate-skyWalker">
 
                 <div className="flex justify-around gap-x-5 ml-10 items-center text-black w-1/2">
                     {!isLoading && data && data?.data?.data &&
