@@ -32,20 +32,34 @@ export default function Header() {
 
                 <div className="navbar-end">
                     <div className="hidden md:flex">
-                        <Image
-                            src="/x-logo.svg"
-                            alt="x"
-                            width={40}
-                            height={40}
-                            className="navbar-item"
-                        />
-                        <Image
-                            src="/discord-logo.svg"
-                            alt="discord"
-                            width={40}
-                            height={40}
-                            className="navbar-item"
-                        />
+
+                        <Link
+                            href="https://x.com/xmaxcoinada"
+                            target="_blank"
+                        >
+                            <Image
+                                src="/x-logo.svg"
+                                alt="x"
+                                width={40}
+                                height={40}
+                                className="navbar-item"
+                            />
+                        </Link>
+
+                        <Link
+                            href=""
+                            target="_blank"
+                        >
+
+                            <Image
+                                src="/discord-logo.svg"
+                                alt="discord"
+                                width={40}
+                                height={40}
+                                className="navbar-item"
+                            />
+                        </Link>
+
 
                         <div className="navbar-item">
                             <ConnectWallet />
@@ -122,20 +136,33 @@ export function MobileMenu() {
                                     </li>
 
                                     <li className="flex">
-                                        <Image
-                                            src="/x-logo.svg"
-                                            alt="x"
-                                            width={40}
-                                            height={40}
-                                            className="navbar-item"
-                                        />
-                                        <Image
-                                            src="/discord-logo.svg"
-                                            alt="discord"
-                                            width={40}
-                                            height={40}
-                                            className="navbar-item"
-                                        />
+
+                                        <Link
+                                            href="https://x.com/xmaxcoinada"
+                                            target="_blank"
+                                        >
+                                            <Image
+                                                src="/x-logo.svg"
+                                                alt="x"
+                                                width={40}
+                                                height={40}
+                                                className="navbar-item"
+                                            />
+                                        </Link>
+
+                                        <Link
+                                            href=""
+                                            target="_blank"
+                                        >
+                                            <Image
+                                                src="/discord-logo.svg"
+                                                alt="discord"
+                                                width={40}
+                                                height={40}
+                                                className="navbar-item"
+                                            />
+                                        </Link>
+
                                     </li>
                                 </ul>
                             </section>
