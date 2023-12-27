@@ -78,7 +78,7 @@ export default function Collection() {
 
                                         <th>Floor</th>
                                         <th>Volume</th>
-                                        <th>Owners</th>
+                                        {/* <th>Owners</th> */}
 
 
                                     </tr>
@@ -174,7 +174,7 @@ export default function Collection() {
 
                                                 </td>
                                                 <td className="">{Math.round(item.volume) ?? '--'}</td>
-                                                <td className="">{item.total_owners[0] ?? '--'}</td>
+                                                {/* <td className="">{item.total_owners[0] ?? '--'}</td> */}
                                             </tr>
                                         )
                                     })}
