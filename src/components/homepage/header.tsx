@@ -36,6 +36,7 @@ export default function Header() {
                         <Link
                             href="https://x.com/xmaxcoinada"
                             target="_blank"
+                            className="flex justify-center items-center"
                         >
                             <Image
                                 src="/x-logo.svg"
@@ -47,8 +48,9 @@ export default function Header() {
                         </Link>
 
                         <Link
-                            href=""
+                            href="#"
                             target="_blank"
+                            className="flex justify-center items-center"
                         >
 
                             <Image
@@ -140,6 +142,7 @@ export function MobileMenu() {
                                         <Link
                                             href="https://x.com/xmaxcoinada"
                                             target="_blank"
+                                            className="flex justify-center items-center"
                                         >
                                             <Image
                                                 src="/x-logo.svg"
@@ -151,8 +154,9 @@ export function MobileMenu() {
                                         </Link>
 
                                         <Link
-                                            href=""
+                                            href="#"
                                             target="_blank"
+                                            className="flex justify-center items-center"
                                         >
                                             <Image
                                                 src="/discord-logo.svg"
