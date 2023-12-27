@@ -147,7 +147,7 @@ export default function HomePage() {
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot dot-error"></span>
-                                    <span>7% Gaming Equipment</span>
+                                    <span>7% Games Improvements</span>
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-[#00FFFF]"></span>
