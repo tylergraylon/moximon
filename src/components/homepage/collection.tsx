@@ -18,7 +18,6 @@ export default function Collection() {
     const { data, isLoading } =
         useSWR<AxiosResponse<{ ranking: { [key: string]: any }[] }>>(`https://api.opencnft.io/2/market/rank/collection?time_range=${timeRange}`,
             fetcherAPI, {
-            revalidateOnReconnect: false,
             revalidateOnFocus: false,
         })
 
@@ -98,7 +97,7 @@ export default function Collection() {
                                                 </th>
                                                 <td><div className="skeleton h-5 rounded-md"></div></td>
                                                 <td><div className="skeleton h-5 rounded-md"></div></td>
-                                                <td><div className="skeleton h-5 rounded-md"></div></td>
+                                                {/* <td><div className="skeleton h-5 rounded-md"></div></td> */}
                                             </tr>
                                         ))
                                     }
@@ -115,7 +114,7 @@ export default function Collection() {
 
                                         <th>Floor</th>
                                         <th>Volume</th>
-                                        <th>Owners</th>
+                                        {/* <th>Owners</th> */}
 
 
                                     </tr>
