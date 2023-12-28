@@ -21,7 +21,7 @@ export default function HomePage() {
 
                 <div className="text-center w-[80%] md:w-[60%]">
 
-                    <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-serrat font-extrabold"> XMAX</h1>
+                    <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-cont font-extrabold"> XMAX</h1>
 
                     <p className="font-conthrax">
                         Experience the thrilling excitement of casino gaming on a decentralized platform.

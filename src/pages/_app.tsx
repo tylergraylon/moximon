@@ -21,7 +21,7 @@ const myFont = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MeshProvider>
-      <main className={`${myFont.className} ${montserrat.variable}`}>
+      <main className={`${myFont.className} ${myFont.variable} ${montserrat.variable}`}>
 
         <Component {...pageProps} />
       </main>
