@@ -143,11 +143,11 @@ export default function HomePage() {
                             <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-blue-700"></span>
-                                    <span>10% Team</span>
+                                    <span>8% Team</span>
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot dot-error"></span>
-                                    <span>7% Games Improvements</span>
+                                    <span>7% Gaming Improvement</span>
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-[#00FFFF]"></span>
@@ -163,7 +163,7 @@ export default function HomePage() {
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-[#FFF500]"></span>
-                                    <span>2% Airdrop</span>
+                                    <span>4% Airdrop</span>
                                 </span>
 
 
