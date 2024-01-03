@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { MeshProvider } from "@meshsdk/react";
 import localFont from "next/font/local";
 import { Montserrat } from "next/font/google";
-
+import Head from 'next/head'
 const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
@@ -20,11 +20,19 @@ const myFont = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <MeshProvider>
-      <main className={`${myFont.className} ${myFont.variable} ${montserrat.variable}`}>
+    <>
+      <Head>
+        {/* <link rel="shortcut icon" href="/static/favicon.ico" /> */}
+        <title>XMAXCOINADA</title>
+      </Head>
+      <MeshProvider>
 
-        <Component {...pageProps} />
-      </main>
-    </MeshProvider>
+        <main className={`${myFont.className} ${myFont.variable} ${montserrat.variable}`}>
+
+          <Component {...pageProps} />
+        </main>
+      </MeshProvider>
+    </>
+
   )
 }
