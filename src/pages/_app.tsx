@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="shortcut icon" href="/wheelz/wheelz-image.svg" />
         <title>XMAXCOINADA</title>
       </Head>
       <MeshProvider>

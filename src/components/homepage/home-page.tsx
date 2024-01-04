@@ -187,7 +187,7 @@ export default function HomePage() {
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
                     {/* <span className="xmax-text-bg"></span> */}
                     <h1
-                        className="text-[4.6vw] md:text-[2.6vw] font-serrat text-transparent
+                        className="text-[8vw] md:text-[3vw] font-serrat text-transparent
                         bg-clip-text font-extrabold bg-gradient-to-r from-white mb-4
                         via-[#00FFFF] to-[#00FFFF]">
 
