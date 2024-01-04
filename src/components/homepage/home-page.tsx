@@ -66,7 +66,8 @@ export default function HomePage() {
 
 
                     <div className="mt-12">
-                        <span className="text-[#00FFFF]">Welcome to XMAX:</span> Join us now and let the wheel decide your fate!
+                        <span className="text-[#00FFFF]">Welcome to XMAX:</span> Embark on thrilling adventures, defy gravity in Wheels, soar to new heights with Aviator,
+                        and explore a world of endless possibilities. Your next gaming journey awaits!
                     </div>
 
                     <button className="mt-16 btn btn-md bg-transparent border border-white hover:text-[#00FFFF] rounded-none text-white">
