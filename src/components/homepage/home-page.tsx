@@ -19,11 +19,11 @@ export default function HomePage() {
             <section className="bg-[url('/xmax-hero.png')] bg-no-repeat bg-cover
              h-[38rem] px-10 flex justify-center items-center">
 
-                <div className="text-center w-[80%] md:w-[60%]">
+                <div className="flex justify-center text-center w-[80%] md:w-[60%]">
 
-                    <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-cont font-extrabold"> XMAX</h1>
+                    <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-serrat font-extrabold"> XMAX</h1>
 
-                    <p className="font-conthrax">
+                    <p className="">
                         Experience the thrilling excitement of casino gaming on a decentralized platform.
                         XMAX simplifies the online gaming experience for both experienced players and newcomers
                         to the game, making it accessible for all.
