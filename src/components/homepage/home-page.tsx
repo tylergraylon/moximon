@@ -217,7 +217,7 @@ export default function HomePage() {
 
                         <div
                             className="bg-clip-text bg-gradient-to-r from-[#00FFFF]
-                                to-[#FF7CFF] text-transparent text-[0.58rem]
+                                to-[#FF7CFF] text-transparent md:text-sm text-[0.58rem]
                                   float-right -mt-9 sm:-mt-20
                                 ">
                             <span className="flex items-center gap-2">
