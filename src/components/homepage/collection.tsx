@@ -43,23 +43,27 @@ export default function Collection() {
                 <div className="tabs tabs-boxed gap-1 text-xs">
                     <input
                         type="radio" id="tab-13" name="tab-5" onChange={(e) => handleTimeChange(e)}
-                        className="tab-toggle" value={DATETOGGLE.oneh} checked={timeRange === DATETOGGLE.oneh} />
-                    <label htmlFor="tab-13" className="tab text-xs">1h</label>
+                        className="tab-toggle" value={DATETOGGLE.oneh}
+                    //  checked={timeRange === DATETOGGLE.oneh} 
+                    />
+                    <label htmlFor="tab-13" className={`tab text-xs ${timeRange === DATETOGGLE.oneh && 'bg-[#0000FF]'}`}>1h</label>
 
                     <input
                         type="radio" id="tab-14" name="tab-5" onChange={(e) => handleTimeChange(e)}
-                        className="tab-toggle" value={DATETOGGLE.twentyfourh} checked={timeRange === DATETOGGLE.twentyfourh} />
-                    <label htmlFor="tab-14" className="tab">24h</label>
+                        className="tab-toggle" value={DATETOGGLE.twentyfourh}
+                    //  checked={timeRange === DATETOGGLE.twentyfourh} 
+                    />
+                    <label htmlFor="tab-14" className={`tab text-xs ${timeRange === DATETOGGLE.twentyfourh && 'bg-[#0000FF]'}`}>24h</label>
 
                     <input
                         type="radio" id="tab-15" name="tab-5" onChange={(e) => handleTimeChange(e)}
-                        className="tab-toggle" value={DATETOGGLE.sevend} checked={timeRange === DATETOGGLE.sevend} />
-                    <label htmlFor="tab-15" className="tab">7d</label>
+                        className="tab-toggle" value={DATETOGGLE.sevend} />
+                    <label htmlFor="tab-15" className={`tab ${timeRange === DATETOGGLE.sevend && 'bg-[#0000FF]'}`}>7d</label>
 
                     <input
                         type="radio" id="tab-4" name="tab-5" onChange={(e) => handleTimeChange(e)}
-                        className="tab-toggle" value={DATETOGGLE.all} checked={timeRange === DATETOGGLE.all} />
-                    <label htmlFor="tab-4" className="tab">All</label>
+                        className="tab-toggle bg-[#0000FF]" value={DATETOGGLE.all} />
+                    <label htmlFor="tab-4" className={`tab ${timeRange === DATETOGGLE.all && 'bg-[#0000FF]'}`}>All</label>
                 </div>
 
             </div>

@@ -31,6 +31,15 @@ body {
   }
 }
 
+.tab-toggle:hover:checked+.tab {
+  background-color: rgb(0 0 255 / var(--tw-bg-opacity)) !important;
+  color: white !important
+}
+
+.tab-toggle:checked+.tab {
+  background-color: rgb(0 0 255 / var(--tw-bg-opacity)) !important;
+  color: white !important
+}
 
 .roulette-ring {
   padding: 2rem;
@@ -38,13 +47,15 @@ body {
   border-radius: 50%;
   border: 5px solid skyblue;
   position: relative;
+  width: 495px;
+  height: 495px;
 }
 
 
 
 .roulette-container {
-  height: clamp(26rem, 28vw, 50vw);
-  width: clamp(26rem, 28vh, 50vh);
+  height: 100%;
+  width: 100%;
   background: #EA8200;
   position: relative;
   border-radius: 50%;
@@ -105,7 +116,7 @@ body {
   border: 12px solid #05002B;
   background: #A61746;
   top: -37px;
-  right: 38.5%;
+  right: 38.7%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,14 +196,25 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .roulette-container {
-    height: clamp(19rem, 22vw, 35rem);
-    width: clamp(19rem, 22vh, 35rem);
+@media screen and (max-width: 768px) {
+  .roulette-ring {
+    width: 420px;
+    height: 420px;
   }
 
   .roulette-pointer {
-    right: 35%;
+    right: 36.5%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .roulette-ring {
+    width: 400px;
+    height: 400px;
+  }
+
+  .roulette-pointer {
+    right: 35.5%;
   }
 
   .background-rounder {
@@ -200,10 +222,18 @@ body {
   }
 }
 
+@media screen and (max-width: 440px) {
+  .roulette-ring {
+    width: 380px;
+    height: 380px;
+  }
+}
+
 @media screen and (max-width: 380px) {
-  .roulette-container {
-    height: clamp(17rem, 20vw, 35rem);
-    width: clamp(17rem, 20vh, 35rem);
+
+  .roulette-ring {
+    width: 355px;
+    height: 355px;
   }
 
   .roulette-pointer {
@@ -211,10 +241,23 @@ body {
   }
 }
 
+@media screen and (max-width: 360px) {
+
+  .roulette-ring {
+    width: 300px;
+    height: 300px;
+  }
+
+  .roulette-pointer {
+    right: 30%;
+  }
+}
+
 @media screen and (max-width: 280px) {
-  .roulette-container {
-    height: clamp(12rem, 15vw, 35rem);
-    width: clamp(12rem, 15vh, 35rem);
+
+  .roulette-ring {
+    width: 260px;
+    height: 260px;
   }
 
   .roulette-pointer {

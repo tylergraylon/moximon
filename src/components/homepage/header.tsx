@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import ConnectWallet from "../ConnectWallet"
-import { useState } from "react"
 export default function Header() {
     return (
         <header className="">
@@ -24,9 +23,9 @@ export default function Header() {
 
                 </div>
                 <div className="navbar-start hidden md:flex text-sm">
-                    <Link href="#" className="navbar-item text-[#FF00FF]">HOME</Link>
-                    <Link href="/magic-wheelz" className="navbar-item whitespace-nowrap">MAGIC WHEELZ</Link>
-                    <Link href="#" className="navbar-item ">WHITEPAPER</Link>
+                    <Link href="#" className="navbar-item !text-[#FF00FF]">HOME</Link>
+                    <Link href="/magic-wheelz" className="navbar-item whitespace-nowrap hover:!text-[#FF00FF]">MAGIC WHEELZ</Link>
+                    <Link href="#" className="navbar-item hover:!text-[#FF00FF]">WHITEPAPER</Link>
                 </div>
 
 

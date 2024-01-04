@@ -296,12 +296,12 @@ export default function MagicWheelz() {
     return (
         <main
 
-            className="grid grid-cols-1 xl:grid-cols-3 py-20
+            className="grid grid-cols-1 xl:grid-cols-7 py-20
                 bg-no-repeat h-full
-                sm:mx-10 gap-y-6 gap-x-2 min-h-full background-rounder"
+                sm:mx-10 gap-y-6 gap-x-1 min-h-full background-rounder"
 
         >
-            <div className="justify-self-center xl:justify-self-start order-last xl:order-none">
+            <div className="justify-self-center xl:col-span-2 xl:justify-self-start order-last xl:order-none">
                 <GlobalWheelz />
             </div>
 
@@ -329,7 +329,7 @@ export default function MagicWheelz() {
 
 
 
-            <section className="flex items-center justify-center p-4 self-start">
+            <section className="flex items-center xl:col-span-3 justify-center py-4 px-2 xl:-mt-14 self-start w-full h-full">
 
                 <div className="roulette-ring">
 
@@ -409,7 +409,7 @@ export default function MagicWheelz() {
 
             </section>
 
-            <div className="justify-self-center xl:justify-self-end">
+            <div className="justify-self-center xl:col-span-2 xl:justify-self-end">
                 <WheelzPicker
                     wheelz={wheelz}
                     setWheelz={setWheelz}

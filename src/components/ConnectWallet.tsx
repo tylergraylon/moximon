@@ -84,7 +84,7 @@ const ConnectButton = () => {
 
   return (
     <div className=''>
-      <label className="btn btn-sm sm:btn-md bg-transparent  border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-2">
+      <label className="btn btn-sm sm:btn-md bg-transparent hover:border-[#FF00FF] hover:text-[#FF00FF] border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-2">
         {
           (isModalOpen && !connected) || connecting ? (
             <svg
@@ -130,7 +130,7 @@ const ConnectButtonMobile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <div className=''>
-      <label className="btn btn-sm sm:btn-md bg-transparent border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-3">
+      <label className="btn btn-sm sm:btn-md bg-transparent hover:border-[#FF00FF] hover:text-[#FF00FF] border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-3">
         {
           (isModalOpen && !connected) || connecting ? (
             <svg
@@ -222,7 +222,7 @@ const ButtonConnected = () => {
     <>
       <div className="popover popover-border">
         <label
-          className="popover-trigger btn btn-sm sm:btn-md bg-transparent 
+          className="popover-trigger btn btn-sm sm:btn-md bg-transparent hover:border-[#FF00FF] hover:text-[#FF00FF] 
             border border-white rounded-none text-white sm:min-w-[150px] flex justify-between"
           tabIndex={0}>
           {

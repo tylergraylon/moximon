@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         cont: ["var(--conthrax)"],
         serrat: ["var(--montserrat)"],
+        lato: ["var(--lato)"],
       },
       animation: {
         ringBlinker: 'blinker 1s infinite',

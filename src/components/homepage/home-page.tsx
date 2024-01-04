@@ -21,7 +21,7 @@ export default function HomePage() {
 
                 <div className="flex flex-col items-center justify-center text-center w-[80%] md:w-[60%]">
 
-                    <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-serrat font-extrabold"> XMAX</h1>
+                    <h1 className="xmax-text-bg text-[17vw] sm:text-[15vw] font-lato font-extrabold"> XMAX</h1>
 
                     <p className="">
                         Experience the thrilling excitement of casino gaming on a decentralized platform.
@@ -30,13 +30,13 @@ export default function HomePage() {
                     </p>
 
                     <div className="flex space-x-5 md:space-x-12 justify-center mt-10 mx-5">
-                        <button className="btn btn-md whitespace-nowrap text-xs bg-transparent border border-white hover:text-[#00FFFF] rounded-none text-white">
+                        <button className="btn btn-sm sm:btn-md whitespace-nowrap text-xs bg-transparent border border-white hover:text-[#FF00FF] hover:border-[#FF00FF] rounded-none text-white">
                             <Link href="#roadmap" className="">
                                 View Roadmap
                             </Link>
 
                         </button>
-                        <button className="btn btn-md whitespace-nowrap text-xs bg-[#00FFFF] rounded-none text-black">
+                        <button className="btn btn-sm sm:btn-md whitespace-nowrap text-xs bg-[#00FFFF] hover:bg-[#FF00FF] rounded-none text-black">
                             <Link href="/magic-wheelz">
                                 Spin Magic Wheelz
                             </Link>
@@ -184,11 +184,13 @@ export default function HomePage() {
                 className="mt-[6rem]" id="roadmap">
 
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
-
+                    {/* <span className="xmax-text-bg"></span> */}
                     <h1
-                        className="roadmap-text-bg text-[7.1vw] md:text-[6vw] font-serrat text-[#00FFFF]
-                        bg-clip-text font-extrabold bg-gradient-to-r">
-                        <span className="xmax-text-bg">RO</span>ADMAP
+                        className=" text-[7.1vw] md:text-[6vw] font-serrat text-transparent
+                        bg-clip-text font-extrabold bg-gradient-to-r from-white
+                        via-[#00FFFF] to-[#00FFFF]">
+
+                        ROADMAP
                     </h1>
 
                     <p className="text-sm md:text-xl tracking-widest text-center opacity-80">
