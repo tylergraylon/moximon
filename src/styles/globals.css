@@ -214,7 +214,7 @@ body {
   }
 
   .roulette-pointer {
-    right: 35.5%;
+    right: 35.7%;
   }
 
   .background-rounder {
@@ -227,6 +227,10 @@ body {
     width: 380px;
     height: 380px;
   }
+
+  .roulette-pointer {
+    right: 34.5%;
+  }
 }
 
 @media screen and (max-width: 380px) {
@@ -237,7 +241,7 @@ body {
   }
 
   .roulette-pointer {
-    right: 33.5%;
+    right: 33.8%;
   }
 }
 
