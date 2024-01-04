@@ -19,7 +19,6 @@ const lato = Lato({
 const myFont = localFont({
   src: "../fonts/conthrax-sb.woff2",
   display: "swap",
-  weight: '100',
   adjustFontFallback: 'Times New Roman',
   variable: '--conthrax'
 });

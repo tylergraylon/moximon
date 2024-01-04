@@ -21,7 +21,7 @@ export default function HomePage() {
 
                 <div className="flex flex-col items-center justify-center text-center w-[80%] md:w-[60%]">
 
-                    <h1 className="xmax-text-bg text-[17vw] sm:text-[15vw] font-lato font-extrabold"> XMAX</h1>
+                    <h1 className="xmax-text-bg text-[17vw] sm:text-[13vw] font-lato font-extrabold"> XMAX</h1>
 
                     <p className="">
                         Experience the thrilling excitement of casino gaming on a decentralized platform.
@@ -70,7 +70,7 @@ export default function HomePage() {
                         and explore a world of endless possibilities. Your next gaming journey awaits!
                     </div>
 
-                    <button className="mt-16 btn btn-md bg-transparent border border-white hover:text-[#00FFFF] rounded-none text-white">
+                    <button className="mt-16 btn btn-md bg-transparent border border-white hover:text-[#FF00FF] hover:border-[#FF00FF] rounded-none text-white">
                         <Link href="#" className="">
                             View WhitePaper
                         </Link>
@@ -127,7 +127,7 @@ export default function HomePage() {
                             alt="discord"
                         />
 
-                        <div className="mt-9 space-y-3 flex flex-col items-center justify-center text-xs sm:text-base">
+                        <div className="mt-9 space-y-3 flex flex-col items-center justify-center text-xs sm:text-[0.82rem]">
 
                             <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
@@ -182,26 +182,26 @@ export default function HomePage() {
             </section>
 
             <section
-                className="mt-[6rem]" id="roadmap">
+                className="mt-[8rem]" id="roadmap">
 
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
                     {/* <span className="xmax-text-bg"></span> */}
                     <h1
-                        className=" text-[7.1vw] md:text-[6vw] font-serrat text-transparent
+                        className="text-[4.6vw] md:text-[2.6vw] font-serrat text-transparent
                         bg-clip-text font-extrabold bg-gradient-to-r from-white mb-4
                         via-[#00FFFF] to-[#00FFFF]">
 
                         ROADMAP
                     </h1>
 
-                    <p className="text-sm md:text-xl tracking-widest text-center opacity-80">
+                    <p className="tracking-widest text-center opacity-80">
                         $XMAX, BRINGING SOMETHING GREAT TO CARDANO
                     </p>
 
                     <Image
                         src={roadmap_rect}
                         alt="roadmap"
-                        className="my-2"
+                        className="my-3"
                     />
 
                 </div>
