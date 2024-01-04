@@ -53,7 +53,7 @@ export default function HomePage() {
                 className="mt-14 grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12">
 
                 <div className="order-last lg:order-none text-center lg:text-start">
-                    <h1 className="text-[8vw] md:text-[3vw] hidden lg:block font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                    <h1 className="text-[8vw] md:text-[3vw] hidden lg:block font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                         OUR MISSION
                     </h1>
 
@@ -79,7 +79,7 @@ export default function HomePage() {
                 </div>
 
 
-                <h1 className="text-[8vw] md:text-[3vw] justify-self-center lg:hidden font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                <h1 className="text-[8vw] md:text-[3vw] justify-self-center font-serrat lg:hidden font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                     OUR MISSION
                 </h1>
 
@@ -103,7 +103,7 @@ export default function HomePage() {
             <section className="mt-16 px-3 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-9  border border-white/40 rounded-2xl">
                     <div className="self-center space-y-4 order-last lg:order-none text-center lg:text-start">
-                        <h1 className="text-[8vw] hidden lg:block md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                        <h1 className="text-[8vw] hidden lg:block md:text-[3vw] font-serrat font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                             TOKENOMICS
                         </h1>
 
@@ -113,7 +113,7 @@ export default function HomePage() {
                         </p>
                     </div>
 
-                    <h1 className="text-[8vw] justify-self-center lg:hidden md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                    <h1 className="text-[8vw] font-serrat justify-self-center lg:hidden md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                         TOKENOMICS
                     </h1>
 
@@ -151,8 +151,9 @@ export default function HomePage() {
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-[#00FFFF]"></span>
-                                    <span>3% Marketing</span>
+                                    <span>4% Airdrop</span>
                                 </span>
+
 
                             </div>
 
@@ -163,8 +164,9 @@ export default function HomePage() {
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <span className="dot bg-[#FFF500]"></span>
-                                    <span>4% Airdrop</span>
+                                    <span>3% Marketing</span>
                                 </span>
+
 
 
                             </div>
@@ -184,7 +186,7 @@ export default function HomePage() {
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
 
                     <h1
-                        className="roadmap-text-bg text-[6vw] md:text-[7vw] text-[#00FFFF]
+                        className="roadmap-text-bg text-[5.5vw] md:text-[6vw] font-serrat text-[#00FFFF]
                         bg-clip-text font-extrabold bg-gradient-to-r">
                         <span className="xmax-text-bg">RO</span>ADMAP
                     </h1>

@@ -30,7 +30,7 @@ export default function Collection() {
 
             <h1
                 className="text-[4.6vw] md:text-[2.6vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r
-             from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+             from-white via-[#00FFFF] to-[#00FFFF] brightness-110 font-serrat">
                 COLLECTION STATS
             </h1>
 
