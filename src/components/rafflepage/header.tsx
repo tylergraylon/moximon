@@ -38,14 +38,14 @@ export default function Header() {
 
                 <div className="navbar-end bg-[#14112D] w-full py-2">
                     <div className=" items-center flex text-[0.65rem] sm:text-xs">
-                        <div className="navbar-item hidden md:block">
+                        <div className="navbar-item hidden md:block text-sm hover:!text-[#FF00FF]">
                             <Link href="/">
                                 HOME
                             </Link>
 
                         </div>
                         <div className="divider divider-vertical mx-0 h-10"></div>
-                        <div className="navbar-item text-[#FF00FF] px-0 md:px-1">
+                        <div className="navbar-item text-[#FF00FF] hover:!text-[#FF00FF] px-0 md:px-1">
                             {(connected && assets && assets.length > 0 &&
                                 assets.filter((item) => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId)).length > 0) ? (
                                 formatNumberToK(parseInt(assets.find(item => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId))!.quantity))
@@ -55,7 +55,7 @@ export default function Header() {
 
                         </div>
                         <div className="divider divider-vertical mx-0 h-10"></div>
-                        <div className="navbar-item text-[#00FFFF] px-0 md:px-1">
+                        <div className="navbar-item text-[#00FFFF] hover:!text-[#00FFFF] px-0 md:px-1">
                             {connected && lovelace ? (
                                 (formatNumberToK(parseInt(lovelace) / oneLoveLace))
                             ) : (

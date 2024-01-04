@@ -53,9 +53,13 @@ export default function HomePage() {
                 className="mt-14 grid grid-cols-1 lg:grid-cols-2 px-8 md:px-12">
 
                 <div className="order-last lg:order-none text-center lg:text-start">
-                    <h1 className="text-[8vw] md:text-[3vw] hidden lg:block font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
-                        OUR MISSION
-                    </h1>
+                    <div className="relative w-full hidden lg:flex  justify-start items-center">
+                        <h1 className="back-text-bg text-[9vw] md:text-[4.4vw] font-extrabold font-serrat"> OUR MISSION</h1>
+                        <h1 className="text-[8vw] md:text-[3vw] font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                            OUR MISSION
+                        </h1>
+                    </div>
+
 
                     <p className="mt-6 ">
                         XMAX, is the ultimate destination for Gamers, offering a seamless and exciting gaming experience.
@@ -80,9 +84,16 @@ export default function HomePage() {
                 </div>
 
 
-                <h1 className="text-[8vw] md:text-[3vw] justify-self-center font-serrat lg:hidden font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                {/* <h1 className="text-[8vw] md:text-[3vw] justify-self-center font-serrat lg:hidden font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                     OUR MISSION
-                </h1>
+                </h1> */}
+
+                <div className="relative w-full flex lg:hidden  justify-center items-center justify-self-center">
+                    <h1 className="back-text-bg text-[9.5vw] md:text-[4.4vw] font-extrabold font-serrat"> OUR MISSION</h1>
+                    <h1 className="text-[8vw] md:text-[3vw] font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                        OUR MISSION
+                    </h1>
+                </div>
 
                 <div className="flex lg:justify-end justify-center">
 
@@ -104,9 +115,16 @@ export default function HomePage() {
             <section className="mt-16 px-3 md:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-8 py-9  border border-white/40 rounded-2xl">
                     <div className="self-center space-y-4 order-last lg:order-none text-center lg:text-start">
-                        <h1 className="text-[8vw] hidden lg:block md:text-[3vw] font-serrat font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                        {/* <h1 className="text-[8vw] hidden lg:block md:text-[3vw] font-serrat font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                             TOKENOMICS
-                        </h1>
+                        </h1> */}
+
+                        <div className="relative w-full hidden lg:flex  justify-start items-center">
+                            <h1 className="back-text-bg text-[9vw] md:text-[4.4vw] font-extrabold font-serrat"> TOKENOMICS</h1>
+                            <h1 className="text-[8vw] md:text-[3vw] font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                                TOKENOMICS
+                            </h1>
+                        </div>
 
                         <p className="text-white/60">
                             We distribute our tokens fairly without any private or VC investment, ensuring that our
@@ -114,9 +132,16 @@ export default function HomePage() {
                         </p>
                     </div>
 
-                    <h1 className="text-[8vw] font-serrat justify-self-center lg:hidden md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                    {/* <h1 className="text-[8vw] font-serrat justify-self-center lg:hidden md:text-[3vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
                         TOKENOMICS
-                    </h1>
+                    </h1> */}
+
+                    <div className="relative w-full flex lg:hidden  justify-center items-center justify-self-center">
+                        <h1 className="back-text-bg text-[9.5vw] md:text-[4.4vw] font-extrabold font-serrat"> TOKENOMICS</h1>
+                        <h1 className="text-[8vw] md:text-[3vw] font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                            TOKENOMICS
+                        </h1>
+                    </div>
 
                     <div className="flex flex-col items-center mt-5 mb-12 lg:mb-0">
 
@@ -187,7 +212,7 @@ export default function HomePage() {
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
                     {/* <span className="xmax-text-bg"></span> */}
                     <h1
-                        className="text-[8vw] md:text-[3vw] font-serrat text-transparent
+                        className="text-[8.5vw] md:text-[3.5vw] font-serrat text-transparent
                         bg-clip-text font-extrabold bg-gradient-to-r from-white mb-4
                         via-[#00FFFF] to-[#00FFFF]">
 

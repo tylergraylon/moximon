@@ -28,11 +28,18 @@ export default function Collection() {
     return (
         <section className="pt-8 mt-14 px-6 md:px-12">
 
-            <h1
+            {/* <h1
                 className="text-[4.6vw] md:text-[2.6vw] font-extrabold  text-transparent bg-clip-text bg-gradient-to-r
              from-white via-[#00FFFF] to-[#00FFFF] brightness-110 font-serrat">
                 COLLECTION STATS
-            </h1>
+            </h1> */}
+
+            <div className="relative w-full flex justify-start items-center">
+                <h1 className="back-text-bg text-[5.6vw] md:text-[3.9vw] font-extrabold font-serrat invisible sm:visible"> COLLECTION STATS</h1>
+                <h1 className="text-[4.6vw] md:text-[2.6vw] font-extrabold font-serrat  text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00FFFF] to-[#00FFFF] brightness-110">
+                    COLLECTION STATS
+                </h1>
+            </div>
 
             <div className="flex justify-between mt-6">
 
