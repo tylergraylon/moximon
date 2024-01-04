@@ -188,7 +188,7 @@ export default function HomePage() {
                     {/* <span className="xmax-text-bg"></span> */}
                     <h1
                         className=" text-[7.1vw] md:text-[6vw] font-serrat text-transparent
-                        bg-clip-text font-extrabold bg-gradient-to-r from-white
+                        bg-clip-text font-extrabold bg-gradient-to-r from-white mb-4
                         via-[#00FFFF] to-[#00FFFF]">
 
                         ROADMAP
