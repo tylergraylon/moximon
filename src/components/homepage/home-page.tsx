@@ -19,7 +19,7 @@ export default function HomePage() {
             <section className="bg-[url('/xmax-hero.png')] bg-no-repeat bg-cover
              h-[38rem] px-10 flex justify-center items-center">
 
-                <div className="flex justify-center text-center w-[80%] md:w-[60%]">
+                <div className="flex flex-col items-center justify-center text-center w-[80%] md:w-[60%]">
 
                     <h1 className="xmax-text-bg text-[12vw] sm:text-[15vw] font-serrat font-extrabold"> XMAX</h1>
 
