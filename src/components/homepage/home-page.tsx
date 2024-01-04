@@ -130,7 +130,7 @@ export default function HomePage() {
 
                             <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
-                                    <span className="dot dot-secondary"></span>
+                                    <span className="dot bg-[#FF00FF]"></span>
                                     <span>55% Pre-sale</span>
                                 </span>
                                 <span className="flex items-center gap-2">
@@ -186,7 +186,7 @@ export default function HomePage() {
                 <div className="bg-[url('/roadmap-bg.svg')] bg-no-repeat bg-cover px-8 md:px-12  flex flex-col items-center justify-center">
 
                     <h1
-                        className="roadmap-text-bg text-[5.5vw] md:text-[6vw] font-serrat text-[#00FFFF]
+                        className="roadmap-text-bg md:text-[6vw] font-serrat text-[#00FFFF]
                         bg-clip-text font-extrabold bg-gradient-to-r">
                         <span className="xmax-text-bg">RO</span>ADMAP
                     </h1>
