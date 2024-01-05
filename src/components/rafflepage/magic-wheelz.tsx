@@ -334,14 +334,25 @@ export default function MagicWheelz() {
                 <div className="roulette-ring">
 
                     <div className={`roulette-pointer ${(disable && count !== 0) && 'animate-ringBlinker'}`}>
-                        <div className="z-30 border-[6px] border-[#A61746] rounded-full">
+                        {/* <div className="z-30 border-[6px] border-[#A61746] rounded-full">
                             <Image
                                 src="/wheelz/rous-blue.svg"
                                 alt="rous"
                                 width={25}
                                 height={25}
                             />
-                        </div>
+                        </div> */}
+
+                        <Image
+                            src="/wheelz/stopper.svg"
+                            alt="rous"
+                            width={70}
+                            height={68}
+                            className="z-30 mt-5"
+                        />
+
+
+
                     </div>
 
                     <div className="roulette-holder flex justify-center ">

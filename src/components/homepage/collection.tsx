@@ -4,7 +4,7 @@ import { fetcherAPI } from "@/utils/utils"
 import useSWR from "swr"
 import { AxiosResponse } from "axios"
 import Image from "next/image"
-import { formatNumberToK } from "@/utils/utils"
+import { formatNumberToKM } from "@/utils/utils"
 
 enum DATETOGGLE {
     oneh = '1h',
@@ -73,7 +73,7 @@ export default function Collection() {
                     <div className="flex items-center space-x-3 ml-4">
                         <span>
                             {volumeLoading || !volumeData ? '...' : (
-                                formatNumberToK(volumeData.data.volume)
+                                formatNumberToKM(volumeData.data.volume)
                             )}
 
                         </span>

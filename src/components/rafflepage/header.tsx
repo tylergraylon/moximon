@@ -7,7 +7,7 @@ import { MobileMenu } from "../homepage/header"
 import { useAssets, useLovelace, useWallet } from "@meshsdk/react"
 import { oneLoveLace, xmaxAssetId, xmaxPolicyId } from "@/utils/services"
 import { Asset } from "@meshsdk/core"
-import { formatNumberToK } from "@/utils/utils"
+import { formatNumberToKM } from "@/utils/utils"
 
 export type AssetExtended = (Asset & { policyId: string })[] | undefined
 
@@ -48,7 +48,7 @@ export default function Header() {
                         <div className="navbar-item text-[#FF00FF] hover:!text-[#FF00FF] px-0 md:px-1">
                             {(connected && assets && assets.length > 0 &&
                                 assets.filter((item) => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId)).length > 0) ? (
-                                formatNumberToK(parseInt(assets.find(item => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId))!.quantity))
+                                formatNumberToKM(parseInt(assets.find(item => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId))!.quantity))
                             ) : (
                                 'N/A'
                             )} <span>XMAX</span>
@@ -57,7 +57,7 @@ export default function Header() {
                         <div className="divider divider-vertical mx-0 h-10"></div>
                         <div className="navbar-item text-[#00FFFF] hover:!text-[#00FFFF] px-0 md:px-1">
                             {connected && lovelace ? (
-                                (formatNumberToK(parseInt(lovelace) / oneLoveLace))
+                                (formatNumberToKM(parseInt(lovelace) / oneLoveLace))
                             ) : (
                                 'N/A'
                             )} ADA
