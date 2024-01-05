@@ -75,7 +75,7 @@ export default function HomePage() {
                     </div>
 
                     <button className="mt-16 btn btn-md bg-transparent border border-white hover:text-[#FF00FF] hover:border-[#FF00FF] rounded-none text-white">
-                        <Link href="#" className="">
+                        <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="">
                             View WhitePaper
                         </Link>
 

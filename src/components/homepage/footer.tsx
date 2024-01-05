@@ -9,7 +9,7 @@ export default function Footer() {
                 &copy; {new Date().getFullYear()} XMAX ALL RIGHTS RESERVED
             </div>
             <div className="divider divider-vertical mx-0 h-7"></div>
-            <Link href="#">
+            <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank">
                 Read Whitepaper
             </Link>
 

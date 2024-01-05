@@ -25,7 +25,7 @@ export default function Header() {
                 <div className="navbar-start hidden md:flex text-sm">
                     <Link href="#" className="navbar-item !text-[#FF00FF]">HOME</Link>
                     <Link href="/magic-wheelz" className="navbar-item whitespace-nowrap hover:!text-[#FF00FF]">MAGIC WHEELZ</Link>
-                    <Link href="#" className="navbar-item hover:!text-[#FF00FF]">WHITEPAPER</Link>
+                    <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="navbar-item hover:!text-[#FF00FF]">WHITEPAPER</Link>
                 </div>
 
 
@@ -125,7 +125,7 @@ export function MobileMenu() {
                                         <Link href="/magic-wheelz" className="text-[15px] w-full">MAGIC WHEELZ</Link>
                                     </li>
                                     <li className="menu-item w-full">
-                                        <Link href="#" className="text-[15px] w-full">WHITEPAPER</Link>
+                                        <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="text-[15px] w-full">WHITEPAPER</Link>
                                     </li>
 
                                     <li className="flex">
