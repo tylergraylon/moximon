@@ -10,7 +10,7 @@ export default function Footer() {
             </div>
             <div className="divider divider-vertical mx-0 h-7"></div>
             <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank">
-                Read Whitepaper
+                Read about XMAX here...
             </Link>
 
         </footer>

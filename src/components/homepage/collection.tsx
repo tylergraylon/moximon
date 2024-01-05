@@ -7,9 +7,10 @@ import Image from "next/image"
 import { formatNumberToKM } from "@/utils/utils"
 
 enum DATETOGGLE {
-    oneh = '1h',
+
     twentyfourh = '24h',
     sevend = '7d',
+    thirtyd = '30d',
     all = 'all',
 
 }
@@ -35,9 +36,9 @@ export default function Collection() {
     const volumeChange = (color: string, change: string | number) => (
         <div className={`flex items-center space-x-2`}>
             <span>
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${color === '#EE4540' && 'transform rotate-90'}`}>
                     <path d="M12.75 5.25L4.5 13.5" stroke={`${color}`} stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M8.25 4.5H12.75C13.1035 4.5 13.2803 4.5 13.3902 4.60984C13.5 4.71967 13.5 4.89645 13.5 5.25V9.75" stroke="#25DD81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M8.25 4.5H12.75C13.1035 4.5 13.2803 4.5 13.3902 4.60984C13.5 4.71967 13.5 4.89645 13.5 5.25V9.75" stroke={`${color}`} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </span>
 
@@ -93,12 +94,7 @@ export default function Collection() {
                 </div>
 
                 <div className="tabs tabs-boxed gap-1 text-xs w-full sm:w-fit rounded-none justify-evenly">
-                    <input
-                        type="radio" id="tab-13" name="tab-5" onChange={(e) => handleTimeChange(e)}
-                        className="tab-toggle" value={DATETOGGLE.oneh}
-                    //  checked={timeRange === DATETOGGLE.oneh} 
-                    />
-                    <label htmlFor="tab-13" className={`tab text-xs ${timeRange === DATETOGGLE.oneh && 'bg-[#0000FF] hover:!bg-[#0000FF]'}`}>1h</label>
+
 
                     <input
                         type="radio" id="tab-14" name="tab-5" onChange={(e) => handleTimeChange(e)}
@@ -111,6 +107,13 @@ export default function Collection() {
                         type="radio" id="tab-15" name="tab-5" onChange={(e) => handleTimeChange(e)}
                         className="tab-toggle" value={DATETOGGLE.sevend} />
                     <label htmlFor="tab-15" className={`tab ${timeRange === DATETOGGLE.sevend && 'bg-[#0000FF] hover:!bg-[#0000FF]'}`}>7d</label>
+
+                    <input
+                        type="radio" id="tab-13" name="tab-5" onChange={(e) => handleTimeChange(e)}
+                        className="tab-toggle" value={DATETOGGLE.thirtyd}
+                    //  checked={timeRange === DATETOGGLE.oneh} 
+                    />
+                    <label htmlFor="tab-13" className={`tab text-xs ${timeRange === DATETOGGLE.thirtyd && 'bg-[#0000FF] hover:!bg-[#0000FF]'}`}>30d</label>
 
                     <input
                         type="radio" id="tab-4" name="tab-5" onChange={(e) => handleTimeChange(e)}
