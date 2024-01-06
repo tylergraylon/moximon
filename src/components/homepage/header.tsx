@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import ConnectWallet from "../ConnectWallet"
+import { usePathname } from "next/navigation"
 export default function Header() {
     return (
         <header className="">
@@ -43,7 +44,7 @@ export default function Header() {
                         </Link>
 
                         <Link
-                            href="#"
+                            href="https://discord.gg/azz9jnck"
                             target="_blank"
                             className="flex justify-center items-center navbar-item"
                         >
@@ -77,7 +78,7 @@ export default function Header() {
 
 export function MobileMenu() {
 
-
+    const pathname = usePathname()
 
     return (
         <>
@@ -119,10 +120,10 @@ export function MobileMenu() {
                             <section className="menu-section">
                                 <ul className="menu-items text-center items-center">
                                     <li className="menu-item  w-full">
-                                        <Link href="/" className=" text-[#FF00FF] w-full text-[15px]">HOME</Link>
+                                        <Link href="/" className={`${pathname.endsWith('/') && 'text-[#FF00FF]'}  w-full text-[15px]`}>HOME</Link>
                                     </li>
                                     <li className="menu-item w-full">
-                                        <Link href="/magic-wheelz" className="text-[15px] w-full">MAGIC WHEELZ</Link>
+                                        <Link href="/magic-wheelz" className={`${pathname.endsWith('magic-wheelz') && 'text-[#FF00FF]'} text-[15px] w-full`}>MAGIC WHEELZ</Link>
                                     </li>
                                     <li className="menu-item w-full">
                                         <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="text-[15px] w-full">WHITEPAPER</Link>
@@ -141,7 +142,7 @@ export function MobileMenu() {
                                         </Link>
 
                                         <Link
-                                            href="#"
+                                            href="https://discord.gg/azz9jnck"
                                             target="_blank"
                                             className="flex justify-center items-center navbar-item"
                                         >
