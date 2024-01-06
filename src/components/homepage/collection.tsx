@@ -15,7 +15,7 @@ enum DATETOGGLE {
 
 }
 export default function Collection() {
-    const [timeRange, setTimeRange] = useState<DATETOGGLE>(DATETOGGLE.twentyfourh)
+    const [timeRange, setTimeRange] = useState<DATETOGGLE>(DATETOGGLE.sevend)
 
     const { data, isLoading } =
         useSWR<AxiosResponse<{ ranking: { [key: string]: any }[] }>>(`https://api.opencnft.io/2/market/rank/collection?time_range=${timeRange}`,
