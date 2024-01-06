@@ -106,19 +106,19 @@ export default function Collection() {
                     <input
                         type="radio" id="tab-15" name="tab-5" onChange={(e) => handleTimeChange(e)}
                         className="tab-toggle" value={DATETOGGLE.sevend} />
-                    <label htmlFor="tab-15" className={`tab ${timeRange === DATETOGGLE.sevend && 'bg-[#0000FF] hover:!bg-[#0000FF]'}`}>7d</label>
+                    <label htmlFor="tab-15" className={`tab ${timeRange === DATETOGGLE.sevend && '!bg-[#0000FF] hover:!bg-[#0000FF]'}`}>7d</label>
 
                     <input
                         type="radio" id="tab-13" name="tab-5" onChange={(e) => handleTimeChange(e)}
                         className="tab-toggle" value={DATETOGGLE.thirtyd}
                     //  checked={timeRange === DATETOGGLE.oneh} 
                     />
-                    <label htmlFor="tab-13" className={`tab text-xs ${timeRange === DATETOGGLE.thirtyd && 'bg-[#0000FF] hover:!bg-[#0000FF]'}`}>30d</label>
+                    <label htmlFor="tab-13" className={`tab text-xs ${timeRange === DATETOGGLE.thirtyd && '!bg-[#0000FF] hover:!bg-[#0000FF]'}`}>30d</label>
 
                     <input
                         type="radio" id="tab-4" name="tab-5" onChange={(e) => handleTimeChange(e)}
                         className="tab-toggle bg-[#0000FF]" value={DATETOGGLE.all} />
-                    <label htmlFor="tab-4" className={`tab ${timeRange === DATETOGGLE.all && 'bg-[#0000FF] hover:!bg-[#0000FF]'}`}>All</label>
+                    <label htmlFor="tab-4" className={`tab ${timeRange === DATETOGGLE.all && '!bg-[#0000FF] hover:!bg-[#0000FF]'}`}>All</label>
                 </div>
 
             </div>
