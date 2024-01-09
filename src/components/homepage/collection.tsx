@@ -37,8 +37,8 @@ export default function Collection() {
         <div className={`flex items-center space-x-2`}>
             <span>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${color === '#EE4540' && 'transform rotate-90'}`}>
-                    <path d="M12.75 5.25L4.5 13.5" stroke={`${color}`} stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M8.25 4.5H12.75C13.1035 4.5 13.2803 4.5 13.3902 4.60984C13.5 4.71967 13.5 4.89645 13.5 5.25V9.75" stroke={`${color}`} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12.75 5.25L4.5 13.5" stroke={`${color}`} strokeWidth="1.5" strokeLinecap="round" />
+                    <path d="M8.25 4.5H12.75C13.1035 4.5 13.2803 4.5 13.3902 4.60984C13.5 4.71967 13.5 4.89645 13.5 5.25V9.75" stroke={`${color}`} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </span>
 
