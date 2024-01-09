@@ -1425,7 +1425,7 @@ export const AdaWheelz = {
                 background: '#0000FF'
             },
             {
-                name: '10000 $XMAX',
+                name: '300 $XMAX',
                 textColor: '#ffffff',
                 ang: 2 * 30,
                 backgroundImage: ``,
@@ -1445,9 +1445,9 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 30
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
             },
             {
                 name: 'Crashed',
@@ -1459,7 +1459,271 @@ export const AdaWheelz = {
                 outcome: OUTCOME.LOSE,
                 code: 240
             },
-
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: '10X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 270
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '10X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 270
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: '1X $XMAX',
+                outcome: OUTCOME.WIN,
+                code: 120
+            },
+            {
+                name: '50 ADA',
+                outcome: OUTCOME.WIN,
+                code: 300
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
+            {
+                name: '300 ADA',
+                outcome: OUTCOME.WIN,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 150
+            },
         ]
     },
     onethousand: {

@@ -133,8 +133,8 @@ export const prizes = {
             amount: `${500 * 1}`
         },
         {
-            name: '10000 $XMAX',
-            amount: `${10000}`
+            name: '300 $XMAX',
+            amount: `${300}`
         },
     ],
     [WHEELZ.onethousand]: [
