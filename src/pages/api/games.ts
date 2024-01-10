@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { db } from '@/utils/db'
 import { WHEELZ, wallet, prizes } from '@/utils/giftWallet'
-import { OUTCOME } from '@/components/rafflepage/wheel-data'
+import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
 import { Transaction } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
 

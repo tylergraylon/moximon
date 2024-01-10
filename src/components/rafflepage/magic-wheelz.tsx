@@ -1,6 +1,6 @@
 
 import { useRef, useState, useEffect, RefObject } from "react"
-import { AdaWheelz } from "./wheel-data"
+import { AdaWheelz } from "./jfhkjhvygcbvjh"
 import Image from "next/image"
 import { useWallet, useAddress, useAssets } from '@meshsdk/react';
 import { Transaction } from '@meshsdk/core';

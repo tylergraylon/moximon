@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import { OUTCOME } from "./wheel-data";
+import { OUTCOME } from "./jfhkjhvygcbvjh";
 
 type Props = {
     opener: boolean;

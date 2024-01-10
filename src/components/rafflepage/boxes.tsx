@@ -2,7 +2,7 @@ import useSWR from "swr"
 import { AxiosResponse } from "axios"
 import { fetcher, gamesKey } from "@/utils/utils"
 import { useCallback } from "react"
-import { AdaWheelz } from "./wheel-data"
+import { AdaWheelz } from "./jfhkjhvygcbvjh"
 import { WHEELZ } from "./magic-wheelz"
 
 

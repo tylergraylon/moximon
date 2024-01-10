@@ -5,10 +5,7 @@ import Collection from "./collection"
 import Footer from "./footer"
 import roadmap_rect from "../../../public/roadmap-rect.svg"
 import roadmap from "../../../public/roadmap-sketch.svg"
-
-import dynamic from 'next/dynamic'
-
-const Carousel = dynamic(() => import('@/components/carousel'), { ssr: false })
+import Carousel from '@/components/carousel'
 
 
 export default function HomePage() {

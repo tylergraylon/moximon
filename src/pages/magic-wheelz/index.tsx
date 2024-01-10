@@ -1,9 +1,6 @@
 import Header from "@/components/rafflepage/header"
 import MagicWheelz from "@/components/rafflepage/magic-wheelz"
-import { lazy } from "react"
-import dynamic from 'next/dynamic'
-
-const Carousel = dynamic(() => import('@/components/carousel'), { ssr: false })
+import Carousel from "@/components/carousel"
 
 
 
