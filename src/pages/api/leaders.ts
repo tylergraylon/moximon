@@ -15,7 +15,10 @@ export default async function handler(
     try {
         if (req.method === 'GET') {
             const data = await db.game.groupBy({
-                by: 'address',
+                by: ['address'],
+                _count: {
+                    address: true
+                },
                 orderBy: {
                     _count: {
                         address: 'desc'
