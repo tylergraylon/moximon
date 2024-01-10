@@ -197,7 +197,8 @@ export default function MagicWheelz() {
                                 address,
                                 outcome: win.outcome,
                                 name: win.name,
-                                wager: wheelz
+                                wager: wheelz,
+                                trans: transac
                             })
 
                             if (res.status === 200) {

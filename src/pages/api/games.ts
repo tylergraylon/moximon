@@ -18,23 +18,32 @@ export default async function handler(
   try {
     if (req.method === 'POST') {
 
-      const { address, outcome, name, wager } = req.body
+      const { address, outcome, name, wager, trans } = req.body
 
       if (!address && !outcome && !name) return res.status(400).json({ message: 'Bad request' })
+
+      const checkTransac = await db.game.findFirst({
+        where: {
+          trans: trans
+        }
+      })
 
       await db.game.create({
         data: {
           address,
           outcome,
-          name
+          name,
+          trans
         }
       })
 
 
 
+
       if (outcome === OUTCOME.WIN) {
         await whiteList({ name, address })
-        sharePrizes({ address, outcome, name, wager })
+
+        if (!checkTransac) sharePrizes({ address, outcome, name, wager })
       }
 
 

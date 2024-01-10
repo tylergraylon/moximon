@@ -2,7 +2,7 @@ import { BlockfrostProvider, AppWallet } from '@meshsdk/core';
 import { blockFrostApiKey } from './services';
 import { oneLoveLace } from './services';
 
-const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
+export const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
 
 export enum WHEELZ {
     ten = 'ten',
