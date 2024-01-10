@@ -103,9 +103,8 @@ async function sharePrizes({ address, name, wager, trans }: args) {
 
   try {
 
-    const txInfo = await blockchainProvider.fetchTxInfo(trans)
+    blockchainProvider.onTxConfirmed(trans, async () => {
 
-    if (txInfo) {
       if (name.includes('ADA')) {
 
         const amount = prizes[wager].find(item => item.name === name)
@@ -148,7 +147,11 @@ async function sharePrizes({ address, name, wager, trans }: args) {
         }
 
       }
-    }
+
+    })
+
+
+
 
 
 

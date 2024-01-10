@@ -1,6 +1,7 @@
 import Header from "@/components/rafflepage/header"
 import MagicWheelz from "@/components/rafflepage/magic-wheelz"
 import Carousel from "@/components/carousel"
+import { useState } from "react"
 
 
 

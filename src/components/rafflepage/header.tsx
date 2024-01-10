@@ -8,6 +8,8 @@ import { useAssets, useLovelace, useWallet } from "@meshsdk/react"
 import { oneLoveLace, xmaxAssetId, xmaxPolicyId } from "@/utils/services"
 import { Asset } from "@meshsdk/core"
 import { formatNumberToKM } from "@/utils/utils"
+import { useEffect, useReducer } from "react"
+
 
 export type AssetExtended = (Asset & { policyId: string })[] | undefined
 
@@ -15,6 +17,10 @@ export default function Header() {
     const lovelace = useLovelace()
     const { connected } = useWallet()
     const assets = useAssets() as AssetExtended
+
+    const rerender = useReducer(() => ({}), {})[1]
+
+
 
     return (
         <header className="relative bg-[#14112D]">

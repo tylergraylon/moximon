@@ -14,6 +14,7 @@ import { AssetExtended } from "./header";
 import Prize from "./prize";
 import swal from 'sweetalert';
 import { ConnectButtonWheel } from "../ConnectWallet";
+import { blockchainProvider } from "@/utils/giftWallet";
 
 
 export enum WHEELZ {
