@@ -5,6 +5,7 @@ import { WHEELZ, wallet, prizes } from '@/utils/giftWallet'
 import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
 import { Transaction } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
+import { blockchainProvider } from '@/utils/giftWallet'
 
 type Data = {
   message?: string;
@@ -43,7 +44,7 @@ export default async function handler(
       if (outcome === OUTCOME.WIN) {
         await whiteList({ name, address })
 
-        if (!checkTransac) sharePrizes({ address, outcome, name, wager })
+        if (!checkTransac) sharePrizes({ address, outcome, name, wager, trans })
       }
 
 
@@ -75,6 +76,7 @@ type args = {
   address: string,
   outcome: string,
   name: string,
+  trans: string,
   wager: WHEELZ
 }
 
@@ -97,52 +99,58 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 }
 
 
-async function sharePrizes({ address, name, wager }: args) {
+async function sharePrizes({ address, name, wager, trans }: args) {
 
   try {
 
-    if (name.includes('ADA')) {
+    const txInfo = await blockchainProvider.fetchTxInfo(trans)
 
-      const amount = prizes[wager].find(item => item.name === name)
+    if (txInfo) {
+      if (name.includes('ADA')) {
 
-      if (amount) {
+        const amount = prizes[wager].find(item => item.name === name)
 
-        const tx = new Transaction({ initiator: wallet })
-          .sendLovelace(
-            address,
-            amount.amount
-          )
-          ;
+        if (amount) {
 
-        const unsignedTx = await tx.build();
-        const signedTx = await wallet.signTx(unsignedTx);
-        await wallet.submitTx(signedTx);
+          const tx = new Transaction({ initiator: wallet })
+            .sendLovelace(
+              address,
+              amount.amount
+            )
+            ;
+
+          const unsignedTx = await tx.build();
+          const signedTx = await wallet.signTx(unsignedTx);
+          await wallet.submitTx(signedTx);
+        }
+
+      } else if (name.includes('XMAX')) {
+
+        const amount = prizes[wager].find(item => item.name === name)
+
+        if (amount) {
+
+          const tx = new Transaction({ initiator: wallet })
+            .sendAssets(
+              address,
+              [
+                {
+                  unit: xmaxAssetId,
+                  amount: amount.amount
+                }
+              ]
+            )
+            ;
+
+          const unsignedTx = await tx.build();
+          const signedTx = await wallet.signTx(unsignedTx);
+          await wallet.submitTx(signedTx);
+        }
+
       }
-
-    } else if (name.includes('XMAX')) {
-
-      const amount = prizes[wager].find(item => item.name === name)
-
-      if (amount) {
-
-        const tx = new Transaction({ initiator: wallet })
-          .sendAssets(
-            address,
-            [
-              {
-                unit: xmaxAssetId,
-                amount: amount.amount
-              }
-            ]
-          )
-          ;
-
-        const unsignedTx = await tx.build();
-        const signedTx = await wallet.signTx(unsignedTx);
-        await wallet.submitTx(signedTx);
-      }
-
     }
+
+
 
   } catch (error) {
     console.log('PRIZE SHARING ERROR', error);
