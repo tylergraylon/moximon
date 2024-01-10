@@ -51,7 +51,14 @@ export default async function handler(
 
     } else if (req.method === 'GET') {
 
-      const data = await db.game.findMany()
+      const data = await db.game.findMany({
+        select: {
+          id: true,
+          address: true,
+          outcome: true,
+          name: true
+        }
+      })
       return res.status(200).json({ data })
     }
     return res.status(400).json({ message: 'Bad request' })
