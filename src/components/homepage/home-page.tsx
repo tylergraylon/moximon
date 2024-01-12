@@ -123,7 +123,7 @@ export default function HomePage() {
                             </h1>
                         </div>
 
-                        <p className="text-white/60">
+                        <p className="">
                             We distribute our tokens fairly without any private or VC investment, ensuring that our
                             community of users receives the maximum rewards, rather than benefiting speculators and insiders.
                         </p>

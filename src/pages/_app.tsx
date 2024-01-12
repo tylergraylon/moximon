@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <MeshProvider>
 
-        <main className={`${myFont.className} ${myFont.variable} ${montserrat.variable} ${lato.variable}`}>
+        <main className={`${myFont.className} ${myFont.variable} ${montserrat.variable} ${lato.variable} tracking-wide`}>
 
           <Component {...pageProps} />
         </main>
