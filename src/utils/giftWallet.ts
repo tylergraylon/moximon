@@ -1,4 +1,4 @@
-import { BlockfrostProvider, AppWallet } from '@meshsdk/core';
+import { BlockfrostProvider, AppWallet, Network } from '@meshsdk/core';
 import { blockFrostApiKey } from './services';
 import { oneLoveLace } from './services';
 
@@ -14,7 +14,7 @@ export enum WHEELZ {
 }
 
 export const wallet = new AppWallet({
-    networkId: 1,
+    networkId: 3,
     fetcher: blockchainProvider,
     submitter: blockchainProvider,
     key: {

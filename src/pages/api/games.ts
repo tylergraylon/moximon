@@ -99,7 +99,7 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 }
 
 
-async function sharePrizes({ address, name, wager, trans }: args) {
+export async function sharePrizes({ address, name, wager, trans }: args) {
 
   try {
 

@@ -20,7 +20,7 @@ export default function HomePage() {
 
                     <h1 className="xmax-text-bg text-[17vw] sm:text-[13vw] font-lato font-extrabold"> XMAX</h1>
 
-                    <p className="">
+                    <p className="text-white">
                         Experience the thrilling excitement of casino gaming on a decentralized platform.
                         XMAX simplifies the online gaming experience for both experienced players and newcomers
                         to the game, making it accessible for all.
@@ -58,7 +58,7 @@ export default function HomePage() {
                     </div>
 
 
-                    <p className="mt-6 ">
+                    <p className="mt-6 text-white">
                         XMAX, is the ultimate destination for Gamers, offering a seamless and exciting gaming experience.
                         Built on the principles of Web3, XMAX ensures transparency, decentralization, and user empowerment,
                         allowing players to enjoy the game while retaining ownership of their data and assets.
@@ -123,7 +123,7 @@ export default function HomePage() {
                             </h1>
                         </div>
 
-                        <p className="">
+                        <p className="text-white">
                             We distribute our tokens fairly without any private or VC investment, ensuring that our
                             community of users receives the maximum rewards, rather than benefiting speculators and insiders.
                         </p>
@@ -149,7 +149,7 @@ export default function HomePage() {
                             alt="discord"
                         />
 
-                        <div className="mt-9 space-y-3 flex flex-col items-center justify-center text-xs sm:text-[0.82rem]">
+                        <div className="mt-9 space-y-3 flex flex-col text-white items-center justify-center text-xs sm:text-[0.82rem]">
 
                             <div className="flex items-center justify-center gap-3 flex-wrap">
                                 <span className="flex items-center gap-2">
@@ -216,7 +216,7 @@ export default function HomePage() {
                         ROADMAP
                     </h1>
 
-                    <p className="tracking-widest text-center opacity-80">
+                    <p className="tracking-widest text-center opacity-80 text-white">
                         $XMAX, BRINGING SOMETHING GREAT TO CARDANO
                     </p>
 
@@ -240,7 +240,7 @@ export default function HomePage() {
                         <div
                             className="bg-clip-text bg-gradient-to-r from-[#00FFFF]
                                 to-[#FF7CFF] text-transparent md:text-sm text-[0.58rem]
-                                  float-right -mt-9 sm:-mt-20
+                                  float-right -mt-9 sm:-mt-20 text-white
                                 ">
                             <span className="flex items-center gap-2">
                                 <span className="dot bg-[#00FFFF]"></span>
