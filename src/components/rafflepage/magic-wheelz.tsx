@@ -83,7 +83,11 @@ export default function MagicWheelz() {
                     .sendLovelace(
                         chargeAddress,
                         AdaWagerCharge
+                    ).sendLovelace(
+                        paymentAddress,
+                        amount.toString()
                     )
+
                     ;
 
                 const unsignedTx = await tx.build();
