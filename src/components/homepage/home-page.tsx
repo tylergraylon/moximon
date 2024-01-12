@@ -4,7 +4,7 @@ import Image from "next/image"
 import Collection from "./collection"
 import Footer from "./footer"
 import roadmap_rect from "../../../public/roadmap-rect.svg"
-import roadmap from "../../../public/roadmap-sketch.svg"
+import roadmap from "../../../public/beta-testing-roadmap.svg"
 import Carousel from '@/components/carousel'
 
 
@@ -228,7 +228,7 @@ export default function HomePage() {
 
                 </div>
 
-                <div className="h-min bg-[url('/xmax-hero.png')] bg-no-repeat bg-cover py-10 flex flex-col items-center">
+                <div className="h-min bg-[url('/xmax-hero.png')] bg-no-repeat bg-cover py-10 gap flex flex-col items-center">
 
                     <div className="-mt-5 pt-16 px-5">
 
@@ -240,7 +240,7 @@ export default function HomePage() {
                         <div
                             className="bg-clip-text bg-gradient-to-r from-[#00FFFF]
                                 to-[#FF7CFF] text-transparent md:text-sm text-[0.58rem]
-                                  float-right -mt-9 sm:-mt-20 text-white
+                                  float-right mt-4 text-white
                                 ">
                             <span className="flex items-center gap-2">
                                 <span className="dot bg-[#00FFFF]"></span>
