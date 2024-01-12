@@ -167,8 +167,8 @@ export default function Collection() {
                     ) : (
                         <div className="flex w-full overflow-x-auto ">
                             <table className="table">
-                                <thead>
-                                    <tr>
+                                <thead className="!bg-gray-800">
+                                    <tr className="!bg-gray-800">
                                         <th>Collection</th>
 
                                         <th>Floor</th>
@@ -200,7 +200,7 @@ export default function Collection() {
                                                                     )}
 
                                                     </div>
-                                                    <span className="truncate">{item.name}</span>
+                                                    <span className="truncate text-white">{item.name}</span>
 
                                                 </td>
                                                 <td className="">
@@ -213,7 +213,7 @@ export default function Collection() {
                                                             height={14}
                                                             className="mr-[0.1rem]" />
 
-                                                        <span>{item.floor_price ?? '--'}</span>
+                                                        <span className="text-white">{item.floor_price ?? '--'}</span>
 
                                                     </div>
 
@@ -231,7 +231,7 @@ export default function Collection() {
 
 
                                                 </td>
-                                                <td className="">{Math.round(item.volume) ?? '--'}</td>
+                                                <td className="text-white">{Math.round(item.volume) ?? '--'}</td>
                                                 {/* <td className="">{item.total_owners[0] ?? '--'}</td> */}
                                             </tr>
                                         )
