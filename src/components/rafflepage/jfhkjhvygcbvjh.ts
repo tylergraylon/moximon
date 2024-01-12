@@ -93,9 +93,9 @@ export const AdaWheelz = {
         ],
         out: [
             {
-                name: 'Whitelist',
+                name: '1X ADA',
                 outcome: 'WIN',
-                code: 30
+                code: 330,
             },
             {
                 name: 'Crashed',
