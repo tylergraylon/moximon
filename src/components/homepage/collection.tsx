@@ -71,7 +71,7 @@ export default function Collection() {
                         Total 24h Volume:
                     </p>
 
-                    <div className="flex items-center space-x-3 ml-4">
+                    <div className="flex items-center space-x-3 ml-4 text-white">
                         <span>
                             {volumeLoading || !volumeData ? '...' : (
                                 formatNumberToKM(volumeData.data.volume)
