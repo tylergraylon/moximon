@@ -83,9 +83,6 @@ export default function MagicWheelz() {
                     .sendLovelace(
                         chargeAddress,
                         AdaWagerCharge
-                    ).sendLovelace(
-                        paymentAddress,
-                        amount.toString()
                     )
                     ;
 

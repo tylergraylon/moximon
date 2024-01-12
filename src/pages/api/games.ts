@@ -111,12 +111,20 @@ async function sharePrizes({ address, name, wager, trans }: args) {
 
         if (amount) {
 
+          console.log('amount ooooo', amount);
+          console.log('baseaddress', wallet.getBaseAddress());
+          console.log('paymentAddress', wallet.getPaymentAddress());
+          console.log('rewardAddress', wallet.getRewardAddress());
+          console.log('usedAddress', wallet.getUsedAddress());
+
+
           const tx = new Transaction({ initiator: wallet })
             .sendLovelace(
               address,
               amount.amount
             )
             ;
+
 
           const unsignedTx = await tx.build();
           const signedTx = await wallet.signTx(unsignedTx);
