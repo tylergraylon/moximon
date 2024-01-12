@@ -44,7 +44,7 @@ export default function Header() {
 
                 <div className="navbar-end bg-[#14112D] w-full py-2">
                     <div className=" items-center flex text-[0.65rem] sm:text-xs">
-                        <div className="navbar-item hidden md:block text-sm hover:!text-[#FF00FF]">
+                        <div className="navbar-item hidden md:block text-white text-sm hover:!text-[#FF00FF]">
                             <Link href="/">
                                 HOME
                             </Link>

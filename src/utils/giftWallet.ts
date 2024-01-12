@@ -14,7 +14,7 @@ export enum WHEELZ {
 }
 
 export const wallet = new AppWallet({
-    networkId: 3,
+    networkId: 1,
     fetcher: blockchainProvider,
     submitter: blockchainProvider,
     key: {

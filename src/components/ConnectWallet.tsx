@@ -130,7 +130,7 @@ const ConnectButtonMobile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <div className=''>
-      <label className="btn btn-sm sm:btn-md bg-transparent hover:border-[#FF00FF] hover:text-[#FF00FF] border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-3">
+      <label className="btn btn-sm sm:btn-md  bg-transparent hover:border-[#FF00FF] hover:text-[#FF00FF] border border-white rounded-none text-white min-w-[150px]" htmlFor="modal-3">
         {
           (isModalOpen && !connected) || connecting ? (
             <svg
@@ -185,7 +185,7 @@ export const ConnectButtonWheel = ({ isModalOpen, setIsModalOpen }: { isModalOpe
               <circle cx="50" cy="50" r="20" />
             </svg>
           ) : (
-            <span className="text-xs lg:text-sm">
+            <span className="text-xs lg:text-sm text-white">
               Connect Wallet
             </span>
 
@@ -266,7 +266,7 @@ const ButtonConnected = () => {
 
             </div>
             <div className="ml-4">
-              <p className="text-sm font-medium text-content1">Disconnect</p>
+              <p className="text-sm font-medium text-white">Disconnect</p>
             </div>
           </button>
         </div>
@@ -288,7 +288,7 @@ const ConnectWalletBody = () => {
           wallets.length > 0 && (
             <nav className="menu bg-gray-2 p-4 rounded-md">
               <section className="menu-section">
-                <span className="menu-title">Installed Wallets</span>
+                <span className="menu-title text-white">Installed Wallets</span>
                 <ul className="menu-items">
                   {wallets.map((wallet, i) => (
                     <li
@@ -299,7 +299,7 @@ const ConnectWalletBody = () => {
                         sessionStorage.setItem(concord, wallet.name)
                       }}
                     >
-                      <span className='text-xs'>{wallet.name}</span>
+                      <span className='text-xs text-white'>{wallet.name}</span>
                       {
                         !wallet.icon.startsWith('data') ? (
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 stroke-blue-600">
@@ -331,7 +331,7 @@ const ConnectWalletBody = () => {
           uninstalledWallets.length > 0 && (
             <nav className="menu bg-gray-2 p-4 rounded-md">
               <section className="menu-section">
-                <span className="menu-title">Uninstalled Wallets</span>
+                <span className="menu-title text-white">Uninstalled Wallets</span>
                 <ul className="menu-items">
                   {
                     uninstalledWallets.map((wallet, i) => (
@@ -341,9 +341,9 @@ const ConnectWalletBody = () => {
                         onClick={() => {
                           window.open(wallet.link, '_blank')
                         }}>
-                        <span className='text-xs'>{wallet.name}</span>
+                        <span className='text-xs text-white'>{wallet.name}</span>
                         <div className='flex items-center'>
-                          <span className="badge badge-md badge-flat-primary mr-3 text-[0.55rem]">Not Installed</span>
+                          <span className="badge badge-md badge-flat-primary text-white mr-3 text-[0.55rem]">Not Installed</span>
                           <Image
                             src={wallet.image}
                             alt={wallet.name}

@@ -25,8 +25,8 @@ export default function Header() {
                 </div>
                 <div className="navbar-start hidden md:flex text-sm">
                     <Link href="#" className="navbar-item !text-[#FF00FF]">HOME</Link>
-                    <Link href="/magic-wheelz" className="navbar-item whitespace-nowrap hover:!text-[#FF00FF]">MAGIC WHEELZ</Link>
-                    <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="navbar-item hover:!text-[#FF00FF]">WHITEPAPER</Link>
+                    <Link href="/magic-wheelz" className="navbar-item whitespace-nowrap text-white hover:!text-[#FF00FF]">MAGIC WHEELZ</Link>
+                    <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="navbar-item text-white hover:!text-[#FF00FF]">WHITEPAPER</Link>
                 </div>
 
 
@@ -120,13 +120,13 @@ export function MobileMenu() {
                             <section className="menu-section">
                                 <ul className="menu-items text-center items-center">
                                     <li className="menu-item  w-full">
-                                        <Link href="/" className={`${pathname.endsWith('/') && 'text-[#FF00FF]'}  w-full text-[15px]`}>HOME</Link>
+                                        <Link href="/" className={`${pathname.endsWith('/') && 'text-[#FF00FF]'} text-white  w-full text-[15px]`}>HOME</Link>
                                     </li>
                                     <li className="menu-item w-full">
-                                        <Link href="/magic-wheelz" className={`${pathname.endsWith('magic-wheelz') && 'text-[#FF00FF]'} text-[15px] w-full`}>MAGIC WHEELZ</Link>
+                                        <Link href="/magic-wheelz" className={`${pathname.endsWith('magic-wheelz') && 'text-[#FF00FF]'} text-white text-[15px] w-full`}>MAGIC WHEELZ</Link>
                                     </li>
                                     <li className="menu-item w-full">
-                                        <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="text-[15px] w-full">WHITEPAPER</Link>
+                                        <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="text-[15px] text-white w-full">WHITEPAPER</Link>
                                     </li>
 
                                     <li className="flex">
