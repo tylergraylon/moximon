@@ -64,7 +64,55 @@ body {
   height: 495px;
 }
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
 
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+}
+
+.logos:after {
+  right: 0;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: flex;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide p {
+  height: 50px;
+  margin: 0 40px;
+}
 
 .roulette-container {
   height: 100%;

@@ -21,7 +21,7 @@ const config: Config = {
       animation: {
         ringBlinker: 'blinker 1s infinite',
         wheelzSlider: 'slideInList 0.5s 1',
-        skyWalker: 'walker 13s linear infinite'
+        skyWalker: 'walker 35s linear infinite'
       },
       keyframes: {
         blinker: {
@@ -51,8 +51,8 @@ const config: Config = {
         },
 
         walker: {
-          '0%': { left: '0' },
-          '100%': { left: '-100%' }
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }
         }
 
       }
