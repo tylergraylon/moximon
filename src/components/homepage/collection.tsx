@@ -129,9 +129,9 @@ export default function Collection() {
                 {
                     isLoading || !data?.data ? (
                         <div className="flex overflow-x-auto">
-                            <table className="table !bg-[#1C1938] w-full text-xs">
-                                <thead>
-                                    <tr>
+                            <table className="table w-full text-xs">
+                                <thead className="!bg-gray-800">
+                                    <tr className="!bg-gray-800">
                                         <th>Collection</th>
 
                                         <th>Floor</th>

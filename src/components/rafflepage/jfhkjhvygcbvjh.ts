@@ -118,9 +118,9 @@ export const AdaWheelz = {
                 code: 240,
             },
             {
-                name: 'Whitelist',
-                outcome: 'WIN',
-                code: 270,
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 240,
             },
             {
                 name: 'Crashed',
@@ -153,9 +153,9 @@ export const AdaWheelz = {
                 code: 60,
             },
             {
-                name: 'Whitelist',
-                outcome: 'WIN',
-                code: 270,
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 240,
             },
             {
                 name: 'Crashed',
@@ -188,9 +188,9 @@ export const AdaWheelz = {
                 code: 60,
             },
             {
-                name: 'Whitelist',
-                outcome: 'WIN',
-                code: 30,
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 240,
             },
             {
                 name: 'Crashed',
@@ -226,11 +226,6 @@ export const AdaWheelz = {
                 name: '1X ADA',
                 outcome: 'WIN',
                 code: 330,
-            },
-            {
-                name: 'Whitelist',
-                outcome: 'WIN',
-                code: 0,
             },
             {
                 name: '1X ADA',
