@@ -253,7 +253,7 @@ export default function MagicWheelz() {
             const errMessage = error.split(':')
 
 
-            console.log(errMessage);
+            // console.log(errMessage);
 
             if (errMessage.includes(`"User declined to sign the transaction."}.') is invalid`)) {
                 swal("Error", 'Declined to sign the transaction', "error");
