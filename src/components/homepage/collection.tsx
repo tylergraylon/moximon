@@ -93,7 +93,7 @@ export default function Collection() {
 
                 </div>
 
-                <div className="tabs tabs-boxed gap-1 text-xs w-full sm:w-fit rounded-none justify-evenly">
+                <div className="tabs !bg-[#1C1938] tabs-boxed gap-1 text-xs w-full sm:w-fit rounded-none justify-evenly">
 
 
                     <input
@@ -129,7 +129,7 @@ export default function Collection() {
                 {
                     isLoading || !data?.data ? (
                         <div className="flex overflow-x-auto">
-                            <table className="table w-full text-xs">
+                            <table className="table !bg-[#1C1938] w-full text-xs">
                                 <thead>
                                     <tr>
                                         <th>Collection</th>

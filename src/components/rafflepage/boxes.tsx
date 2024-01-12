@@ -39,7 +39,7 @@ export function GlobalWheelz() {
                         data.data.data.map((item, i) => (
                             <div
 
-                                className={`flex items-center text-center gap-2 text-xs mt-2  animate-wheelzSlider`} key={i}>
+                                className={`flex items-center text-center gap-2 text-xs mt-2 text-white  animate-wheelzSlider`} key={i}>
                                 <p className=" jus w-full ">
                                     {item.address.slice(0, 5)}...{item.address.slice(-4)}
                                 </p>
@@ -106,7 +106,7 @@ export function WheelzDetails({ wheelz }: { wheelz: WHEELZ }) {
                 {
                     AdaWheelz[wheelz].wheel.map((item, i) => (
 
-                        <div className="flex gap-x-2 text-sm" key={i}>
+                        <div className="flex gap-x-2 text-sm text-white" key={i}>
                             <p>
                                 {i + 1}.
                             </p>

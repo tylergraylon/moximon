@@ -527,7 +527,7 @@ function WheelzPicker({ wheelz, setWheelz, setCount, wheelRef, setSpinner, setWi
                             adaWager.map((item, i) => (
                                 <button
                                     onClick={() => changeWager(item.wheel)}
-                                    className={`border  py-6 btn btn-md rounded-none
+                                    className={`border  py-6 btn btn-md rounded-none text-white
                                                 ${item.wheel === wheelz ? 'bg-[#0000FF]' : 'bg-transparent hover:bg-[#020274]'}
                                                  border-[#00FFFF] text-center  text-sm font-medium`}
                                     key={i}>
@@ -553,7 +553,7 @@ function WheelzPicker({ wheelz, setWheelz, setCount, wheelRef, setSpinner, setWi
                             xmaxWager.map((item, i) => (
                                 <button
                                     onClick={() => changeWager(item.wheel)}
-                                    className={`border  py-6 btn btn-md rounded-none
+                                    className={`border  py-6 btn btn-md rounded-none text-white
                                                 ${item.wheel === wheelz ? 'bg-[#0000FF]' : 'bg-transparent hover:bg-[#020274]'}
                                                  border-[#FF00FF] text-center  text-sm font-medium`}
                                     key={i}>
