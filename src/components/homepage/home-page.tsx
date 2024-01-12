@@ -66,7 +66,7 @@ export default function HomePage() {
                     </p>
 
 
-                    <div className="mt-12">
+                    <div className="mt-12 text-white">
                         <span className="text-[#00FFFF]">Welcome to XMAX:</span> Embark on thrilling adventures, defy gravity in Wheels, soar to new heights with Aviator,
                         and explore a world of endless possibilities. Your next gaming journey awaits!
                     </div>
