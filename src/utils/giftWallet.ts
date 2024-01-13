@@ -40,7 +40,7 @@ export const prizes = {
         },
         {
             name: '3X ADA',
-            amount: `${3 * oneLoveLace}`
+            amount: `${30 * oneLoveLace}`
         },
         {
             name: '5000 $XMAX',

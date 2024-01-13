@@ -122,10 +122,11 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         const tx = new Transaction({ initiator: wallet })
 
-        const utxo = await wallet.getUsedUTxOs()
+        // const utxo = await wallet.getUsedUTxOs()
 
+        // console.log('utxo', utxo);
 
-        tx.setCollateral(utxo)
+        // tx.setCollateral(utxo)
 
 
         tx.sendLovelace(
