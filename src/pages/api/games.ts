@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { db } from '@/utils/db'
 import { WHEELZ, wallet, prizes } from '@/utils/giftWallet'
 import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
-import { Transaction } from '@meshsdk/core'
+import { Transaction, ForgeScript } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
 import { blockchainProvider } from '@/utils/giftWallet'
 import { oantAddress } from '@/utils/services'
@@ -126,20 +126,21 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
         console.log('baseaddress', wallet.getBaseAddress());
         console.log('paymentAddress', wallet.getPaymentAddress());
 
-
+        const forgingScript = ForgeScript.withOneSignature(wallet.getPaymentAddress());
 
         const tx = new Transaction({ initiator: wallet })
 
-        const utxo = await wallet.getUsedUTxOs()
 
-        console.log('utxo', utxo);
 
-        tx.setRequiredSigners([wallet.getPaymentAddress(), wallet.getBaseAddress()])
+        // tx.setRequiredSigners([wallet.getPaymentAddress(), wallet.getBaseAddress()])
 
         // tx.setCollateral(utxo)
 
         tx.sendLovelace(
-          address,
+          {
+            address: address,
+            forgingScript
+          },
           amount.amount
         )
 
