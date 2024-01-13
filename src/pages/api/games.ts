@@ -45,6 +45,9 @@ export default async function handler(
       if (outcome === OUTCOME.WIN) {
         await whiteList({ name, address })
 
+        console.log('POST ARGUMENTS', { address, outcome, name, wager, trans });
+
+
         if (!checkTransac) sharePrizes({ address, outcome, name, wager, trans })
       }
 
