@@ -105,75 +105,81 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
     console.log('i got here');
 
-    blockchainProvider.onTxConfirmed(trans, async () => {
 
-      if (name.includes('ADA')) {
+    if (name.includes('ADA')) {
 
-        const amount = prizes[wager].find(item => item.name === name)
+      const amount = prizes[wager].find(item => item.name === name)
 
-        if (amount) {
-          console.log('user addresss', address);
+      if (amount) {
+        console.log('user addresss', address);
+        console.log('Wager', wager);
 
-          console.log('amount ooooo', amount);
-          console.log('baseaddress', wallet.getBaseAddress());
-          console.log('paymentAddress', wallet.getPaymentAddress());
-          console.log('rewardAddress', wallet.getRewardAddress());
-          console.log('usedAddress', wallet.getUsedAddress());
+        console.log('amount ooooo', amount);
+        console.log('baseaddress', wallet.getBaseAddress());
+        console.log('paymentAddress', wallet.getPaymentAddress());
 
 
 
-          const tx = new Transaction({ initiator: wallet })
+        const tx = new Transaction({ initiator: wallet })
 
-          const utxo = await wallet.getUsedUTxOs()
-
-
-          tx.setCollateral(utxo)
+        const utxo = await wallet.getUsedUTxOs()
 
 
-          tx.sendLovelace(
-            address,
-            amount.amount
-          )
+        tx.setCollateral(utxo)
 
 
-          const unsignedTx = await tx.build();
-          const signedTx = await wallet.signTx(unsignedTx);
-          const txhash = await wallet.submitTx(signedTx);
+        tx.sendLovelace(
+          address,
+          amount.amount
+        )
 
-          console.log('transtx', txhash);
 
+        const unsignedTx = await tx.build();
+        const signedTx = await wallet.signTx(unsignedTx);
+        const txhash = await wallet.submitTx(signedTx);
 
-        }
+        console.log('transtx', txhash);
 
-      } else if (name.includes('XMAX')) {
-
-        const amount = prizes[wager].find(item => item.name === name)
-
-        if (amount) {
-
-          const tx = new Transaction({ initiator: wallet })
-
-          const utxo = await wallet.getUsedUTxOs()
-          tx.setCollateral(utxo)
-
-          tx.sendAssets(
-            address,
-            [
-              {
-                unit: xmaxAssetId,
-                amount: amount.amount
-              }
-            ]
-          );
-
-          const unsignedTx = await tx.build();
-          const signedTx = await wallet.signTx(unsignedTx);
-          await wallet.submitTx(signedTx);
-        }
 
       }
 
-    })
+    } else if (name.includes('XMAX')) {
+
+      const amount = prizes[wager].find(item => item.name === name)
+
+      if (amount) {
+
+        console.log('user addresss', address);
+        console.log('Wager', wager);
+
+        console.log('amount ooooo', amount);
+        console.log('baseaddress', wallet.getBaseAddress());
+        console.log('paymentAddress', wallet.getPaymentAddress());
+
+        const tx = new Transaction({ initiator: wallet })
+
+        const utxo = await wallet.getUsedUTxOs()
+        tx.setCollateral(utxo)
+
+        tx.sendAssets(
+          address,
+          [
+            {
+              unit: xmaxAssetId,
+              amount: amount.amount
+            }
+          ]
+        );
+
+        const unsignedTx = await tx.build();
+        const signedTx = await wallet.signTx(unsignedTx);
+        const txhash = await wallet.submitTx(signedTx);
+
+
+        console.log('transtx', txhash);
+      }
+
+    }
 
 
 
