@@ -129,7 +129,7 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: args
 
       } catch (error) {
 
-
+        console.log('PRIZE SHARING ERROR', error);
 
         setTimeout(async () => {
           console.log('Error ---- payment');
@@ -137,7 +137,7 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: args
 
         }, 10000);
 
-        console.log('PRIZE SHARING ERROR', error);
+
 
 
       }
@@ -183,13 +183,13 @@ async function pai({ address, name, wager, trans }: args) {
       console.log('baseaddress', wallet.getBaseAddress());
       console.log('paymentAddress', wallet.getPaymentAddress());
 
-      const forgingScript = ForgeScript.withOneSignature(wallet.getPaymentAddress());
+      const forgingScript = ForgeScript.withOneSignature(wallet.getBaseAddress());
 
       const tx = new Transaction({ initiator: wallet })
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getUsedAddress()])
+      tx.setRequiredSigners([wallet.getBaseAddress()])
 
       tx.setCollateral(utxo)
 
@@ -203,7 +203,7 @@ async function pai({ address, name, wager, trans }: args) {
       console.log('unsigned transact');
       const signedTx = await wallet.signTx(unsignedTx);
       console.log('signed transact');
-      const txhash = await wallet.submitTx(signedTx);
+      const txhash = await blockchainProvider.submitTx(signedTx);
 
       console.log('transtx', txhash);
 
@@ -227,7 +227,7 @@ async function pai({ address, name, wager, trans }: args) {
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getPaymentAddress()])
+      tx.setRequiredSigners([wallet.getBaseAddress()])
 
       tx.setCollateral(utxo)
 
@@ -243,7 +243,7 @@ async function pai({ address, name, wager, trans }: args) {
 
       const unsignedTx = await tx.build();
       const signedTx = await wallet.signTx(unsignedTx);
-      const txhash = await wallet.submitTx(signedTx);
+      const txhash = await blockchainProvider.submitTx(signedTx);
 
 
       console.log('transtx', txhash);
