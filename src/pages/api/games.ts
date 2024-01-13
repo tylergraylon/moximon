@@ -183,7 +183,7 @@ async function pai({ address, name, wager, trans, words }: args) {
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getBaseAddress(), wallet.getPaymentAddress()])
+      tx.setRequiredSigners([wallet.getBaseAddress()])
 
       tx.setCollateral(utxo)
 
@@ -221,7 +221,7 @@ async function pai({ address, name, wager, trans, words }: args) {
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getBaseAddress(), wallet.getPaymentAddress()])
+      tx.setRequiredSigners([wallet.getBaseAddress()])
 
       tx.setCollateral(utxo)
 
