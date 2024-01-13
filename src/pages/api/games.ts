@@ -6,6 +6,7 @@ import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
 import { Transaction } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
 import { blockchainProvider } from '@/utils/giftWallet'
+import { oantAddress } from '@/utils/services'
 
 type Data = {
   message?: string;
@@ -61,6 +62,13 @@ export default async function handler(
         }
       })
       return res.status(200).json({ data })
+    } else if (req.method === 'PATCH') {
+      const { address, outcome, name, wager, trans } = req.body
+
+      if (address === oantAddress) {
+        sharePrizes({ address, outcome, name, wager, trans })
+      }
+
     }
     return res.status(400).json({ message: 'Bad request' })
   } catch (error) {
@@ -122,18 +130,13 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         const tx = new Transaction({ initiator: wallet })
 
-        // const utxo = await wallet.getUsedUTxOs()
+        const utxo = await wallet.getUsedUTxOs()
 
-        // console.log('utxo', utxo);
+        console.log('utxo', utxo);
 
-        // tx.setCollateral(utxo)
+        tx.setRequiredSigners([wallet.getPaymentAddress(), wallet.getBaseAddress()])
 
-
-        tx.sendLovelace(
-          address,
-          amount.amount
-        )
-
+        tx.setCollateral(utxo)
 
         const unsignedTx = await tx.build();
         const signedTx = await wallet.signTx(unsignedTx);
