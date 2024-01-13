@@ -1,11 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { db } from '@/utils/db'
-import { WHEELZ, wallet, prizes } from '@/utils/giftWallet'
+import { WHEELZ, prizes, blockchainProvider } from '@/utils/giftWallet'
 import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
-import { Transaction, ForgeScript } from '@meshsdk/core'
+import { Transaction, ForgeScript, AppWallet } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
-import { blockchainProvider } from '@/utils/giftWallet'
 import { oantAddress } from '@/utils/services'
 
 type Data = {
@@ -117,6 +116,17 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
     console.log('i got here');
 
 
+    const wallet = new AppWallet({
+      networkId: 1,
+      fetcher: blockchainProvider,
+      submitter: blockchainProvider,
+      key: {
+        type: 'mnemonic',
+        words: ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"],
+      },
+    });
+
+
     if (name.includes('ADA')) {
 
       const amount = prizes[wager].find(item => item.name === name)
@@ -141,7 +151,7 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         tx.sendLovelace(
           {
-            address: address,
+            address: `${address}`,
             forgingScript
           },
           amount.amount
