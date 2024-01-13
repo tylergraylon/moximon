@@ -176,14 +176,14 @@ async function pai({ address, name, wager, trans, words }: args) {
       console.log('Wager', wager);
 
       console.log('amount ooooo', amount);
-      console.log('baseaddress', wallet.getBaseAddress());
+      console.log('baseaddress', wallet.getBaseAddress(0));
       console.log('paymentAddress', wallet.getPaymentAddress());
 
       const tx = new Transaction({ initiator: wallet })
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getBaseAddress()])
+      tx.setRequiredSigners([wallet.getBaseAddress(0)])
 
       tx.setCollateral(utxo)
 
@@ -214,14 +214,14 @@ async function pai({ address, name, wager, trans, words }: args) {
       console.log('Wager', wager);
 
       console.log('amount ooooo', amount);
-      console.log('baseaddress', wallet.getBaseAddress());
+      console.log('baseaddress', wallet.getBaseAddress(0));
       console.log('paymentAddress', wallet.getPaymentAddress());
 
       const tx = new Transaction({ initiator: wallet })
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getBaseAddress()])
+      tx.setRequiredSigners([wallet.getBaseAddress(0)])
 
       tx.setCollateral(utxo)
 
