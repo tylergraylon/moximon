@@ -23,11 +23,7 @@ export default async function handler(
 
       if (!address && !outcome && !name) return res.status(400).json({ message: 'Bad request' })
 
-      const checkTransac = await db.game.findFirst({
-        where: {
-          trans: trans
-        }
-      })
+
 
       await db.game.create({
         data: {
@@ -46,12 +42,7 @@ export default async function handler(
 
         console.log('POST ARGUMENTS', { address, outcome, name, wager, trans });
 
-
-        if (!checkTransac) {
-
-          await sharePrizes({ address, outcome, name, wager, trans })
-
-        }
+        sharePrizes({ address, outcome, name, wager, trans })
       }
 
 
@@ -188,13 +179,11 @@ async function pai({ address, name, wager, trans, words }: args) {
       console.log('baseaddress', wallet.getBaseAddress());
       console.log('paymentAddress', wallet.getPaymentAddress());
 
-      const forgingScript = ForgeScript.withOneSignature(wallet.getBaseAddress());
-
       const tx = new Transaction({ initiator: wallet })
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getBaseAddress()])
+      tx.setRequiredSigners([wallet.getPaymentAddress()])
 
       tx.setCollateral(utxo)
 
@@ -232,7 +221,7 @@ async function pai({ address, name, wager, trans, words }: args) {
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getBaseAddress()])
+      tx.setRequiredSigners([wallet.getPaymentAddress()])
 
       tx.setCollateral(utxo)
 
