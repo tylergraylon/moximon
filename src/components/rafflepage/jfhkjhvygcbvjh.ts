@@ -93,11 +93,6 @@ export const AdaWheelz = {
         ],
         out: [
             {
-                name: '1X ADA',
-                outcome: 'WIN',
-                code: 330,
-            },
-            {
                 name: 'Crashed',
                 outcome: 'LOSE',
                 code: 60,
@@ -115,7 +110,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 240,
+                code: 60,
             },
             {
                 name: '1X ADA',
@@ -138,9 +133,29 @@ export const AdaWheelz = {
                 code: 240,
             },
             {
+                name: '1X ADA',
+                outcome: 'WIN',
+                code: 330,
+            },
+            {
                 name: 'Crashed',
                 outcome: 'LOSE',
                 code: 240,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 240,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 0,
+            },
+            {
+                name: '3X ADA',
+                outcome: 'WIN',
+                code: 180,
             },
             {
                 name: 'Crashed',
