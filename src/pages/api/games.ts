@@ -103,6 +103,8 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
   try {
 
+    console.log('i got here');
+
     blockchainProvider.onTxConfirmed(trans, async () => {
 
       if (name.includes('ADA')) {
@@ -111,11 +113,11 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         if (amount) {
 
-          // console.log('amount ooooo', amount);
-          // console.log('baseaddress', wallet.getBaseAddress());
-          // console.log('paymentAddress', wallet.getPaymentAddress());
-          // console.log('rewardAddress', wallet.getRewardAddress());
-          // console.log('usedAddress', wallet.getUsedAddress());
+          console.log('amount ooooo', amount);
+          console.log('baseaddress', wallet.getBaseAddress());
+          console.log('paymentAddress', wallet.getPaymentAddress());
+          console.log('rewardAddress', wallet.getRewardAddress());
+          console.log('usedAddress', wallet.getUsedAddress());
 
 
 
@@ -136,6 +138,9 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
           const unsignedTx = await tx.build();
           const signedTx = await wallet.signTx(unsignedTx);
           const txhash = await wallet.submitTx(signedTx);
+
+          console.log('transtx', txhash);
+
 
         }
 
