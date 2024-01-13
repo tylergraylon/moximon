@@ -188,6 +188,9 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
         const tx = new Transaction({ initiator: wallet })
 
         const utxo = await wallet.getUsedUTxOs()
+
+        tx.setRequiredSigners([wallet.getBaseAddress()])
+
         tx.setCollateral(utxo)
 
         tx.sendAssets(
