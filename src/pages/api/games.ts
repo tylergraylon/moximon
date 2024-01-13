@@ -136,7 +136,12 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         tx.setRequiredSigners([wallet.getPaymentAddress(), wallet.getBaseAddress()])
 
-        tx.setCollateral(utxo)
+        tx.setCollateral(await wallet.getUsedCollateral())
+
+        tx.sendLovelace(
+          address,
+          amount.amount
+        )
 
         const unsignedTx = await tx.build();
         const signedTx = await wallet.signTx(unsignedTx);
