@@ -278,10 +278,10 @@ const ConnectWalletBody = () => {
   return (
     <>
       <h2 className="text-xl">Connect Wallet</h2>
-      <div className='mt-4'>
+      <div className='mt-4' style={{ backgroundColor: 'rgb(22, 22, 22)' }}>
         {
           wallets.length > 0 && (
-            <nav className="menu bg-gray-2 p-4 rounded-md">
+            <nav className="menu bg-gray-2 p-4 rounded-md" style={{ backgroundColor: 'rgba(22, 22, 22, 0.8)' }}>
               <section className="menu-section">
                 <span className="menu-title text-white">Installed Wallets</span>
                 <ul className="menu-items">
@@ -324,7 +324,7 @@ const ConnectWalletBody = () => {
 
         {
           uninstalledWallets.length > 0 && (
-            <nav className="menu bg-gray-2 p-4 rounded-md">
+            <nav className="menu bg-gray-2 p-4 rounded-md" style={{ backgroundColor: 'rgba(22, 22, 22, 0.8)' }}>
               <section className="menu-section">
                 <span className="menu-title text-white">Uninstalled Wallets</span>
                 <ul className="menu-items">

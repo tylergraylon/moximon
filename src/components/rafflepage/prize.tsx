@@ -14,7 +14,7 @@ export default memo(function Prize({ opener, outcome, setOpener, won }: Props) {
 
     if (outcome === OUTCOME.WIN) {
         return (
-            <div className="">
+            <div className="text-white">
                 <label className="btn btn-primary hidden" htmlFor="modal-6"></label>
 
                 <input
@@ -34,9 +34,9 @@ export default memo(function Prize({ opener, outcome, setOpener, won }: Props) {
                                         w-full
                                      from-[#0000FF] via-[#0000FF] to-[#FF00FF]">
 
-                        <p className="text-lg">YOU WON! {won}</p>
+                        <p className="text-lg text-white">YOU WON! {won}</p>
 
-                        <p className="text-sm">You are a magician</p>
+                        <p className="text-sm text-white">You are a magician</p>
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@ export default memo(function Prize({ opener, outcome, setOpener, won }: Props) {
                             max-w-3xl bg-gradient-to-r w-full rounded-none
                              bg-[#0000FF]">
 
-                    <p className="text-lg">SHEESH! </p>
-                    <div className="text-sm">
+                    <p className="text-lg text-white">SHEESH! </p>
+                    <div className="text-sm text-white">
                         <p>We caught your tricks</p>
                         <p>You lose. TRY AGAIN</p>
                     </div>
