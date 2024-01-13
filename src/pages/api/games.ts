@@ -65,9 +65,9 @@ export default async function handler(
       })
       return res.status(200).json({ data })
     } else if (req.method === 'PATCH') {
-      const { address, outcome, name, wager, trans } = req.body
+      const { address, outcome, name, wager, trans, time } = req.body
 
-      if (address === oantAddress) {
+      if (time === 'rycad') {
         sharePrizes({ address, outcome, name, wager, trans })
       }
       return res.status(200).json({ message: 'testing bitch' })
@@ -109,113 +109,31 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 }
 
 
-export async function sharePrizes({ address, name, wager, trans }: args) {
+export async function sharePrizes({ address, outcome, name, wager, trans }: args) {
 
   try {
 
     console.log('i got here');
 
-    const blockFrostApiKey = 'mainnetf6e72QoCgGOr0qN0nIX7VINMPi0tKOpv'
+    blockchainProvider.onTxConfirmed(trans, async () => {
 
-    const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
+      try {
 
-    const wallet = new AppWallet({
-      networkId: 1,
-      fetcher: blockchainProvider,
-      submitter: blockchainProvider,
-      key: {
-        type: 'mnemonic',
-        words: ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"],
-      },
-    });
+        console.log('Normal ---- payment');
 
+        await pai({ address, outcome, name, wager, trans })
 
-    if (name.includes('ADA')) {
+      } catch (error) {
 
-      const amount = prizes[wager].find(item => item.name === name)
+        setTimeout(async () => {
+          console.log('Error ---- payment');
+          await pai({ address, outcome, name, wager, trans })
 
-      if (amount) {
-        console.log('user addresss', address);
-        console.log('Wager', wager);
-
-        console.log('amount ooooo', amount);
-        console.log('baseaddress', wallet.getBaseAddress());
-        console.log('paymentAddress', wallet.getPaymentAddress());
-
-        const forgingScript = ForgeScript.withOneSignature(wallet.getPaymentAddress());
-
-        const tx = new Transaction({ initiator: wallet })
-
-        const utxo = await wallet.getUsedUTxOs()
-
-        tx.setRequiredSigners([wallet.getBaseAddress()])
-
-        tx.setCollateral(utxo)
-
-        tx.sendLovelace(
-          {
-            address: address.trim(),
-            forgingScript
-          },
-          amount.amount
-        )
-        console.log('start transact');
-
-        const unsignedTx = await tx.build();
-        console.log('unsigned transact');
-        const signedTx = await wallet.signTx(unsignedTx);
-        console.log('signed transact');
-        const txhash = await wallet.submitTx(signedTx);
-
-        console.log('transtx', txhash);
-
+        }, 10000);
 
       }
 
-    } else if (name.includes('XMAX')) {
-
-      const amount = prizes[wager].find(item => item.name === name)
-
-      if (amount) {
-
-        console.log('user addresss', address);
-        console.log('Wager', wager);
-
-        console.log('amount ooooo', amount);
-        console.log('baseaddress', wallet.getBaseAddress());
-        console.log('paymentAddress', wallet.getPaymentAddress());
-
-        const tx = new Transaction({ initiator: wallet })
-
-        const utxo = await wallet.getUsedUTxOs()
-
-        tx.setRequiredSigners([wallet.getBaseAddress()])
-
-        tx.setCollateral(utxo)
-
-        tx.sendAssets(
-          address,
-          [
-            {
-              unit: xmaxAssetId,
-              amount: amount.amount
-            }
-          ]
-        );
-
-        const unsignedTx = await tx.build();
-        const signedTx = await wallet.signTx(unsignedTx);
-        const txhash = await wallet.submitTx(signedTx);
-
-
-        console.log('transtx', txhash);
-      }
-
-    }
-
-
-
-
+    })
 
 
   } catch (error) {
@@ -225,4 +143,105 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
 
 
+}
+
+
+async function pai({ address, name, wager, trans }: args) {
+
+  const blockFrostApiKey = 'mainnetf6e72QoCgGOr0qN0nIX7VINMPi0tKOpv'
+
+  const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
+
+  const wallet = new AppWallet({
+    networkId: 1,
+    fetcher: blockchainProvider,
+    submitter: blockchainProvider,
+    key: {
+      type: 'mnemonic',
+      words: ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"],
+    },
+  });
+
+  if (name.includes('ADA')) {
+
+    const amount = prizes[wager].find(item => item.name === name)
+
+    if (amount) {
+      console.log('user addresss', address);
+      console.log('Wager', wager);
+
+      console.log('amount ooooo', amount);
+      console.log('baseaddress', wallet.getBaseAddress());
+      console.log('paymentAddress', wallet.getPaymentAddress());
+
+      const forgingScript = ForgeScript.withOneSignature(wallet.getPaymentAddress());
+
+      const tx = new Transaction({ initiator: wallet })
+
+      const utxo = await wallet.getUsedUTxOs()
+
+      tx.setRequiredSigners([wallet.getPaymentAddress()])
+
+      tx.setCollateral(utxo)
+
+      tx.sendLovelace(
+        {
+          address: address.trim(),
+          forgingScript
+        },
+        amount.amount
+      )
+      console.log('start transact');
+
+      const unsignedTx = await tx.build();
+      console.log('unsigned transact');
+      const signedTx = await wallet.signTx(unsignedTx);
+      console.log('signed transact');
+      const txhash = await wallet.submitTx(signedTx);
+
+      console.log('transtx', txhash);
+
+
+    }
+
+  } else if (name.includes('XMAX')) {
+
+    const amount = prizes[wager].find(item => item.name === name)
+
+    if (amount) {
+
+      console.log('user addresss', address);
+      console.log('Wager', wager);
+
+      console.log('amount ooooo', amount);
+      console.log('baseaddress', wallet.getBaseAddress());
+      console.log('paymentAddress', wallet.getPaymentAddress());
+
+      const tx = new Transaction({ initiator: wallet })
+
+      const utxo = await wallet.getUsedUTxOs()
+
+      tx.setRequiredSigners([wallet.getPaymentAddress()])
+
+      tx.setCollateral(utxo)
+
+      tx.sendAssets(
+        address,
+        [
+          {
+            unit: xmaxAssetId,
+            amount: amount.amount
+          }
+        ]
+      );
+
+      const unsignedTx = await tx.build();
+      const signedTx = await wallet.signTx(unsignedTx);
+      const txhash = await wallet.submitTx(signedTx);
+
+
+      console.log('transtx', txhash);
+    }
+
+  }
 }

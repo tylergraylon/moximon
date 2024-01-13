@@ -32,7 +32,7 @@ export const prizes = {
         },
         {
             name: '10X ADA',
-            amount: `${10 * oneLoveLace}`
+            amount: `${100 * oneLoveLace}`
         },
         {
             name: '200 ADA',
@@ -66,11 +66,11 @@ export const prizes = {
         },
         {
             name: '5X ADA',
-            amount: `${(5 * oneLoveLace) * 50}`
+            amount: `${(50 * oneLoveLace) * 50}`
         },
         {
             name: '2X ADA',
-            amount: `${(2 * oneLoveLace) * 50}`
+            amount: `${(20 * oneLoveLace) * 50}`
         },
         {
             name: '15X ADA',
@@ -78,7 +78,7 @@ export const prizes = {
         },
         {
             name: '1X ADA',
-            amount: `${(1 * oneLoveLace) * 50}`
+            amount: `${(10 * oneLoveLace) * 50}`
         },
     ],
     [WHEELZ.hundred]: [
@@ -92,11 +92,11 @@ export const prizes = {
         },
         {
             name: '3X ADA',
-            amount: `${(3 * oneLoveLace) * 100}`
+            amount: `${(30 * oneLoveLace) * 100}`
         },
         {
             name: '1X ADA',
-            amount: `${(1 * oneLoveLace) * 100}`
+            amount: `${(10 * oneLoveLace) * 100}`
         },
         {
             name: '20000 $XMAX',
