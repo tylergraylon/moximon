@@ -16,11 +16,6 @@ const WalletList = [
     link: "https://flint-wallet.com/"
   },
   {
-    name: "Eternl",
-    image: "/wallets/eternl-wallet.svg",
-    link: "https://eternl.io/app/mainnet/welcome"
-  },
-  {
     name: "Typhon Wallet",
     image: "/wallets/typhon-wallet.svg",
     link: "https://typhonwallet.io/#/"
