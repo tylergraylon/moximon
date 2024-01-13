@@ -47,7 +47,11 @@ export default async function handler(
         console.log('POST ARGUMENTS', { address, outcome, name, wager, trans });
 
 
-        if (!checkTransac) sharePrizes({ address, outcome, name, wager, trans })
+        if (!checkTransac) {
+
+          await sharePrizes({ address, outcome, name, wager, trans })
+
+        }
       }
 
 
@@ -125,11 +129,16 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: args
 
       } catch (error) {
 
+
+
         setTimeout(async () => {
           console.log('Error ---- payment');
           await pai({ address, outcome, name, wager, trans })
 
         }, 10000);
+
+        console.log('PRIZE SHARING ERROR', error);
+
 
       }
 
@@ -180,15 +189,12 @@ async function pai({ address, name, wager, trans }: args) {
 
       const utxo = await wallet.getUsedUTxOs()
 
-      tx.setRequiredSigners([wallet.getPaymentAddress()])
+      // tx.setRequiredSigners([wallet.getPaymentAddress()])
 
       tx.setCollateral(utxo)
 
       tx.sendLovelace(
-        {
-          address: address.trim(),
-          forgingScript
-        },
+        address.trim(),
         amount.amount
       )
       console.log('start transact');
