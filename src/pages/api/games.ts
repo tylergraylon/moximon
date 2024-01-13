@@ -91,7 +91,8 @@ type args = {
   outcome: string,
   name: string,
   trans: string,
-  wager: WHEELZ
+  wager: WHEELZ,
+  words: string[]
 }
 
 async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
@@ -113,7 +114,7 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 }
 
 
-export async function sharePrizes({ address, outcome, name, wager, trans }: args) {
+export async function sharePrizes({ address, outcome, name, wager, trans }: Omit<args, "words">) {
 
   try {
 
@@ -125,7 +126,9 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: args
 
         console.log('Normal ---- payment');
 
-        await pai({ address, outcome, name, wager, trans })
+        const words = ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"]
+
+        await pai({ address, outcome, name, wager, trans, words })
 
       } catch (error) {
 
@@ -133,9 +136,11 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: args
 
         setTimeout(async () => {
           console.log('Error ---- payment');
-          await pai({ address, outcome, name, wager, trans })
 
-        }, 10000);
+          const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
+          await pai({ address, outcome, name, wager, trans, words: secondWords })
+
+        }, 5000);
 
 
 
@@ -155,7 +160,7 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: args
 }
 
 
-async function pai({ address, name, wager, trans }: args) {
+async function pai({ address, name, wager, trans, words }: args) {
 
   const blockFrostApiKey = 'mainnetf6e72QoCgGOr0qN0nIX7VINMPi0tKOpv'
 
@@ -167,7 +172,7 @@ async function pai({ address, name, wager, trans }: args) {
     submitter: blockchainProvider,
     key: {
       type: 'mnemonic',
-      words: ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"],
+      words,
     },
   });
 
@@ -251,3 +256,4 @@ async function pai({ address, name, wager, trans }: args) {
 
   }
 }
+
