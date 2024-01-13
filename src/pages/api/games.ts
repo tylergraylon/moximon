@@ -112,6 +112,7 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
         const amount = prizes[wager].find(item => item.name === name)
 
         if (amount) {
+          console.log('user addresss', address);
 
           console.log('amount ooooo', amount);
           console.log('baseaddress', wallet.getBaseAddress());
