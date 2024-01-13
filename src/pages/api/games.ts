@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { db } from '@/utils/db'
 import { WHEELZ, prizes, blockchainProvider } from '@/utils/giftWallet'
 import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
-import { Transaction, ForgeScript, AppWallet } from '@meshsdk/core'
+import { Transaction, ForgeScript, AppWallet, BlockfrostProvider } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
 import { oantAddress } from '@/utils/services'
 
@@ -115,6 +115,9 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
     console.log('i got here');
 
+    const blockFrostApiKey = 'mainnetf6e72QoCgGOr0qN0nIX7VINMPi0tKOpv'
+
+    const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
 
     const wallet = new AppWallet({
       networkId: 1,
@@ -151,7 +154,7 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         tx.sendLovelace(
           {
-            address: `${address}`,
+            address: address.trim(),
             forgingScript
           },
           amount.amount
