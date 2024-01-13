@@ -68,7 +68,7 @@ export default async function handler(
       if (address === oantAddress) {
         sharePrizes({ address, outcome, name, wager, trans })
       }
-
+      return res.status(200).json({ message: 'testing bitch' })
     }
     return res.status(400).json({ message: 'Bad request' })
   } catch (error) {
@@ -130,11 +130,11 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
 
         const tx = new Transaction({ initiator: wallet })
 
+        const utxo = await wallet.getUsedUTxOs()
 
+        tx.setRequiredSigners([wallet.getBaseAddress()])
 
-        // tx.setRequiredSigners([wallet.getPaymentAddress(), wallet.getBaseAddress()])
-
-        // tx.setCollateral(utxo)
+        tx.setCollateral(utxo)
 
         tx.sendLovelace(
           {
@@ -143,9 +143,12 @@ export async function sharePrizes({ address, name, wager, trans }: args) {
           },
           amount.amount
         )
+        console.log('start transact');
 
         const unsignedTx = await tx.build();
+        console.log('unsigned transact');
         const signedTx = await wallet.signTx(unsignedTx);
+        console.log('signed transact');
         const txhash = await wallet.submitTx(signedTx);
 
         console.log('transtx', txhash);
