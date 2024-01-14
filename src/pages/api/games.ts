@@ -82,7 +82,7 @@ type args = {
   trans: string,
   wager: WHEELZ,
   words: string,
-  xmaxwords?: string[]
+  xmaxwords: string[]
 }
 
 async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
@@ -104,7 +104,7 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 }
 
 
-export async function sharePrizes({ address, outcome, name, wager, trans }: Omit<args, "words">) {
+export async function sharePrizes({ address, outcome, name, wager, trans }: Omit<args, "words" | "xmaxwords">) {
 
   try {
 
