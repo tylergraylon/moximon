@@ -5,7 +5,7 @@ import { WHEELZ, prizes, blockchainProvider } from '@/utils/giftWallet'
 import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
 import { Transaction, ForgeScript, AppWallet, BlockfrostProvider } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
-import { oantAddress } from '@/utils/services'
+import { payment } from './payer'
 
 type Data = {
   message?: string;
@@ -33,8 +33,6 @@ export default async function handler(
           trans
         }
       })
-
-
 
 
       if (outcome === OUTCOME.WIN) {
@@ -83,7 +81,8 @@ type args = {
   name: string,
   trans: string,
   wager: WHEELZ,
-  words: string[]
+  words: string,
+  xmaxwords?: string[]
 }
 
 async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
@@ -117,7 +116,7 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
 
         console.log('Normal ---- payment');
 
-        const words = ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"]
+        const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
 
         await pai({ address, outcome, name, wager, trans, words })
 
@@ -125,16 +124,13 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
 
         console.log('PRIZE SHARING ERROR', error);
 
-        setTimeout(async () => {
-          console.log('Error ---- payment');
+        // setTimeout(async () => {
+        //   console.log('Error ---- payment');
 
-          const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
-          await pai({ address, outcome, name, wager, trans, words: secondWords })
+        //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
+        //   await pai({ address, outcome, name, wager, trans, words: secondWords })
 
-        }, 5000);
-
-
-
+        // }, 5000);
 
       }
 
@@ -145,109 +141,90 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
     console.log('PRIZE SHARING ERROR', error);
 
   }
-
-
-
 }
 
 
-async function pai({ address, name, wager, trans, words }: args) {
-
-  const blockFrostApiKey = 'mainnetf6e72QoCgGOr0qN0nIX7VINMPi0tKOpv'
-
-  const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
-
-  const wallet = new AppWallet({
-    networkId: 1,
-    fetcher: blockchainProvider,
-    submitter: blockchainProvider,
-    key: {
-      type: 'mnemonic',
-      words,
-    },
-  });
+async function pai({ address, name, wager, trans, xmaxwords, words }: args) {
 
   if (name.includes('ADA')) {
 
     const amount = prizes[wager].find(item => item.name === name)
 
     if (amount) {
-      console.log('user addresss', address);
-      console.log('Wager', wager);
-
-      const signingAddress = wallet.getBaseAddress(0)
-
-      console.log('amount ooooo', amount);
-      console.log('baseaddress', wallet.getBaseAddress(0));
-      console.log('paymentAddress', wallet.getPaymentAddress());
-
-      const tx = new Transaction({ initiator: wallet })
-
-      const utxo = await wallet.getUsedUTxOs()
-
-      tx.setRequiredSigners([signingAddress])
-
-      tx.setCollateral(utxo)
-
-      tx.sendLovelace(
-        address.trim(),
-        amount.amount
-      )
-      console.log('start transact');
-
-      const unsignedTx = await tx.build();
-      console.log('unsigned transact');
-      const signedTx = await wallet.signTx(unsignedTx);
-      console.log('signed transact');
-      const txhash = await blockchainProvider.submitTx(signedTx);
-
-      console.log('transtx', txhash);
-
+      payment({
+        output_address: address,
+        amount: amount.amount,
+        words
+      })
 
     }
 
   } else if (name.includes('XMAX')) {
 
-    const amount = prizes[wager].find(item => item.name === name)
 
-    if (amount) {
+    if (xmaxwords) {
 
-      console.log('user addresss', address);
-      console.log('Wager', wager);
+      const blockFrostApiKey = 'mainnetf6e72QoCgGOr0qN0nIX7VINMPi0tKOpv'
 
-      const signingAddress = wallet.getBaseAddress(0)
+      const blockchainProvider = new BlockfrostProvider(blockFrostApiKey);
 
-      console.log('amount ooooo', amount);
-      console.log('baseaddress', wallet.getBaseAddress(0));
-      console.log('paymentAddress', wallet.getPaymentAddress());
+      const wallet = new AppWallet({
+        networkId: 1,
+        fetcher: blockchainProvider,
+        submitter: blockchainProvider,
+        key: {
+          type: 'mnemonic',
+          words: xmaxwords,
+        },
+      });
 
-      const tx = new Transaction({ initiator: wallet })
+      const amount = prizes[wager].find(item => item.name === name)
 
-      const utxo = await wallet.getUsedUTxOs()
+      if (amount) {
 
+        console.log('user addresss', address);
+        console.log('Wager', wager);
 
-      tx.setRequiredSigners([signingAddress])
+        const signingAddress = wallet.getBaseAddress(0)
 
-      tx.setCollateral(utxo)
+        console.log('amount ooooo', amount);
+        console.log('baseaddress', wallet.getBaseAddress(0));
+        console.log('paymentAddress', wallet.getPaymentAddress());
 
-      tx.sendAssets(
-        address,
-        [
-          {
-            unit: xmaxAssetId,
-            amount: amount.amount
-          }
-        ]
-      );
+        const tx = new Transaction({ initiator: wallet })
 
-      const unsignedTx = await tx.build();
-      const signedTx = await wallet.signTx(unsignedTx);
-      const txhash = await blockchainProvider.submitTx(signedTx);
+        const utxo = await wallet.getUsedUTxOs()
 
 
-      console.log('transtx', txhash);
+        tx.setRequiredSigners([signingAddress])
+
+        tx.setCollateral(utxo)
+
+        tx.sendAssets(
+          address,
+          [
+            {
+              unit: xmaxAssetId,
+              amount: amount.amount
+            }
+          ]
+        );
+
+        const unsignedTx = await tx.build();
+        const signedTx = await wallet.signTx(unsignedTx);
+        const txhash = await blockchainProvider.submitTx(signedTx);
+
+
+        console.log('transtx', txhash);
+      }
+
     }
+
+
 
   }
 }
+
+
+
 
