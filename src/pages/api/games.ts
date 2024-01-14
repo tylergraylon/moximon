@@ -6,7 +6,6 @@ import { OUTCOME } from '@/components/rafflepage/jfhkjhvygcbvjh'
 import { Transaction, ForgeScript, AppWallet, BlockfrostProvider } from '@meshsdk/core'
 import { xmaxAssetId } from '@/utils/services'
 import { payment } from './payer'
-import { error } from 'console'
 
 type Data = {
   message?: string;
@@ -125,6 +124,8 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
 
         console.log('ERROR PAYMENT MESSAGE----------------', error);
 
+        const errorMessage = error
+
         // setTimeout(async () => {
         //   console.log('Error ---- payment');
 
@@ -144,12 +145,8 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
       }
 
     })
-
-    throw Error(`CHECK ERROR bITCH --------- ${error}`)
-
   } catch (error) {
     console.log('PRIZE SHARING ERROR', error);
-
   }
 }
 
