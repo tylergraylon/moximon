@@ -28,3 +28,19 @@ model Whitelist {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 }
+
+enum PAYMENTSTATUS {
+  PAID
+  UNPAID
+}
+
+model unpaid {
+  id      String        @id @default(auto()) @map("_id") @db.ObjectId
+  address String
+  outcome String
+  name    String
+  status  PAYMENTSTATUS @default(UNPAID)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
