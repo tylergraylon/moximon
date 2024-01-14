@@ -63,6 +63,7 @@ const nextConfig = withNextJsObfuscator(
         asyncWebAssembly: true,
         layers: true,
       };
+      config.resolve.fallback = { fs: false };
       return config;
     },
     images: {
