@@ -152,18 +152,32 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
 }
 
 
-async function pai({ address, name, wager, trans, xmaxwords, words }: args) {
+async function pai({ address, name, wager, trans, xmaxwords, words, outcome }: args) {
 
   if (name.includes('ADA')) {
 
     const amount = prizes[wager].find(item => item.name === name)
 
     if (amount) {
-      payment({
-        output_address: address,
-        amount: amount.amount,
-        words
-      })
+      try {
+        payment({
+          output_address: address,
+          amount: amount.amount,
+          words
+        })
+
+      } catch (error) {
+
+        await db.unpaid.create({
+          data: {
+            address,
+            outcome,
+            name
+          }
+        })
+
+      }
+
 
     }
 
