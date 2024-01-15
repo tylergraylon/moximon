@@ -28,7 +28,7 @@ export const AdaWheelz = {
                 background: '#FFF300'
             },
             {
-                name: '1X Whitelist',
+                name: '2X ADA',
                 textColor: '#ffffff',
                 ang: 9 * 30,
                 backgroundImage: ``,
@@ -70,21 +70,21 @@ export const AdaWheelz = {
                 background: '#FFF300'
             },
             {
-                name: '100 ADA',
+                name: 'Whitelist',
                 textColor: '#ffffff',
                 ang: 3 * 30,
                 backgroundImage: ``,
                 background: '#000000'
             },
             {
-                name: 'Crashed',
+                name: '15 ADA',
                 textColor: '#ffffff',
                 ang: 2 * 30,
                 backgroundImage: ``,
                 background: '#000000'
             },
             {
-                name: 'Whitelist',
+                name: '100 ADA',
                 textColor: '#000000',
                 ang: 1 * 30,
                 backgroundImage: `bg-[url('/wheelz/blue-spin.svg')]`,
@@ -95,7 +95,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 150,
             },
             {
                 name: '1X ADA',
@@ -105,12 +105,12 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 150,
             },
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 0,
             },
             {
                 name: '1X ADA',
@@ -123,9 +123,14 @@ export const AdaWheelz = {
                 code: 240,
             },
             {
-                name: '1X ADA',
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 0,
+            },
+            {
+                name: '2X ADA',
                 outcome: 'WIN',
-                code: 330,
+                code: 270,
             },
             {
                 name: 'Crashed',
@@ -153,6 +158,21 @@ export const AdaWheelz = {
                 code: 0,
             },
             {
+                name: '15 ADA',
+                outcome: 'WIN',
+                code: 60,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 0,
+            },
+            {
+                name: '15 ADA',
+                outcome: 'WIN',
+                code: 60,
+            },
+            {
                 name: '3X ADA',
                 outcome: 'WIN',
                 code: 180,
@@ -168,6 +188,26 @@ export const AdaWheelz = {
                 code: 330,
             },
             {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 150,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 240,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 150,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 0,
+            },
+            {
                 name: '3X ADA',
                 outcome: 'WIN',
                 code: 180,
@@ -175,7 +215,17 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 240,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 0,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 150,
             },
             {
                 name: '1X ADA',
@@ -185,17 +235,17 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
-            },
-            {
-                name: 'Crashed',
-                outcome: 'LOSE',
                 code: 240,
             },
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 150,
+            },
+            {
+                name: 'Crashed',
+                outcome: 'LOSE',
+                code: 240,
             },
             {
                 name: '3X ADA',
@@ -205,42 +255,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 240,
-            },
-            {
-                name: 'Crashed',
-                outcome: 'LOSE',
-                code: 60,
-            },
-            {
-                name: '1X ADA',
-                outcome: 'WIN',
-                code: 330,
-            },
-            {
-                name: 'Crashed',
-                outcome: 'LOSE',
-                code: 60,
-            },
-            {
-                name: 'Crashed',
-                outcome: 'LOSE',
-                code: 240,
-            },
-            {
-                name: 'Crashed',
-                outcome: 'LOSE',
-                code: 60,
-            },
-            {
-                name: '3X ADA',
-                outcome: 'WIN',
-                code: 180,
-            },
-            {
-                name: 'Crashed',
-                outcome: 'LOSE',
-                code: 60,
+                code: 0,
             },
             {
                 name: 'Crashed',
@@ -295,7 +310,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 150,
             },
             {
                 name: 'Crashed',
@@ -315,7 +330,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 150,
             },
             {
                 name: 'Crashed',
@@ -330,7 +345,7 @@ export const AdaWheelz = {
             {
                 name: 'Whitelist',
                 outcome: 'WIN',
-                code: 30,
+                code: 90,
             },
             {
                 name: 'Crashed',
@@ -345,7 +360,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
-                code: 60,
+                code: 0,
             },
             {
                 name: 'Crashed',
@@ -368,7 +383,7 @@ export const AdaWheelz = {
                 code: 0,
             },
             {
-                name: 'Whitelist',
+                name: '2X ADA',
                 outcome: 'WIN',
                 code: 270,
             },
@@ -393,14 +408,14 @@ export const AdaWheelz = {
                 code: 0,
             },
             {
-                name: 'Whitelist',
+                name: '2X ADA',
                 outcome: 'WIN',
                 code: 270,
             },
             {
                 name: 'Whitelist',
                 outcome: 'WIN',
-                code: 30,
+                code: 90,
             },
             {
                 name: 'Crashed',
@@ -439,7 +454,7 @@ export const AdaWheelz = {
                 background: '#FF00FF'
             },
             {
-                name: 'Whitelist',
+                name: '3X ADA',
                 textColor: '#ffffff',
                 ang: 11 * 30,
                 backgroundImage: ``,
@@ -488,7 +503,7 @@ export const AdaWheelz = {
                 background: '#000000'
             },
             {
-                name: 'Crashed',
+                name: '30 ADA',
                 textColor: '#ffffff',
                 ang: 4 * 30,
                 backgroundImage: ``,
@@ -518,115 +533,9 @@ export const AdaWheelz = {
         ],
         out: [
             {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 60
-            },
-            {
-                name: '2X ADA',
-                outcome: OUTCOME.WIN,
-                code: 150
-            },
-
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
                 name: '1X ADA',
                 outcome: OUTCOME.WIN,
                 code: 30
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: '10000 $XMAX',
-                outcome: OUTCOME.WIN,
-                code: 270
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 210
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
-                name: '2X ADA',
-                outcome: OUTCOME.WIN,
-                code: 150
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 30
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 60
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 210
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 30
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 30
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 210
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 60
             },
             {
                 name: 'Crashed',
@@ -639,7 +548,127 @@ export const AdaWheelz = {
                 code: 150
             },
             {
-                name: 'Whitelist',
+                name: '30 ADA',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 300
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '30 ADA',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 330
             },
@@ -659,7 +688,7 @@ export const AdaWheelz = {
                 code: 210
             },
             {
-                name: 'Whitelist',
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 330
             },
@@ -671,87 +700,12 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: '2X ADA',
-                outcome: OUTCOME.WIN,
-                code: 150
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 30
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 210
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 30
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 60
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 330
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 210
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 210
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 120
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 30
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
                 code: 60
             },
             {
                 name: 'Crashed',
                 outcome: OUTCOME.LOSE,
-                code: 120
+                code: 210
             },
             {
                 name: 'Crashed',
@@ -764,12 +718,87 @@ export const AdaWheelz = {
                 code: 150
             },
             {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
                 name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '3X ADA',
+                outcome: OUTCOME.WIN,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '30 ADA',
                 outcome: OUTCOME.LOSE,
                 code: 120
             },
             {
-                name: 'Whitelist',
+                name: '1X ADA',
+                outcome: OUTCOME.WIN,
+                code: 30
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 60
+            },
+            {
+                name: '30 ADA',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 210
+            },
+            {
+                name: '2X ADA',
+                outcome: OUTCOME.WIN,
+                code: 150
+            },
+            {
+                name: '30 ADA',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 330
             },
@@ -804,7 +833,7 @@ export const AdaWheelz = {
                 code: 210
             },
             {
-                name: 'Whitelist',
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 330
             },
@@ -821,7 +850,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: OUTCOME.LOSE,
-                code: 120
+                code: 60
             },
             {
                 name: '200 ADA',
@@ -831,7 +860,7 @@ export const AdaWheelz = {
             {
                 name: 'Crashed',
                 outcome: OUTCOME.LOSE,
-                code: 120
+                code: 210
             },
             {
                 name: 'Crashed',
@@ -839,7 +868,7 @@ export const AdaWheelz = {
                 code: 60
             },
             {
-                name: 'Crashed',
+                name: '30 ADA',
                 outcome: OUTCOME.LOSE,
                 code: 120
             },
@@ -854,12 +883,12 @@ export const AdaWheelz = {
                 code: 60
             },
             {
-                name: 'Whitelist',
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 330
             },
             {
-                name: 'Crashed',
+                name: '30 ADA',
                 outcome: OUTCOME.LOSE,
                 code: 120
             },
@@ -869,7 +898,7 @@ export const AdaWheelz = {
                 code: 60
             },
             {
-                name: 'Whitelist',
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 330
             },
@@ -926,7 +955,7 @@ export const AdaWheelz = {
                 background: '#000000'
             },
             {
-                name: 'Whitelist',
+                name: '400 ADA',
                 textColor: '#000000',
                 ang: 6 * 30,
                 backgroundImage: `bg-[url('/wheelz/pink-spin.svg')]`,
@@ -961,7 +990,7 @@ export const AdaWheelz = {
                 background: '#000000'
             },
             {
-                name: '400 ADA',
+                name: '2X ADA',
                 textColor: '#ffffff',
                 ang: 1 * 30,
                 background: '#000000'
@@ -969,40 +998,54 @@ export const AdaWheelz = {
         ],
         out: [
             {
-                name: 'Whitelist',
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '200 ADA',
+                outcome: OUTCOME.WIN,
+                code: 60
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '400 ADA',
                 outcome: OUTCOME.WIN,
                 code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
             },
             {
                 name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 210
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 330
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 330
-            },
-
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
-            },
-            {
-                name: '1X ADA',
-                outcome: OUTCOME.WIN,
-                code: 150
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 330
             },
             {
                 name: '20000 $XMAX',
@@ -1020,9 +1063,14 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Whitelist',
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '2X ADA',
                 outcome: OUTCOME.WIN,
-                code: 180
+                code: 30
             },
             {
                 name: '3X ADA',
@@ -1040,9 +1088,14 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Whitelist',
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
+            },
+            {
+                name: '2X ADA',
                 outcome: OUTCOME.WIN,
-                code: 180
+                code: 30
             },
             {
                 name: 'Crashed',
@@ -1055,9 +1108,9 @@ export const AdaWheelz = {
                 code: 150
             },
             {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
             },
             {
                 name: '1X ADA',
@@ -1070,9 +1123,9 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
             },
             {
                 name: 'Crashed',
@@ -1080,9 +1133,9 @@ export const AdaWheelz = {
                 code: 330
             },
             {
-                name: '1X ADA',
+                name: '2X ADA',
                 outcome: OUTCOME.WIN,
-                code: 150
+                code: 30
             },
             {
                 name: 'Crashed',
@@ -1103,34 +1156,29 @@ export const AdaWheelz = {
                 name: '3X ADA',
                 outcome: OUTCOME.WIN,
                 code: 210
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 240
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 330
-            },
-            {
-                name: 'Crashed',
-                outcome: OUTCOME.LOSE,
-                code: 330
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
             },
             {
                 name: '400 ADA',
+                outcome: OUTCOME.WIN,
+                code: 180
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 330
+            },
+            {
+                name: '2X ADA',
                 outcome: OUTCOME.WIN,
                 code: 30
             },
@@ -1155,9 +1203,9 @@ export const AdaWheelz = {
                 code: 150
             },
             {
-                name: 'Whitelist',
+                name: '1X ADA',
                 outcome: OUTCOME.WIN,
-                code: 180
+                code: 150
             },
             {
                 name: 'Crashed',
@@ -1173,11 +1221,6 @@ export const AdaWheelz = {
                 name: 'Crashed',
                 outcome: OUTCOME.LOSE,
                 code: 120
-            },
-            {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
             },
             {
                 name: 'Crashed',
@@ -1225,9 +1268,9 @@ export const AdaWheelz = {
                 code: 330
             },
             {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 240
             },
             {
                 name: 'Crashed',
@@ -1270,7 +1313,7 @@ export const AdaWheelz = {
                 code: 210
             },
             {
-                name: 'Whitelist',
+                name: '400 ADA',
                 outcome: OUTCOME.WIN,
                 code: 180
             },
@@ -1290,9 +1333,9 @@ export const AdaWheelz = {
                 code: 120
             },
             {
-                name: '1X ADA',
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
-                code: 150
+                code: 210
             },
             {
                 name: 'Crashed',
@@ -1300,7 +1343,7 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Whitelist',
+                name: '400 ADA',
                 outcome: OUTCOME.WIN,
                 code: 180
             },
@@ -1350,9 +1393,9 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Whitelist',
+                name: '3X ADA',
                 outcome: OUTCOME.WIN,
-                code: 180
+                code: 210
             },
             {
                 name: 'Crashed',
@@ -1365,9 +1408,9 @@ export const AdaWheelz = {
                 code: 240
             },
             {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
             },
             {
                 name: '1X ADA',
@@ -1390,10 +1433,11 @@ export const AdaWheelz = {
                 code: 120
             },
             {
-                name: 'Whitelist',
-                outcome: OUTCOME.WIN,
-                code: 180
+                name: 'Crashed',
+                outcome: OUTCOME.LOSE,
+                code: 120
             },
+
 
         ]
     },

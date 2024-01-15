@@ -13,22 +13,20 @@ export enum WHEELZ {
     onethousandfive = 'onethousandfive',
 }
 
-export const wallet = new AppWallet({
-    networkId: 1,
-    fetcher: blockchainProvider,
-    submitter: blockchainProvider,
-    key: {
-        type: 'mnemonic',
-        words: ["apology", "muscle", "ivory", "dune", "rifle", "all", "slide", "tooth", "wheat", "garage", "joy", "neglect", "egg", "claim", "access"],
-    },
-});
-
 
 export const prizes = {
     [WHEELZ.ten]: [
         {
             name: '1X ADA',
             amount: `${10 * oneLoveLace}`
+        },
+        {
+            name: '2X ADA',
+            amount: `${20 * oneLoveLace}`
+        },
+        {
+            name: '15 ADA',
+            amount: `${20 * oneLoveLace}`
         },
         {
             name: '10X ADA',
@@ -53,6 +51,10 @@ export const prizes = {
     ],
     [WHEELZ.fifty]: [
         {
+            name: '30 ADA',
+            amount: `${30 * oneLoveLace}`
+        },
+        {
             name: '400 ADA',
             amount: `${400 * oneLoveLace}`
         },
@@ -71,6 +73,10 @@ export const prizes = {
         {
             name: '2X ADA',
             amount: `${(20 * oneLoveLace) * 50}`
+        },
+        {
+            name: '3X ADA',
+            amount: `${(30 * oneLoveLace) * 50}`
         },
         {
             name: '15X ADA',
@@ -97,6 +103,10 @@ export const prizes = {
         {
             name: '1X ADA',
             amount: `${(10 * oneLoveLace) * 100}`
+        },
+        {
+            name: '2X ADA',
+            amount: `${(20 * oneLoveLace) * 100}`
         },
         {
             name: '20000 $XMAX',
