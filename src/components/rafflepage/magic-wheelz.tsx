@@ -67,16 +67,16 @@ export default function MagicWheelz() {
                 let amount: number;
                 switch (wheelz) {
                     case WHEELZ.ten:
-                        amount = 10 * oneLoveLace
+                        amount = 5 * oneLoveLace
                         break;
                     case WHEELZ.fifty:
-                        amount = 50 * oneLoveLace
+                        amount = 25 * oneLoveLace
                         break;
                     case WHEELZ.hundred:
-                        amount = 100 * oneLoveLace
+                        amount = 50 * oneLoveLace
                         break;
                     default:
-                        amount = 10 * oneLoveLace
+                        amount = 5 * oneLoveLace
                         break;
                 }
                 const tx = new Transaction({ initiator: wallet })
@@ -459,9 +459,9 @@ export default function MagicWheelz() {
 
 
 const adaWager = [
-    { name: '10', wheel: WHEELZ.ten },
-    { name: '50', wheel: WHEELZ.fifty },
-    { name: '100', wheel: WHEELZ.hundred },
+    { name: '5', wheel: WHEELZ.ten },
+    { name: '25', wheel: WHEELZ.fifty },
+    { name: '50', wheel: WHEELZ.hundred },
 ]
 
 const xmaxWager = [

@@ -18,19 +18,19 @@ export const prizes = {
     [WHEELZ.ten]: [
         {
             name: '1X ADA',
-            amount: `${10 * oneLoveLace}`
+            amount: `${5 * oneLoveLace}`
         },
         {
             name: '2X ADA',
-            amount: `${20 * oneLoveLace}`
+            amount: `${10 * oneLoveLace}`
         },
         {
             name: '15 ADA',
-            amount: `${20 * oneLoveLace}`
+            amount: `${15 * oneLoveLace}`
         },
         {
             name: '10X ADA',
-            amount: `${100 * oneLoveLace}`
+            amount: `${50 * oneLoveLace}`
         },
         {
             name: '200 ADA',
@@ -38,7 +38,7 @@ export const prizes = {
         },
         {
             name: '3X ADA',
-            amount: `${30 * oneLoveLace}`
+            amount: `${15 * oneLoveLace}`
         },
         {
             name: '5000 $XMAX',
@@ -68,23 +68,23 @@ export const prizes = {
         },
         {
             name: '5X ADA',
-            amount: `${(50 * oneLoveLace) * 50}`
+            amount: `${(25 * oneLoveLace) * 5}`
         },
         {
             name: '2X ADA',
-            amount: `${(20 * oneLoveLace) * 50}`
+            amount: `${(25 * oneLoveLace) * 5}`
         },
         {
             name: '3X ADA',
-            amount: `${(30 * oneLoveLace) * 50}`
+            amount: `${(25 * oneLoveLace) * 3}`
         },
         {
             name: '15X ADA',
-            amount: `${(15 * oneLoveLace) * 50}`
+            amount: `${(25 * oneLoveLace) * 15}`
         },
         {
             name: '1X ADA',
-            amount: `${(10 * oneLoveLace) * 50}`
+            amount: `${(25 * oneLoveLace)}`
         },
     ],
     [WHEELZ.hundred]: [
@@ -94,19 +94,19 @@ export const prizes = {
         },
         {
             name: '10X ADA',
-            amount: `${(10 * oneLoveLace) * 100}`
+            amount: `${(50 * oneLoveLace) * 10}`
         },
         {
             name: '3X ADA',
-            amount: `${(30 * oneLoveLace) * 100}`
+            amount: `${(50 * oneLoveLace) * 3}`
         },
         {
             name: '1X ADA',
-            amount: `${(10 * oneLoveLace) * 100}`
+            amount: `${(50 * oneLoveLace)}`
         },
         {
             name: '2X ADA',
-            amount: `${(20 * oneLoveLace) * 100}`
+            amount: `${(50 * oneLoveLace) * 3}`
         },
         {
             name: '20000 $XMAX',
