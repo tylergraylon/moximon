@@ -63,7 +63,7 @@ export const AdaWheelz = {
                 background: '#000000'
             },
             {
-                name: '5000 $XMAX',
+                name: 'Xmax Mint Card',
                 textColor: '#000000',
                 ang: 4 * 30,
                 backgroundImage: `bg-[url('/wheelz/gold-spin.svg')]`,
@@ -323,7 +323,7 @@ export const AdaWheelz = {
                 code: 330,
             },
             {
-                name: '5000 $XMAX',
+                name: 'Xmax Mint Card',
                 outcome: 'WIN',
                 code: 120,
             },
