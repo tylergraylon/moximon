@@ -128,6 +128,7 @@ export async function payment({ output_address, amount, words }: { output_addres
                 console.log(`Transaction rejected`);
                 // Reason for the rejection is in error.message
                 console.log(error.message);
+                throw new Error(`${error}`)
             } else {
                 // rethrow other errors
                 throw error;
