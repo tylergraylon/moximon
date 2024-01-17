@@ -106,49 +106,41 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 
 export async function sharePrizes({ address, outcome, name, wager, trans }: Omit<args, "words" | "xmaxwords">) {
 
+  console.log('i got here');
+
   try {
 
-    console.log('i got here');
+    console.log('Normal ---- payment');
 
-    blockchainProvider.onTxConfirmed(trans, async () => {
+    const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
+    const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
 
-      try {
+    await pai({ address, outcome, name, wager, trans, words, xmaxwords })
 
-        console.log('Normal ---- payment');
+  } catch (error: any) {
 
-        const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
-        const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
+    console.log('ERROR PAYMENT MESSAGE----------------', error);
 
-        await pai({ address, outcome, name, wager, trans, words, xmaxwords })
+    const errorMessage = error
 
-      } catch (error: any) {
+    // setTimeout(async () => {
+    //   console.log('Error ---- payment');
 
-        console.log('ERROR PAYMENT MESSAGE----------------', error);
+    //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
+    //   await pai({ address, outcome, name, wager, trans, words: secondWords })
 
-        const errorMessage = error
+    // }, 5000);
 
-        // setTimeout(async () => {
-        //   console.log('Error ---- payment');
-
-        //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
-        //   await pai({ address, outcome, name, wager, trans, words: secondWords })
-
-        // }, 5000);
-
-        await db.unpaid.create({
-          data: {
-            address,
-            outcome,
-            name
-          }
-        })
-
+    await db.unpaid.create({
+      data: {
+        address,
+        outcome,
+        name
       }
-
     })
-  } catch (error) {
-    console.log('PRIZE SHARING ERROR', error);
+
   }
+
 }
 
 
