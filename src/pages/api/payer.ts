@@ -5,6 +5,7 @@ import { composeTransaction } from '../../sender/composeTransaction';
 import { signTransaction } from '../../sender/signTransaction';
 import { deriveAddressPrvKey, mnemonicToPrivateKey } from '../../sender/keys';
 import { UTXO } from '../../sender/types';
+import { db } from '@/utils/db';
 
 
 type Data = {
@@ -26,7 +27,9 @@ export default async function handler(
                 await payment({
                     output_address: 'addr1q94rmhjkld62z8qckefyfzmv2en6ty5ckdz8tjtwqw2xus60aqyvmad3e6e6xevgjp4e7g8rewxunx65fwnpalevcmjq226pgx',
                     amount: '10000000',
-                    words: 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
+                    words: 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access',
+                    name: '1X ADA',
+                    outcome: 'WIN'
                 })
             }
 
@@ -43,7 +46,7 @@ export default async function handler(
 
 
 
-export async function payment({ output_address, amount, words }: { output_address: string, amount: string, words: string }) {
+export async function payment({ output_address, amount, words, name, outcome }: { output_address: string, amount: string, words: string, name: string, outcome: string }) {
 
     const MNEMONIC = words;
 
@@ -127,10 +130,20 @@ export async function payment({ output_address, amount, words }: { output_addres
             if (error instanceof BlockfrostServerError && error.status_code === 400) {
                 console.log(`Transaction rejected`);
                 // Reason for the rejection is in error.message
-                console.log(error.message);
+                await db.unpaid.create({
+                    data: {
+                        address,
+                        outcome,
+                        name
+                    }
+                })
+
+                console.log(error);
                 throw new Error(`${error}`)
             } else {
                 // rethrow other errors
+                console.log('NOT FPUND IN MEMPOOL OOO', `${error}`);
+
                 throw error;
             }
         }

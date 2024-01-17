@@ -110,36 +110,43 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
 
   try {
 
-    console.log('Normal ---- payment');
+    blockchainProvider.onTxConfirmed(trans, async () => {
 
-    const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
-    const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
+      try {
 
-    await pai({ address, outcome, name, wager, trans, words, xmaxwords })
+        console.log('Normal ---- payment');
 
-  } catch (error: any) {
+        const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
+        const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
 
-    console.log('ERROR PAYMENT MESSAGE----------------', error);
+        await pai({ address, outcome, name, wager, trans, words, xmaxwords })
 
-    const errorMessage = error
+      } catch (error: any) {
 
-    // setTimeout(async () => {
-    //   console.log('Error ---- payment');
+        console.log('ERROR PAYMENT MESSAGE----------------', error);
 
-    //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
-    //   await pai({ address, outcome, name, wager, trans, words: secondWords })
+        // setTimeout(async () => {
+        //   console.log('Error ---- payment');
 
-    // }, 5000);
+        //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
+        //   await pai({ address, outcome, name, wager, trans, words: secondWords })
 
-    await db.unpaid.create({
-      data: {
-        address,
-        outcome,
-        name
+        // }, 5000);
+
       }
+
     })
 
+  } catch (error) {
+
+    console.log('OUTSIDE ERROR BITCH', error);
+
+
   }
+
+
+
+
 
 }
 
@@ -155,18 +162,15 @@ async function pai({ address, name, wager, trans, xmaxwords, words, outcome }: a
         payment({
           output_address: address,
           amount: amount.amount,
-          words
+          words,
+          name,
+          outcome
         })
 
       } catch (error) {
 
-        await db.unpaid.create({
-          data: {
-            address,
-            outcome,
-            name
-          }
-        })
+        console.log('payment error please', error);
+
 
       }
 
