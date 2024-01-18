@@ -24,12 +24,20 @@ export default async function handler(
             const { time } = req.body
 
             if (time === 'rycad') {
-                await payment({
-                    output_address: 'addr1q94rmhjkld62z8qckefyfzmv2en6ty5ckdz8tjtwqw2xus60aqyvmad3e6e6xevgjp4e7g8rewxunx65fwnpalevcmjq226pgx',
-                    amount: '10000000',
-                    words: 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access',
-                    name: '1X ADA',
-                    outcome: 'WIN'
+                // await payment({
+                //     output_address: 'addr1q94rmhjkld62z8qckefyfzmv2en6ty5ckdz8tjtwqw2xus60aqyvmad3e6e6xevgjp4e7g8rewxunx65fwnpalevcmjq226pgx',
+                //     amount: '10000000',
+                //     words: 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access',
+                //     name: '1X ADA',
+                //     outcome: 'WIN'
+                // })
+
+                await db.unpaid.create({
+                    data: {
+                        address: "addr1q94rmhjkld62z8qckefyfzmv2en6ty5ckdz8tjtwqw2xus60aqyvmad3e6e6xevgjp4e7g8rewxunx65fwnpalevcmjq226pgx",
+                        outcome: "WIN",
+                        name: "1X ADA"
+                    }
                 })
             }
 
@@ -132,7 +140,7 @@ export async function payment({ output_address, amount, words, name, outcome }: 
                 // Reason for the rejection is in error.message
                 await db.unpaid.create({
                     data: {
-                        address,
+                        address: OUTPUT_ADDRESS,
                         outcome,
                         name
                     }
