@@ -126,13 +126,14 @@ export async function payment({ output_address, amount, words, name, outcome }: 
             // txSubmit endpoint returns transaction hash on successful submit
             const txHash = await client.txSubmit(transaction.to_bytes());
 
+            console.log(`Transaction successfully submitted: ${txHash}\n`);
+
             // Before the tx is included in a block it is a waiting room known as mempool
             // Retrieve transaction from Blockfrost Mempool
             const mempoolTx = await client.mempoolTx(txHash);
             console.log('Mempool Tx:');
             console.log(JSON.stringify(mempoolTx, undefined, 4));
 
-            console.log(`Transaction successfully submitted: ${txHash}\n`);
         } catch (error) {
             // submit could fail if the transactions is rejected by cardano node
             if (error instanceof BlockfrostServerError && error.status_code === 400) {
