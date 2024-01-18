@@ -1933,7 +1933,7 @@ export const AdaWheelz = {
                 background: '#000000'
             },
             {
-                name: 'Goody Gophers',
+                name: 'Goofy Gophers',
                 textColor: '#000000',
                 ang: 3 * 30,
                 backgroundImage: `bg-[url('/wheelz/blue-spin.svg')]`,
