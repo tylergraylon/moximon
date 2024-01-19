@@ -110,43 +110,26 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
 
   try {
 
-    blockchainProvider.onTxConfirmed(trans, async () => {
+    console.log('Normal ---- payment');
 
-      try {
+    const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
+    const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
 
-        console.log('Normal ---- payment');
+    await pai({ address, outcome, name, wager, trans, words, xmaxwords })
 
-        const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
-        const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
+  } catch (error: any) {
 
-        await pai({ address, outcome, name, wager, trans, words, xmaxwords })
+    console.log('ERROR PAYMENT MESSAGE----------------', error);
 
-      } catch (error: any) {
+    // setTimeout(async () => {
+    //   console.log('Error ---- payment');
 
-        console.log('ERROR PAYMENT MESSAGE----------------', error);
+    //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
+    //   await pai({ address, outcome, name, wager, trans, words: secondWords })
 
-        // setTimeout(async () => {
-        //   console.log('Error ---- payment');
-
-        //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
-        //   await pai({ address, outcome, name, wager, trans, words: secondWords })
-
-        // }, 5000);
-
-      }
-
-    })
-
-  } catch (error) {
-
-    console.log('OUTSIDE ERROR BITCH', error);
-
+    // }, 5000);
 
   }
-
-
-
-
 
 }
 
