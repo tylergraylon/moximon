@@ -10,6 +10,7 @@ import { Asset } from "@meshsdk/core"
 import { formatNumberToKM } from "@/utils/utils"
 import { useEffect, useReducer } from "react"
 import ClaimPrize from "../claim-prize"
+import CasinoHead from "../homepage/casino-head"
 
 
 export type AssetExtended = (Asset & { policyId: string })[] | undefined
@@ -50,6 +51,10 @@ export default function Header() {
                                 HOME
                             </Link>
 
+                        </div>
+
+                        <div className="navbar-item hidden lg:block">
+                            <CasinoHead />
                         </div>
 
                         <div className="navbar-item hidden lg:block">

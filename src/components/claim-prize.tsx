@@ -18,7 +18,7 @@ export default function ClaimPrize() {
             <input className="modal-state" id="modal-11" type="checkbox" />
             <div className="modal w-screen">
                 <label className="modal-overlay" htmlFor="modal-11"></label>
-                <div className="modal-content bg-[#090719] flex flex-col gap-5 min-w-[22rem] rounded-none !p-0">
+                <div className="modal-content bg-[#090719] flex flex-col min-w-[22rem] rounded-none !p-0">
                     <div className=" bg-gradient-to-r from-[#0000FF] via-[#0000FF] to-[#FF00FF] py-2 px-4">
                         <label htmlFor="modal-11" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-1">✕</label>
                         <span className="text-xl flex items-center space-x-3">
@@ -59,7 +59,7 @@ export function ClaimPrizeMobile() {
             <input className="modal-state" id="modal-16" type="checkbox" />
             <div className="modal w-screen">
                 <label className="modal-overlay" htmlFor="modal-16"></label>
-                <div className="modal-content bg-[#090719] flex flex-col gap-5 min-w-[22rem] rounded-none !p-0">
+                <div className="modal-content bg-[#090719] flex flex-col min-w-[22rem] rounded-none !p-0">
                     <div className=" bg-gradient-to-r from-[#0000FF] via-[#0000FF] to-[#FF00FF] py-2 px-4">
                         <label htmlFor="modal-16" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-1">✕</label>
                         <span className="text-xl flex items-center space-x-3">
@@ -133,7 +133,7 @@ const ClaimPrizeBody = () => {
         <>
 
 
-            <div className="py-2 px-4 min-h-[385px] max-h-[500px] overflow-y-scroll">
+            <div className="p-4 min-h-[385px] max-h-[500px] overflow-y-scroll border border-[#00FFFF]">
 
                 {
                     (connected && addr) && isLoading ? (
