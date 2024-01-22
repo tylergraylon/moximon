@@ -130,10 +130,11 @@ export async function payment({ output_address, amount, words, name, outcome }: 
 
             // Before the tx is included in a block it is a waiting room known as mempool
             // Retrieve transaction from Blockfrost Mempool
-            const mempoolTx = await client.mempoolTx(txHash);
-            console.log('Mempool Tx:');
-            console.log(JSON.stringify(mempoolTx, undefined, 4));
+            // const mempoolTx = await client.mempoolTx(txHash);
+            // console.log('Mempool Tx:');
+            // console.log(JSON.stringify(mempoolTx, undefined, 4));
 
+            return txHash;
         } catch (error) {
             // submit could fail if the transactions is rejected by cardano node
             if (error instanceof BlockfrostServerError && error.status_code === 400) {
@@ -158,7 +159,7 @@ export async function payment({ output_address, amount, words, name, outcome }: 
         }
     };
 
-    run();
+    return run();
 
 }
 

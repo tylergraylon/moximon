@@ -14,8 +14,26 @@ model Game {
   id      String  @id @default(auto()) @map("_id") @db.ObjectId
   address String
   outcome String
+  wager   String?
   name    String
   trans   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+enum CLAIMED {
+  YES
+  NO
+}
+
+model Prizes {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  address String
+  name    String
+  outcome String
+  wager   String
+  claimed CLAIMED @default(NO)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt

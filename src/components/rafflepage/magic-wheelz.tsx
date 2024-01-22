@@ -14,7 +14,7 @@ import { AssetExtended } from "./header";
 import Prize from "./prize";
 import swal from 'sweetalert';
 import { ConnectButtonWheel } from "../ConnectWallet";
-import { blockchainProvider } from "@/utils/giftWallet";
+import { ClaimPrizeMobile } from "../claim-prize";
 
 
 export enum WHEELZ {
@@ -314,6 +314,10 @@ export default function MagicWheelz() {
         >
             <div className="justify-self-center xl:col-span-2 xl:justify-self-start order-last xl:order-none">
                 <GlobalWheelz />
+            </div>
+
+            <div className="absolute right-5 lg:hidden">
+                <ClaimPrizeMobile />
             </div>
 
 

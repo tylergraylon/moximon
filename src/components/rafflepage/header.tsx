@@ -9,6 +9,7 @@ import { oneLoveLace, xmaxAssetId, xmaxPolicyId } from "@/utils/services"
 import { Asset } from "@meshsdk/core"
 import { formatNumberToKM } from "@/utils/utils"
 import { useEffect, useReducer } from "react"
+import ClaimPrize from "../claim-prize"
 
 
 export type AssetExtended = (Asset & { policyId: string })[] | undefined
@@ -44,12 +45,17 @@ export default function Header() {
 
                 <div className="navbar-end bg-[#14112D] w-full py-2">
                     <div className=" items-center flex text-[0.65rem] sm:text-xs">
-                        <div className="navbar-item hidden md:block text-white text-sm hover:!text-[#FF00FF]">
+                        <div className="navbar-item hidden lg:block text-white text-sm hover:!text-[#FF00FF]">
                             <Link href="/">
                                 HOME
                             </Link>
 
                         </div>
+
+                        <div className="navbar-item hidden lg:block">
+                            <ClaimPrize />
+                        </div>
+
                         <div className="divider divider-vertical mx-0 h-10"></div>
                         <div className="navbar-item text-[#FF00FF] hover:!text-[#FF00FF] px-0 md:px-1">
                             {(connected && assets && assets.length > 0 &&
@@ -73,11 +79,11 @@ export default function Header() {
                     </div>
 
 
-                    <div className="navbar-item hidden md:block">
+                    <div className="navbar-item hidden lg:block">
                         <ConnectWallet />
                     </div>
 
-                    <div className="navbar-item md:hidden p-0 m-0">
+                    <div className="navbar-item lg:hidden p-0 m-0">
                         <MobileMenu />
                     </div>
 

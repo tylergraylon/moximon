@@ -30,7 +30,8 @@ export default async function handler(
           address,
           outcome,
           name,
-          trans
+          trans,
+          wager
         }
       })
 
@@ -40,7 +41,15 @@ export default async function handler(
 
         console.log('POST ARGUMENTS', { address, outcome, name, wager, trans });
 
-        sharePrizes({ address, outcome, name, wager, trans })
+        await db.prizes.create({
+          data: {
+            address,
+            name,
+            wager,
+            outcome
+          }
+        })
+
       }
 
 
@@ -58,10 +67,10 @@ export default async function handler(
       })
       return res.status(200).json({ data })
     } else if (req.method === 'PATCH') {
-      const { address, outcome, name, wager, trans, time } = req.body
+      const { address, outcome, name, wager, trans, time, amount } = req.body
 
       if (time === 'rycad') {
-        sharePrizes({ address, outcome, name, wager, trans })
+        sharePrizes({ address, outcome, name, wager, trans, amount })
       }
       return res.status(200).json({ message: 'testing bitch' })
     }
@@ -79,9 +88,10 @@ type args = {
   address: string,
   outcome: string,
   name: string,
-  trans: string,
+  trans?: string,
   wager: WHEELZ,
   words: string,
+  amount?: string
   xmaxwords: string[]
 }
 
@@ -104,7 +114,7 @@ async function whiteList({ address, name }: Pick<args, 'address' | 'name'>) {
 }
 
 
-export async function sharePrizes({ address, outcome, name, wager, trans }: Omit<args, "words" | "xmaxwords">) {
+export async function sharePrizes({ address, outcome, name, wager, trans, amount }: Omit<args, "words" | "xmaxwords">) {
 
   console.log('i got here');
 
@@ -115,40 +125,34 @@ export async function sharePrizes({ address, outcome, name, wager, trans }: Omit
     const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
     const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
 
-    await pai({ address, outcome, name, wager, trans, words, xmaxwords })
+    return await pai({ address, outcome, name, wager, trans, words, xmaxwords })
 
   } catch (error: any) {
 
     console.log('ERROR PAYMENT MESSAGE----------------', error);
-
-    // setTimeout(async () => {
-    //   console.log('Error ---- payment');
-
-    //   const secondWords = ["kind", "oval", "churn", "black", "abandon", "curve", "number", "jazz", "cabbage", "riot", "pistol", "trumpet", "pledge", "hunt", "steak", "letter", "oblige", "situate", "south", "annual", "girl", "expose", "manage", "photo"]
-    //   await pai({ address, outcome, name, wager, trans, words: secondWords })
-
-    // }, 5000);
 
   }
 
 }
 
 
-async function pai({ address, name, wager, trans, xmaxwords, words, outcome }: args) {
+async function pai({ address, name, wager, trans, xmaxwords, words, outcome, amount }: args) {
 
   if (name.includes('ADA')) {
 
-    const amount = prizes[wager].find(item => item.name === name)
+    const amountToPay = amount ? amount : prizes[wager].find(item => item.name === name)?.amount
 
-    if (amount) {
+    if (amountToPay) {
       try {
-        payment({
+        const trans = await payment({
           output_address: address,
-          amount: amount.amount,
+          amount: amountToPay,
           words,
           name,
           outcome
         })
+
+        return trans
 
       } catch (error) {
 
@@ -179,9 +183,9 @@ async function pai({ address, name, wager, trans, xmaxwords, words, outcome }: a
         },
       });
 
-      const amount = prizes[wager].find(item => item.name === name)
+      const amountToPay = amount ? amount : prizes[wager].find(item => item.name === name)?.amount
 
-      if (amount) {
+      if (amountToPay) {
 
         console.log('user addresss', address);
         console.log('Wager', wager);
@@ -206,7 +210,7 @@ async function pai({ address, name, wager, trans, xmaxwords, words, outcome }: a
           [
             {
               unit: xmaxAssetId,
-              amount: amount.amount
+              amount: amountToPay
             }
           ]
         );
@@ -217,6 +221,8 @@ async function pai({ address, name, wager, trans, xmaxwords, words, outcome }: a
 
 
         console.log('transtx', txhash);
+
+        return txhash
       }
 
     }
