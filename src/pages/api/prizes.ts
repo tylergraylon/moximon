@@ -180,6 +180,8 @@ export default async function handler(
 
 
                 if (!trans) {
+                    console.log('Transaction failed');
+
                     return res.status(400).json({ message: 'Transaction failed' })
                 }
 
@@ -218,7 +220,7 @@ export default async function handler(
                 }
 
                 const amount = prizesXmaxNotClaimedACC.name.includes('$XMAX') ? (prizesLib[wager as WHEELZ].find(item => item.name === prizesXmaxNotClaimedACC.name))?.amount : (
-                    Number(prizesXmaxNotClaimedACC.name.split(' ')[0]) * oneLoveLace
+                    Number(prizesXmaxNotClaimedACC.name.split(' ')[0])
                 )
 
                 const trans = await sharePrizes({
