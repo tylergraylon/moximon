@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useWallet, useAddress, useAssets } from '@meshsdk/react';
 import { Transaction } from '@meshsdk/core';
 import { useSWRConfig } from "swr";
-import { gamesKey } from "@/utils/utils";
+import { gamesKey, prizesKey } from "@/utils/utils";
 import { chargeAddress, paymentAddress, AdaWagerCharge, oneLoveLace, xmaxWagerCharge, xmaxAssetId, xmaxPolicyId } from "@/utils/services";
 import axios from "axios";
 import useAddressCus from "@/utils/useAddress";
@@ -213,6 +213,7 @@ export default function MagicWheelz() {
 
                             if (res.status === 200) {
                                 await mutate(gamesKey)
+                                await mutate(prizesKey(address))
 
                             }
 

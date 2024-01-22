@@ -86,13 +86,7 @@ export default async function handler(
 
             if (prizesXmaxClaimed.length > 0) prizesXmaxClaimed = [extractAmountXMAX({ sym: 'XMAX', prizes: prizesXmaxClaimed, extract: '$XMAX' })]
 
-            console.log('prizesXmaxNotClaimed', prizesXmaxNotClaimed);
-            console.log('---------');
-            console.log('---------');
-            console.log('---------');
-            console.log('---------');
-            console.log('---------');
-            console.log('prizesXmaxClaimed', prizesXmaxClaimed);
+
 
 
             let prizesOther = await db.prizes.findMany({
@@ -167,14 +161,21 @@ export default async function handler(
                     return res.status(400).json({ message: 'Bad request' })
                 }
 
-                const amount = Number(prizesAdaNotClaimedACC.name.split(' ')[0]) * oneLoveLace
+                const amount = prizesAdaNotClaimedACC.name.includes('X') ? (prizesLib[wager as WHEELZ].find(item => item.name === prizesAdaNotClaimedACC.name))?.amount : (
+                    Number(prizesAdaNotClaimedACC.name.split(' ')[0]) * oneLoveLace
+                )
+
+
+                console.log('AMOUNT 000PPP CHECK AM', amount);
+
+
 
                 const trans = await sharePrizes({
                     address,
                     outcome,
                     name,
                     wager: wager as WHEELZ,
-                    amount: amount.toString()
+                    amount: `${amount}`
                 })
 
 
@@ -216,14 +217,16 @@ export default async function handler(
                     return res.status(400).json({ message: 'Bad request' })
                 }
 
-                const amount = Number(prizesXmaxNotClaimedACC.name.split(' ')[0])
+                const amount = prizesXmaxNotClaimedACC.name.includes('$XMAX') ? (prizesLib[wager as WHEELZ].find(item => item.name === prizesXmaxNotClaimedACC.name))?.amount : (
+                    Number(prizesXmaxNotClaimedACC.name.split(' ')[0]) * oneLoveLace
+                )
 
                 const trans = await sharePrizes({
                     address,
                     outcome,
                     name,
                     wager: wager as WHEELZ,
-                    amount: amount.toString()
+                    amount: `${amount}`
                 })
 
 
