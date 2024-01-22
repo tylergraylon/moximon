@@ -125,7 +125,9 @@ export async function sharePrizes({ address, outcome, name, wager, trans, amount
     const words = 'apology muscle ivory dune rifle all slide tooth wheat garage joy neglect egg claim access'
     const xmaxwords = ['apology', 'muscle', 'ivory', 'dune', 'rifle', 'all', 'slide', 'tooth', 'wheat', 'garage', 'joy', 'neglect', 'egg', 'claim', 'access']
 
-    return await pai({ address, outcome, name, wager, trans, words, xmaxwords })
+    console.log('AFTER NORMAL ---- payment');
+    console.log('payload',);
+    return await pai({ address, outcome, name, wager, trans, words, xmaxwords, amount })
 
   } catch (error: any) {
 

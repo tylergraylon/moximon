@@ -280,7 +280,7 @@ export default async function handler(
 
             return res.status(200).json({ message: 'Updated' })
         }
-
+        return res.status(400).json({ message: 'Bad request' })
     } catch (error) {
         console.log(error);
 
