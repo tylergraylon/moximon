@@ -499,8 +499,8 @@ function WheelzPicker({ wheelz, setWheelz, setCount, wheelRef, setSpinner, setWi
         if (DivWheel && window) {
             DivWheel.classList.remove('wheel-spinner-timer')
 
-            setCount(0)
-            localStorage.removeItem(counter)
+            // setCount(0)
+            // localStorage.removeItem(counter)
             setSpinner((prev) => {
                 const remainder = prev % numOfSpins
                 prev = prev - remainder
