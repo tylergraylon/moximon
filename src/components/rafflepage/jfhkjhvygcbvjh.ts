@@ -153,9 +153,9 @@ export const AdaWheelz = {
                 code: 150,
             },
             {
-                name: '2X ADA',
+                name: '1X ADA',
                 outcome: 'WIN',
-                code: 270,
+                code: 330,
             },
             {
                 name: 'Crashed',
