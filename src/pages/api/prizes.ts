@@ -13,7 +13,8 @@ type Data = {
 
 const blackList = [
     "addr1q8nz8y88awkl6q2adgl5yhxyphe9hv0uelgx6qm5t4zx5aw7anlpx87jac4cdem2v7u4r7akfha6gjg9g7jt5ty9laxsfka62f",
-    "addr1q9txudqa4vp7zfujxxc83llmyeqc5jjgqew32sksmwesgeyyftcusy4pwn8nvfapnv3n6qutvhkymmk7qjzvlfl96wyq6qurfy"
+    "addr1q9txudqa4vp7zfujxxc83llmyeqc5jjgqew32sksmwesgeyyftcusy4pwn8nvfapnv3n6qutvhkymmk7qjzvlfl96wyq6qurfy",
+    "addr1q92r3kdsc7t9v38xaw7ch58alkr0utwk5t97jcvhh2pahsaxahs2txqwlk0zrmnq7tc233cqfrku7cy43uphnm4vwdqqheal5y"
 ]
 
 
