@@ -11,6 +11,10 @@ type Data = {
     data?: {}[]
 }
 
+const blackList = [
+    "addr1q8nz8y88awkl6q2adgl5yhxyphe9hv0uelgx6qm5t4zx5aw7anlpx87jac4cdem2v7u4r7akfha6gjg9g7jt5ty9laxsfka62f"
+]
+
 
 export default async function handler(
     req: NextApiRequest,
@@ -139,6 +143,10 @@ export default async function handler(
                 wager,
                 id
             }: Prizes = req.body
+
+            if (blackList.includes(address)) {
+                return res.status(400).json({ message: 'Bad request' })
+            }
 
             if (name.endsWith("ADA")) {
 
