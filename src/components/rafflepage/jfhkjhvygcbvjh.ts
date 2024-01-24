@@ -92,11 +92,11 @@ export const AdaWheelz = {
             },
         ],
         out: [
-            // {
-            //     name: '2X ADA',
-            //     outcome: 'WIN',
-            //     code: 270,
-            // },
+            {
+                name: '2X ADA',
+                outcome: 'WIN',
+                code: 270,
+            },
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
@@ -112,11 +112,11 @@ export const AdaWheelz = {
                 outcome: 'LOSE',
                 code: 0,
             },
-            // {
-            //     name: '2X ADA',
-            //     outcome: 'WIN',
-            //     code: 270,
-            // },
+            {
+                name: '2X ADA',
+                outcome: 'WIN',
+                code: 270,
+            },
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
@@ -152,11 +152,11 @@ export const AdaWheelz = {
                 outcome: 'LOSE',
                 code: 150,
             },
-            // {
-            //     name: '2X ADA',
-            //     outcome: 'WIN',
-            //     code: 270,
-            // },
+            {
+                name: '2X ADA',
+                outcome: 'WIN',
+                code: 270,
+            },
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
@@ -167,11 +167,11 @@ export const AdaWheelz = {
                 outcome: 'LOSE',
                 code: 0,
             },
-            // {
-            //     name: '2X ADA',
-            //     outcome: 'WIN',
-            //     code: 270,
-            // },
+            {
+                name: '2X ADA',
+                outcome: 'WIN',
+                code: 270,
+            },
 
             {
                 name: 'Crashed',
@@ -228,11 +228,11 @@ export const AdaWheelz = {
                 outcome: 'LOSE',
                 code: 0,
             },
-            // {
-            //     name: '2X ADA',
-            //     outcome: 'WIN',
-            //     code: 270,
-            // },
+            {
+                name: '2X ADA',
+                outcome: 'WIN',
+                code: 270,
+            },
             {
                 name: '1X ADA',
                 outcome: 'WIN',
@@ -333,11 +333,11 @@ export const AdaWheelz = {
                 outcome: 'LOSE',
                 code: 0,
             },
-            // {
-            //     name: '2X ADA',
-            //     outcome: 'WIN',
-            //     code: 270,
-            // },
+            {
+                name: '2X ADA',
+                outcome: 'WIN',
+                code: 270,
+            },
             {
                 name: '1X ADA',
                 outcome: 'WIN',
