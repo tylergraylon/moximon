@@ -359,11 +359,11 @@ export const AdaWheelz = {
                 outcome: 'LOSE',
                 code: 240,
             },
-            {
-                name: '2X ADA',
-                outcome: 'WIN',
-                code: 270,
-            },
+            // {
+            //     name: '2X ADA',
+            //     outcome: 'WIN',
+            //     code: 270,
+            // },
             {
                 name: 'Crashed',
                 outcome: 'LOSE',
