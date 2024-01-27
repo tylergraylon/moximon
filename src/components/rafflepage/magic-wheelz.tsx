@@ -373,20 +373,21 @@ export default function MagicWheelz() {
 
                     <div className="roulette-holder flex justify-center ">
                         <button
-                            onClick={() => connected ? spinWheel() : setIsModalOpen(true)}
+                            // onClick={() => connected ? spinWheel() : setIsModalOpen(true)}
                             disabled={(disable)}
                             className={`absolute h-14 w-[120%] border-4 border-black 
                                         bg-gradient-to-r
                                          ${(connected && address && !disable) ? spin : not_spin} 
                                         flex justify-center items-center
                                          -bottom-9 rounded-tl-3xl rounded-tr-3xl`}>
-                            <span className="text-center text-3xl select-none">
-                                {connected && address ? 'SPIN' : (
+                            <span className="text-center text-xl select-none">
+                                {/* {connected && address ? 'SPIN' : (
                                     <ConnectButtonWheel
                                         isModalOpen={isModalOpen}
                                         setIsModalOpen={setIsModalOpen}
                                     />
-                                )}
+                                )} */}
+                                SPIN AFTER PRESALE
                             </span>
                         </button>
                     </div>
