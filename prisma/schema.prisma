@@ -66,8 +66,8 @@ model unpaid {
 model presale {
   id         String @id @default(auto()) @map("_id") @db.ObjectId
   address    String
-  amountAda  Int
-  amountXmax Int
+  amountAda  Float
+  amountXmax Float
   trans      String
 
   createdAt DateTime @default(now())
