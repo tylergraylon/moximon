@@ -34,9 +34,9 @@ export default function Header() {
 
 
                 <div className="navbar-end">
-                    <div className="flex items-center text-xs">
+                    {/* <div className="flex items-center text-xs">
                         <FundsShow />
-                    </div>
+                    </div> */}
                     <div className="hidden md:flex">
 
 
