@@ -16,12 +16,6 @@ import CasinoHead from "../homepage/casino-head"
 export type AssetExtended = (Asset & { policyId: string })[] | undefined
 
 export default function Header() {
-    const lovelace = useLovelace()
-    const { connected } = useWallet()
-    const assets = useAssets() as AssetExtended
-
-    const rerender = useReducer(() => ({}), {})[1]
-
 
 
     return (
@@ -62,24 +56,7 @@ export default function Header() {
                         </div>
 
                         <div className="divider divider-vertical mx-0 h-10"></div>
-                        <div className="navbar-item text-[#FF00FF] hover:!text-[#FF00FF] px-0 md:px-1">
-                            {(connected && assets && assets.length > 0 &&
-                                assets.filter((item) => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId)).length > 0) ? (
-                                formatNumberToKM(parseInt(assets.find(item => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId))!.quantity))
-                            ) : (
-                                'N/A'
-                            )} <span>XMAX</span>
-
-                        </div>
-                        <div className="divider divider-vertical mx-0 h-10"></div>
-                        <div className="navbar-item text-[#00FFFF] hover:!text-[#00FFFF] px-0 md:px-1">
-                            {connected && lovelace ? (
-                                (formatNumberToKM(parseInt(lovelace) / oneLoveLace))
-                            ) : (
-                                'N/A'
-                            )} ADA
-
-                        </div>
+                        <FundsShow />
                         <div className="divider divider-vertical mx-0 h-10"></div>
                     </div>
 
@@ -97,5 +74,33 @@ export default function Header() {
 
 
         </header>
+    )
+}
+
+export function FundsShow() {
+    const lovelace = useLovelace()
+    const { connected } = useWallet()
+    const assets = useAssets() as AssetExtended
+    return (
+        <>
+            <div className="navbar-item text-[#FF00FF] hover:!text-[#FF00FF] px-0 md:px-1">
+                {(connected && assets && assets.length > 0 &&
+                    assets.filter((item) => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId)).length > 0) ? (
+                    formatNumberToKM(parseInt(assets.find(item => (item.unit === xmaxAssetId || item.policyId === xmaxPolicyId))!.quantity))
+                ) : (
+                    'N/A'
+                )} <span>XMAX</span>
+
+            </div>
+            <div className="divider divider-vertical mx-0 h-10"></div>
+            <div className="navbar-item text-[#00FFFF] hover:!text-[#00FFFF] px-0 md:px-1">
+                {connected && lovelace ? (
+                    (formatNumberToKM(parseInt(lovelace) / oneLoveLace))
+                ) : (
+                    'N/A'
+                )} ADA
+
+            </div>
+        </>
     )
 }

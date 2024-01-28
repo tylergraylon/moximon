@@ -7,6 +7,8 @@ const testAddress = 'addr1qxhhm44w427kth87p83aw55sjh9ww778u9ukh78a4vzuxd6a5ddtg6
 
 export const xmaxPolicyId = 'bf6017c05f1a89c7a85b7c4780d28aa2f1f6759e702b82274ae55c8e'
 
+export const xmaxMintCardPolicyId = '44c63f2f00ca609f1def5f0e4598daeb72805172ff7e7215225dff01'
+
 
 export const xmaxAssetId = 'bf6017c05f1a89c7a85b7c4780d28aa2f1f6759e702b82274ae55c8e584d4158'
 

@@ -3,6 +3,7 @@ import Link from "next/link"
 import ConnectWallet from "../ConnectWallet"
 import { usePathname } from "next/navigation"
 import CasinoHead from "./casino-head"
+import { FundsShow } from "../rafflepage/header"
 export default function Header() {
     return (
         <header className="">
@@ -33,7 +34,12 @@ export default function Header() {
 
 
                 <div className="navbar-end">
+                    <div className="flex items-center text-xs">
+                        <FundsShow />
+                    </div>
                     <div className="hidden md:flex">
+
+
 
                         <Link
                             href="https://x.com/xmaxcoinada"

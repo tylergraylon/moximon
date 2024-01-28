@@ -41,6 +41,17 @@ body {
     right: 50%; */
     /* margin: 0 auto; */
   }
+
+  .presale-text-bg {
+    color: transparent;
+    -webkit-text-stroke: 0.7px #00FFFF;
+
+    position: absolute;
+    opacity: 0.4;
+    /* left: 50%;
+    right: 50%; */
+    /* margin: 0 auto; */
+  }
 }
 
 
