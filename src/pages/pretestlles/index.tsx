@@ -13,7 +13,7 @@ export default function PresalePage() {
     if (query && query === 'lime') return (
         <div>
             <div className="flex flex-col min-h-screen">
-                <Header />
+                <Header presale />
 
                 <div className="flex-1">
                     <Presale />

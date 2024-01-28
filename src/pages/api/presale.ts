@@ -3,7 +3,7 @@ import { db } from '@/utils/db'
 
 type Data = {
     message?: string;
-    data?: {}[]
+    data?: {}
 }
 
 
@@ -27,6 +27,38 @@ export default async function handler(
             })
 
             return res.status(200).json({ message: "LFG!!!" })
+        } else if (req.method === 'GET') {
+            const { address } = req.query
+
+            const wallets = await db.presale.findMany({
+                where: {
+                    address: address as string
+                }
+            })
+
+            const accAda = wallets.reduce((acc, cv) => {
+
+                const amount = acc.amountAda + cv.amountAda
+                return {
+                    ...acc,
+                    amountAda: amount
+                }
+            })
+
+
+            console.log(accAda);
+
+
+
+
+            const data = {
+                address: accAda.address ?? 0,
+                amount: accAda.amountAda ?? 0
+            }
+
+
+            return res.status(200).json({ data })
+
         }
 
         return res.status(400).json({ message: 'Bad request' })

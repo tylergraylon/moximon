@@ -1,6 +1,6 @@
 
 import MintBox from "./mint-box"
-import { useStopwatch } from 'react-timer-hook';
+import { useTimer } from 'react-timer-hook';
 import { useMemo, useState, useEffect, useCallback } from "react";
 
 import { addZero } from "@/utils/utils";
@@ -21,19 +21,25 @@ export default function Presale() {
     const address = useAddressCus()
 
     const time1 = useMemo(() => {
-        const time = new Date("2024-01-28T15:00:00");
+        const time = new Date("2024-01-28T23:59:59");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const time2 = useMemo(() => {
-        const time = new Date("2024-01-28T19:00:00");
+        const time = new Date("2024-01-28T23:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const time3 = useMemo(() => {
         const time = new Date();
+        time.setSeconds(time.getSeconds() + 0);
+        return time
+    }, [])
+
+    const timeToPresale = useMemo(() => {
+        const time = new Date("2024-01-30T23:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
@@ -86,8 +92,9 @@ export default function Presale() {
         isRunning,
         start,
         pause,
-        reset,
-    } = useStopwatch({ autoStart: true, offsetTimestamp: stopwatchOffset });
+        resume,
+        restart,
+    } = useTimer({ expiryTimestamp: timeToPresale, onExpire: () => console.warn('Time for presale!!!') });
 
 
 

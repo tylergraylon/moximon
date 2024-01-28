@@ -4,7 +4,7 @@ import ConnectWallet from "../ConnectWallet"
 import { usePathname } from "next/navigation"
 import CasinoHead from "./casino-head"
 import { FundsShow } from "../rafflepage/header"
-export default function Header() {
+export default function Header({ presale }: { presale?: boolean }) {
     return (
         <header className="">
             <div className="navbar bg-[#14112D]">
@@ -34,9 +34,14 @@ export default function Header() {
 
 
                 <div className="navbar-end">
-                    {/* <div className="flex items-center text-xs">
-                        <FundsShow />
-                    </div> */}
+                    {
+                        presale && (
+                            <div className="flex items-center text-xs">
+                                <FundsShow />
+                            </div>
+                        )
+                    }
+
                     <div className="hidden md:flex">
 
 

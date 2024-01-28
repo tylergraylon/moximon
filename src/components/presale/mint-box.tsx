@@ -1,18 +1,14 @@
 import Image from "next/image"
 import { ChangeEvent, useEffect, useState, FormEvent, useRef } from "react";
 import { memo } from "react";
-import { useWallet } from "@meshsdk/react";
+import { useWallet, useAssets } from "@meshsdk/react";
 import useAddressCus from "@/utils/useAddress";
-
 import { Transaction } from '@meshsdk/core';
-
 import { xmaxMintCardPolicyId, oneLoveLace, oantAddress, paymentAddress } from "@/utils/services";
 import axios from "axios";
-
 import Swal from 'sweetalert2'
-
+import { AssetExtended } from "../rafflepage/header";
 import { useTimer } from 'react-timer-hook';
-
 import { addZero } from "@/utils/utils";
 import { formatNumberToKM } from "@/utils/utils";
 
@@ -47,8 +43,11 @@ export default memo(function MintBox({
 
     const refAda = useRef<HTMLInputElement>(null)
 
+    const assets = useAssets() as AssetExtended
+
 
     const { connected, wallet } = useWallet()
+
     const address = useAddressCus()
 
 
@@ -79,7 +78,24 @@ export default memo(function MintBox({
         } else {
             setErrorMessage("")
         }
+    }
 
+    const checkMintLimit = async (add: string): Promise<boolean> => {
+        try {
+            const response = await axios.get(`/api/presale?address${add}`)
+
+            if (response.status === 200) {
+
+                const minted = response.data.data.amount
+
+                return minted >= limit ? true : false
+
+            }
+
+        } catch (error) {
+            return false
+        }
+        return false
     }
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -131,6 +147,22 @@ export default memo(function MintBox({
                     position: "center",
                     icon: 'error',
                     title: checkErrorMessage,
+                    showCloseButton: true,
+                    showConfirmButton: false,
+                    background: "#090719",
+                    color: "#ffffff"
+                })
+
+                return;
+            }
+
+            const limitChecker = await checkMintLimit(address)
+
+            if (limitChecker) {
+                Swal.fire({
+                    position: "center",
+                    icon: 'error',
+                    title: `You have reached your mint limit`,
                     showCloseButton: true,
                     showConfirmButton: false,
                     background: "#090719",
@@ -285,19 +317,28 @@ export default memo(function MintBox({
                             className="h-12 p-2 bg-transparent border
                                      border-white/60 w-full outline-none"
                             placeholder="Amount" />
-                        <div className="">
+                        <div className="flex justify-between">
                             <span>
                                 <div className="font-serrat text-[#E22E6B]">
                                     {errorMessage}
                                 </div>
-                                <div className="text-[#00FFFF] text-xs mt-1">
-                                    Total
-                                </div>
+                                {
+                                    limit === 500 && (
+                                        <div className="text-[#00FFFF] text-xs mt-1">
+                                            Total
+                                        </div>
+                                    )
+                                }
+
                             </span>
 
 
-                            <span>
-
+                            <span className="text-xs text-[#00FFFF]">
+                                {
+                                    limit === 500 && assets && (
+                                        `${(Number(assets.find((item) => (item.policyId === xmaxMintCardPolicyId))?.quantity ?? 0)) * limit} ADA`
+                                    )
+                                }
                             </span>
                         </div>
                     </div>
