@@ -18,8 +18,10 @@
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-timer-hook": "^3.0.7",
     "rippleui": "^1.12.1",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.10.4",
     "swr": "^2.2.4"
   },
   "devDependencies": {

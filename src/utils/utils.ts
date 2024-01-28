@@ -14,6 +14,9 @@ export async function fetcherAPI<T>(url: string) {
         }
     });
 }
+export const addZero = (t: number) => {
+    return t < 10 ? `0${t}` : t
+}
 
 export function formatNumberToK(number: number | undefined) {
 
