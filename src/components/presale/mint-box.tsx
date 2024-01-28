@@ -336,7 +336,8 @@ export default memo(function MintBox({
                             <span className="text-xs text-[#00FFFF]">
                                 {
                                     limit === 500 && assets && (
-                                        `${assets.filter((item) => (item.policyId === xmaxMintCardPolicyId)).length} Mint Cards`
+                                        `${assets.filter((item) => (item.policyId === xmaxMintCardPolicyId)).length} Mint Card${assets.filter((item) => (item.policyId === xmaxMintCardPolicyId)).length > 1 && 's'
+                                        }`
 
                                     )
                                 }
