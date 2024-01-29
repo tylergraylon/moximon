@@ -39,19 +39,19 @@ export default function Presale() {
     }, [])
 
     const timeToPresale = useMemo(() => {
-        const time = new Date("2024-01-30T17:00:00");
+        const time = new Date("2024-01-28T17:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
 
-    const date1 = new Date("2024-01-27T05:00:00");
-    const date2 = new Date(Date.now());
-    const diffInMinutes = Math.abs(Number(date1.getTime()) - Number(date2.getTime())) / 1000
+    // const date1 = new Date("2024-01-27T05:00:00");
+    // const date2 = new Date(Date.now());
+    // const diffInMinutes = Math.abs(Number(date1.getTime()) - Number(date2.getTime())) / 1000
 
 
-    const stopwatchOffset = new Date();
-    stopwatchOffset.setSeconds(stopwatchOffset.getSeconds() + diffInMinutes);
+    // const stopwatchOffset = new Date();
+    // stopwatchOffset.setSeconds(stopwatchOffset.getSeconds() + diffInMinutes);
 
 
 
@@ -152,6 +152,7 @@ export default function Presale() {
                     coin_price={0.0145}
                     limit={500}
                     time={time1}
+                    startTime={new Date("2024-01-30T17:00:00")}
                     presaleTime={timeToPresale}
                     customCheck={checkMintCard}
                     checkErrorMessage="You do not have an XMAX MINT CARD"
@@ -164,6 +165,7 @@ export default function Presale() {
                     limit={150}
                     // disabled
                     time={time2}
+                    startTime={new Date("2024-01-30T20:00:00")}
                     presaleTime={timeToPresale}
                     customCheck={checkWhitelist}
                     checkErrorMessage="You are not whitelisted"
@@ -174,7 +176,8 @@ export default function Presale() {
                     title_price="90 ADA"
                     coin_price={0.018}
                     limit={90}
-                    disabled
+                    // disabled
+                    startTime={new Date("2024-01-30T22:00:00")}
                     presaleTime={timeToPresale}
                     time={time3}
 
