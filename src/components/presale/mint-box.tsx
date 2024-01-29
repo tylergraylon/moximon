@@ -330,7 +330,7 @@ export default memo(function MintBox({
                             name="ada"
                             id="ada"
                             ref={refAda}
-                            disabled={disabled || checkTimeLimit}
+                            // disabled={disabled || checkTimeLimit}
                             onChange={(e) => filterInput(e, limit)}
                             className="h-12 p-2 bg-transparent border
                                      border-white/60 w-full outline-none"
