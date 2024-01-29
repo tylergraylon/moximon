@@ -54,8 +54,10 @@ export default memo(function MintBox({
 
     const address = useAddressCus()
 
+    const today = new Date()
 
-    const checkTimeLimit = !(new Date() >= startTime) || new Date() < presaleTime || new Date() > time
+
+    const checkTimeLimit = !(today >= startTime) || today < presaleTime || today > time
 
 
     const {
@@ -279,7 +281,19 @@ export default memo(function MintBox({
                         {
                             isClient && (
                                 <span className="text-[#FA00FF]" suppressHydrationWarning>
-                                    <span>{addZero(days)}</span>:<span>{addZero(hours)}</span>:<span>{addZero(minutes)}</span>:<span>{addZero(seconds)}</span>
+                                    {
+                                        today >= startTime ? (
+                                            <>
+                                                <span>{addZero(days)}</span>:<span>{addZero(hours)}</span>:<span>{addZero(minutes)}</span>:<span>{addZero(seconds)}</span>
+                                            </>
+
+                                        ) : (
+                                            <>
+                                                <span>00</span>:<span>00</span>:<span>00</span>:<span>00</span>
+                                            </>
+                                        )
+                                    }
+
                                 </span>
                             )
                         }
