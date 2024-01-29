@@ -39,7 +39,7 @@ export default function Presale() {
     }, [])
 
     const timeToPresale = useMemo(() => {
-        const time = new Date("2024-01-28T17:00:00");
+        const time = new Date("2024-01-30T17:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
