@@ -21,6 +21,7 @@ type Props = {
     disabled?: boolean,
     limit: number,
     time: Date,
+    presaleTime: Date,
     customCheck?: () => boolean,
     checkErrorMessage?: string
 }
@@ -34,7 +35,8 @@ export default memo(function MintBox({
     time,
     limit,
     customCheck,
-    checkErrorMessage
+    checkErrorMessage,
+    presaleTime
 }: Props) {
 
     const [isClient, setIsClient] = useState(false)
@@ -51,7 +53,7 @@ export default memo(function MintBox({
     const address = useAddressCus()
 
 
-    const checkTimeLimit = new Date > time
+    const checkTimeLimit = new Date() > time || new Date() < presaleTime
 
 
     const {

@@ -21,25 +21,25 @@ export default function Presale() {
     const address = useAddressCus()
 
     const time1 = useMemo(() => {
-        const time = new Date("2024-01-28T23:59:59");
+        const time = new Date("2024-01-30T20:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const time2 = useMemo(() => {
-        const time = new Date("2024-01-28T23:00:00");
+        const time = new Date("2024-01-30T22:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const time3 = useMemo(() => {
-        const time = new Date();
+        const time = new Date("2024-02-02T23:59:59");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const timeToPresale = useMemo(() => {
-        const time = new Date("2024-01-30T23:00:00");
+        const time = new Date("2024-01-30T17:00:00");
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
@@ -152,6 +152,7 @@ export default function Presale() {
                     coin_price={0.0145}
                     limit={500}
                     time={time1}
+                    presaleTime={timeToPresale}
                     customCheck={checkMintCard}
                     checkErrorMessage="You do not have an XMAX MINT CARD"
                 />
@@ -163,6 +164,7 @@ export default function Presale() {
                     limit={150}
                     // disabled
                     time={time2}
+                    presaleTime={timeToPresale}
                     customCheck={checkWhitelist}
                     checkErrorMessage="You are not whitelisted"
                 />
@@ -173,6 +175,7 @@ export default function Presale() {
                     coin_price={0.018}
                     limit={90}
                     disabled
+                    presaleTime={timeToPresale}
                     time={time3}
 
                 />
