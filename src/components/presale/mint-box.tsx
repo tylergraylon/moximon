@@ -78,7 +78,7 @@ export default memo(function MintBox({
         setAmount(Number(e.target.value))
 
         if (Number(e.target.value) > limit) {
-            setErrorMessage(`Maximum Mint is ${limit} ADA`)
+            setErrorMessage(`Maximum input amount is ${limit} ADA`)
         } else {
             setErrorMessage("")
         }
