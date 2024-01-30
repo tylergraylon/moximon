@@ -57,7 +57,7 @@ export default memo(function MintBox({
     const today = new Date()
 
 
-    const checkTimeLimit = !(today >= startTime) || today < presaleTime || today > time
+    const checkTimeLimit = !(today >= startTime) || today > time
 
 
     const {

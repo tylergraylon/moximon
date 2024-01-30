@@ -154,7 +154,7 @@ export default function Presale() {
                     coin_price={0.0145}
                     limit={500}
                     time={time1}
-
+                    disabled
                     startTime={new Date(Date.UTC(2024, 0, 30, 16, 0, 0))}
                     presaleTime={timeToPresale}
                     customCheck={checkMintCard}
