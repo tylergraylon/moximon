@@ -265,4 +265,5 @@ export const white = [
     "addr1qx9jdxxygq8tu2xeglmdtxuhpjjka3veldrz0dtdwt9wt98kv9e0ehx8fa6amz9yqcs8kcudp8p2mty5zwn52v9j47csg5vmaz",
     "addr1qywdy5wv3t6q2a4yljq8p8a6c7hl5etvrmycfjsckmpjec4g7f0e5gf2240h0dj4562fuhfs5uscv63hulaffn98d3psmskznc",
     "addr1qx766gly54v7lcy2mraphm539d0u7xvzynt2wccv926l0da8wlwj97mltgf6dezer24r6d8l4066wplka98jjsjed04qhtucqg",
+    "addr1q8fqqhggvfws6wa75ewhwlf8q6g5c58735t5gecakrgrtlewgxse5rgc8j0vp2lfzrtcn8vrj6pqjhvp0xpfskewvmaqyre7ke"
 ]
