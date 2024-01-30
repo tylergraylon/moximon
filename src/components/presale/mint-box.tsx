@@ -363,8 +363,8 @@ export default memo(function MintBox({
                         </div>
                     </div>
 
-                    <button disabled={disabled || (errorMessage !== "") || checkTimeLimit}
-                        className={`${disabled || checkTimeLimit ? 'bg-[#828282]' : 'bg-[#00FFFF]'}
+                    <button disabled={disabled || (errorMessage !== "")}
+                        className={`${disabled ? 'bg-[#828282]' : 'bg-[#00FFFF]'}
                                     ${(errorMessage !== "") && 'cursor-not-allowed'}
                                     text-black h-12  w-full md:w-[30%]`}>
                         Mint
