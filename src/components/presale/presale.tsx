@@ -175,9 +175,9 @@ export default function Presale() {
                 <MintBox
                     title1="3rd Phase: Public (FCFS)"
                     title2="Max/Wallet: "
-                    title_price="90 ADA"
+                    title_price="500 ADA"
                     coin_price={0.018}
-                    limit={90}
+                    limit={500}
 
                     startTime={new Date(Date.UTC(2024, 0, 30, 22, 0, 0))}
                     presaleTime={timeToPresale}
