@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import CasinoHead from "./casino-head"
 import { FundsShow } from "../rafflepage/header"
 export default function Header({ presale }: { presale?: boolean }) {
+    const pathname = usePathname()
     return (
         <header className="">
             <div className="navbar bg-[#14112D]">
@@ -26,10 +27,11 @@ export default function Header({ presale }: { presale?: boolean }) {
 
                 </div>
                 <div className="navbar-start hidden md:flex text-sm">
-                    <Link href="#" className="navbar-item !text-[#FF00FF]">HOME</Link>
+                    <Link href="#" className={`${pathname.endsWith('/') ? 'text-[#FF00FF]' : 'text-white'} navbar-item hover:!text-[#FF00FF]`}>HOME</Link>
                     {/* <Link href="/magic-wheelz" className="navbar-item whitespace-nowrap text-white hover:!text-[#FF00FF]">MAGIC WHEELZ</Link> */}
                     <CasinoHead />
                     <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="navbar-item text-white hover:!text-[#FF00FF]">WHITEPAPER</Link>
+                    <Link href="/presale" className={`${pathname.endsWith('presale') ? 'text-[#FF00FF]' : 'text-white'} navbar-item  hover:!text-[#FF00FF]`}>PRESALE</Link>
                 </div>
 
 
@@ -141,7 +143,11 @@ export function MobileMenu() {
                                         {/* <Link href="/magic-wheelz" className={`${pathname.endsWith('magic-wheelz') && 'text-[#FF00FF]'} text-white text-[15px] w-full`}>MAGIC WHEELZ</Link> */}
                                     </li>
                                     <li className="menu-item w-full">
-                                        <Link href="https://xmax.gitbook.io/xmax-paper/" target="_blank" className="text-[15px] text-white w-full">WHITEPAPER</Link>
+                                        <Link href="https://xmax.gitbook.io/xmax-paper/" className="text-[15px] text-white w-full">WHITEPAPER</Link>
+                                    </li>
+
+                                    <li className="menu-item w-full">
+                                        <Link href="/presale" className={`${pathname.endsWith('presale') ? 'text-[#FF00FF]' : 'text-white'} text-[15px] w-full`}>PRESALE</Link>
                                     </li>
 
                                     <li className="flex">

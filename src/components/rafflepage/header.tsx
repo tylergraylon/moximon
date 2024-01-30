@@ -40,18 +40,24 @@ export default function Header() {
 
                 <div className="navbar-end bg-[#14112D] w-full py-2">
                     <div className=" items-center flex text-[0.65rem] sm:text-xs">
-                        <div className="navbar-item hidden lg:block text-white text-sm hover:!text-[#FF00FF]">
+                        <div className="navbar-item hidden xl:block text-white text-sm hover:!text-[#FF00FF]">
                             <Link href="/">
                                 HOME
                             </Link>
 
                         </div>
 
-                        <div className="navbar-item hidden lg:block">
+                        <div className="navbar-item hidden xl:block">
                             <CasinoHead />
                         </div>
 
-                        <div className="navbar-item hidden lg:block">
+                        <div className="navbar-item hidden xl:block text-white text-sm hover:!text-[#FF00FF]">
+                            <Link href="/presale">
+                                PRESALE
+                            </Link>
+                        </div>
+
+                        <div className="navbar-item hidden xl:block">
                             <ClaimPrize />
                         </div>
 
@@ -61,11 +67,11 @@ export default function Header() {
                     </div>
 
 
-                    <div className="navbar-item hidden lg:block">
+                    <div className="navbar-item hidden xl:block">
                         <ConnectWallet />
                     </div>
 
-                    <div className="navbar-item lg:hidden p-0 m-0">
+                    <div className="navbar-item xl:hidden p-0 m-0">
                         <MobileMenu />
                     </div>
 

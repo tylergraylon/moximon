@@ -7,10 +7,8 @@ import { useSearchParams } from "next/navigation"
 
 export default function PresalePage() {
 
-    const params = useSearchParams()
 
-    const query = params.get("backstreetboys")
-    if (query && query === 'lime') return (
+    return (
         <div>
             <div className="flex flex-col min-h-screen">
                 <Header presale />
@@ -25,5 +23,4 @@ export default function PresalePage() {
 
     )
 
-    return null
 }

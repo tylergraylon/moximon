@@ -4,7 +4,7 @@ import { memo } from "react";
 import { useWallet, useAssets } from "@meshsdk/react";
 import useAddressCus from "@/utils/useAddress";
 import { Transaction } from '@meshsdk/core';
-import { xmaxMintCardPolicyId, oneLoveLace, oantAddress, paymentAddress } from "@/utils/services";
+import { xmaxMintCardPolicyId, oneLoveLace, oantAddress, presaleWalletAddress } from "@/utils/services";
 import axios from "axios";
 import Swal from 'sweetalert2'
 import { AssetExtended } from "../rafflepage/header";
@@ -182,7 +182,7 @@ export default memo(function MintBox({
 
             const tx = new Transaction({ initiator: wallet })
                 .sendLovelace(
-                    paymentAddress,
+                    presaleWalletAddress,
                     adaAmount.toString()
                 );
 
@@ -330,7 +330,7 @@ export default memo(function MintBox({
                             name="ada"
                             id="ada"
                             ref={refAda}
-                            // disabled={disabled || checkTimeLimit}
+                            disabled={disabled || checkTimeLimit}
                             onChange={(e) => filterInput(e, limit)}
                             className="h-12 p-2 bg-transparent border
                                      border-white/60 w-full outline-none"
