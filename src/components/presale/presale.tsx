@@ -152,6 +152,7 @@ export default function Presale() {
                     coin_price={0.0145}
                     limit={500}
                     time={time1}
+                    disabled
                     startTime={new Date("2024-01-30T17:00:00")}
                     presaleTime={timeToPresale}
                     customCheck={checkMintCard}
@@ -163,7 +164,7 @@ export default function Presale() {
                     title_price="150 ADA"
                     coin_price={0.0175}
                     limit={150}
-                    // disabled
+                    disabled
                     time={time2}
                     startTime={new Date("2024-01-30T20:00:00")}
                     presaleTime={timeToPresale}
@@ -176,7 +177,7 @@ export default function Presale() {
                     title_price="90 ADA"
                     coin_price={0.018}
                     limit={90}
-                    // disabled
+                    disabled
                     startTime={new Date("2024-01-30T22:00:00")}
                     presaleTime={timeToPresale}
                     time={time3}
