@@ -171,7 +171,7 @@ export default function Presale() {
                     checkErrorMessage="You are not whitelisted"
                 />
                 <MintBox
-                    title1="3red Phase: Public (FCFS)"
+                    title1="3rd Phase: Public (FCFS)"
                     title2="Max/Wallet: "
                     title_price="90 ADA"
                     coin_price={0.018}
