@@ -162,21 +162,21 @@ export default memo(function MintBox({
                 return;
             }
 
-            const limitChecker = await checkMintLimit(address)
+            // const limitChecker = await checkMintLimit(address)
 
-            if (limitChecker) {
-                Swal.fire({
-                    position: "center",
-                    icon: 'error',
-                    title: `You have reached your mint limit`,
-                    showCloseButton: true,
-                    showConfirmButton: false,
-                    background: "#090719",
-                    color: "#ffffff"
-                })
+            // if (limitChecker) {
+            //     Swal.fire({
+            //         position: "center",
+            //         icon: 'error',
+            //         title: `You have reached your mint limit`,
+            //         showCloseButton: true,
+            //         showConfirmButton: false,
+            //         background: "#090719",
+            //         color: "#ffffff"
+            //     })
 
-                return;
-            }
+            //     return;
+            // }
 
             const adaAmount = amount! * oneLoveLace
 
