@@ -11,7 +11,7 @@ export default function PresalePage() {
     return (
         <div>
             <div className="flex flex-col min-h-screen">
-                <Header presale />
+                <Header />
 
                 <div className="flex-1">
                     <Presale />
