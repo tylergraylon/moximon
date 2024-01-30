@@ -21,25 +21,27 @@ export default function Presale() {
     const address = useAddressCus()
 
     const time1 = useMemo(() => {
-        const time = new Date("2024-01-30T20:00:00");
+        const now = new Date();
+        const utcNow = new Date(now.toUTCString());
+        const time = new Date(Date.UTC(2024, 0, 30, 19, 0, 0));
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const time2 = useMemo(() => {
-        const time = new Date("2024-01-30T22:00:00");
+        const time = new Date(Date.UTC(2024, 0, 30, 22, 0, 0));
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const time3 = useMemo(() => {
-        const time = new Date("2024-02-02T23:59:59");
+        const time = new Date(Date.UTC(2024, 1, 10, 23, 0, 0));
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
 
     const timeToPresale = useMemo(() => {
-        const time = new Date("2024-01-30T17:00:00");
+        const time = new Date(Date.UTC(2024, 0, 30, 16, 0, 0));
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
@@ -153,7 +155,7 @@ export default function Presale() {
                     limit={500}
                     time={time1}
                     disabled
-                    startTime={new Date("2024-01-30T17:00:00")}
+                    startTime={new Date(Date.UTC(2024, 0, 30, 16, 0, 0))}
                     presaleTime={timeToPresale}
                     customCheck={checkMintCard}
                     checkErrorMessage="You do not have an XMAX MINT CARD"
@@ -166,7 +168,7 @@ export default function Presale() {
                     limit={150}
                     disabled
                     time={time2}
-                    startTime={new Date("2024-01-30T20:00:00")}
+                    startTime={new Date(Date.UTC(2024, 0, 30, 19, 0, 0))}
                     presaleTime={timeToPresale}
                     customCheck={checkWhitelist}
                     checkErrorMessage="You are not whitelisted"
@@ -178,7 +180,7 @@ export default function Presale() {
                     coin_price={0.018}
                     limit={90}
                     disabled
-                    startTime={new Date("2024-01-30T22:00:00")}
+                    startTime={new Date(Date.UTC(2024, 0, 30, 22, 0, 0))}
                     presaleTime={timeToPresale}
                     time={time3}
 
