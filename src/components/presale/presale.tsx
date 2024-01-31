@@ -35,7 +35,7 @@ export default function Presale() {
     }, [])
 
     const time3 = useMemo(() => {
-        const time = new Date(Date.UTC(2024, 1, 10, 23, 0, 0));
+        const time = new Date(Date.UTC(2024, 0, 10, 23, 0, 0));
         time.setSeconds(time.getSeconds() + 0);
         return time
     }, [])
@@ -154,6 +154,7 @@ export default function Presale() {
                     coin_price={0.0145}
                     limit={500}
                     time={time1}
+                    disabled
                     startTime={new Date(Date.UTC(2024, 0, 30, 16, 0, 0))}
                     presaleTime={timeToPresale}
                     customCheck={checkMintCard}
@@ -165,7 +166,7 @@ export default function Presale() {
                     title_price="150 ADA"
                     coin_price={0.0175}
                     limit={150}
-
+                    disabled
                     time={time2}
                     startTime={new Date(Date.UTC(2024, 0, 30, 19, 0, 0))}
                     presaleTime={timeToPresale}
@@ -178,7 +179,7 @@ export default function Presale() {
                     title_price="500 ADA"
                     coin_price={0.018}
                     limit={500}
-
+                    disabled
                     startTime={new Date(Date.UTC(2024, 0, 30, 22, 0, 0))}
                     presaleTime={timeToPresale}
                     time={time3}
