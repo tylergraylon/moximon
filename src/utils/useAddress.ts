@@ -1,38 +1,7 @@
-import { useAddress, useWallet } from "@meshsdk/react";
-import { useEffect, useState } from "react";
-import { BrowserWallet } from '@meshsdk/core';
-
+import { useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
 
 export default function useAddressCus() {
+  const { publicKey } = useSolanaWallet();
 
-    const { name, connected } = useWallet()
-
-    const address = useAddress()
-
-
-
-    const [cusAddress, setCusAddress] = useState<undefined | string>(undefined)
-
-
-
-    const getOtherAddress = async (name: string) => {
-        const wallet = await BrowserWallet.enable(name)
-
-        setCusAddress((await wallet.getUnusedAddresses())[0])
-
-    }
-
-
-    useEffect(() => {
-        if (connected) {
-            if (!address && connected) {
-                getOtherAddress(name)
-            } else {
-                setCusAddress(address)
-            }
-
-        }
-    }, [name, address])
-
-    return cusAddress
+  return publicKey?.toBase58();
 }

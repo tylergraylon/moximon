@@ -1,19 +1,10 @@
 import { useRef, useState, useEffect, RefObject } from "react";
 import { AdaWheelz } from "./jfhkjhvygcbvjh";
 import Image from "next/image";
-import { useWallet, useAddress, useAssets } from "@meshsdk/react";
-import { Transaction } from "@meshsdk/core";
 import { useSWRConfig } from "swr";
 import { gamesKey, prizesKey } from "@/utils/utils";
-import {
-  chargeAddress,
-  paymentAddress,
-  AdaWagerCharge,
-  oneLoveLace,
-  xmaxWagerCharge,
-  xmaxAssetId,
-  xmaxPolicyId,
-} from "@/utils/services";
+import { useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import axios from "axios";
 import useAddressCus from "@/utils/useAddress";
 import { GlobalWheelz, WheelzDetails } from "./boxes";
@@ -61,8 +52,8 @@ export default function MagicWheelz() {
 
   const wheel = useRef<HTMLDivElement>(null);
 
-  const { connected, wallet } = useWallet();
-  const assets = useAssets() as AssetExtended;
+  const { connected } = useSolanaWallet();
+  // const assets = useAssets() as AssetExtended;
 
   const address = useAddressCus();
 
@@ -78,44 +69,37 @@ export default function MagicWheelz() {
         let amount: number;
         switch (wheelz) {
           case WHEELZ.ten:
-            amount = 5 * oneLoveLace;
+            amount = 0.1 * LAMPORTS_PER_SOL;
             break;
           case WHEELZ.fifty:
-            amount = 25 * oneLoveLace;
+            amount = 0.25 * LAMPORTS_PER_SOL;
             break;
           case WHEELZ.hundred:
-            amount = 50 * oneLoveLace;
+            amount = 0.5 * LAMPORTS_PER_SOL;
             break;
           default:
-            amount = 5 * oneLoveLace;
+            amount = 0.1 * LAMPORTS_PER_SOL;
             break;
         }
-        const tx = new Transaction({ initiator: wallet })
-          .sendLovelace(chargeAddress, AdaWagerCharge)
-          .sendLovelace(paymentAddress, amount.toString());
 
-        const unsignedTx = await tx.build();
-        const signedTx = await wallet.signTx(unsignedTx);
-        const txHash = await wallet.submitTx(signedTx);
-
-        return txHash;
+        return "txHash";
       } else if (
         wheelz === WHEELZ.fivehundred ||
         wheelz === WHEELZ.onethousand ||
         wheelz === WHEELZ.onethousandfive
       ) {
-        if (
-          !(
-            assets &&
-            assets.filter(
-              (item) =>
-                item.unit === xmaxAssetId || item.policyId === xmaxPolicyId
-            ).length > 0
-          )
-        ) {
-          swal("Error", "No Xmax token. Please buy some tokens", "error");
-          return null;
-        }
+        // if (
+        //   !(
+        //     assets &&
+        //     assets.filter(
+        //       (item) =>
+        //         item.unit === xmaxAssetId || item.policyId === xmaxPolicyId
+        //     ).length > 0
+        //   )
+        // ) {
+        //   swal("Error", "No Xmax token. Please buy some tokens", "error");
+        //   return null;
+        // }
 
         let amount: number;
         switch (wheelz) {
@@ -133,20 +117,7 @@ export default function MagicWheelz() {
             break;
         }
 
-        const tx = new Transaction({ initiator: wallet })
-          .sendLovelace(chargeAddress, xmaxWagerCharge)
-          .sendAssets(paymentAddress, [
-            {
-              unit: xmaxAssetId,
-              quantity: amount.toString(),
-            },
-          ]);
-
-        const unsignedTx = await tx.build();
-        const signedTx = await wallet.signTx(unsignedTx);
-        const txHash = await wallet.submitTx(signedTx);
-
-        return txHash;
+        return "txHash";
       }
 
       return null;
@@ -174,7 +145,7 @@ export default function MagicWheelz() {
     try {
       const spin_wheel = wheel.current;
 
-      if (connected && address && wallet) {
+      if (connected && address) {
         const transac = await sendTransaction();
 
         if (spin_wheel && transac) {
@@ -450,9 +421,9 @@ export default function MagicWheelz() {
 }
 
 const adaWager = [
-  { name: "5", wheel: WHEELZ.ten },
-  { name: "25", wheel: WHEELZ.fifty },
-  { name: "50", wheel: WHEELZ.hundred },
+  { name: "0.1", wheel: WHEELZ.ten },
+  { name: "0.25", wheel: WHEELZ.fifty },
+  { name: "0.5", wheel: WHEELZ.hundred },
 ];
 
 const xmaxWager = [
@@ -519,7 +490,7 @@ function WheelzPicker({
       <section className="w-full bg-[#1E1A45] xl:bg-transparent">
         <div className=" mt-8 text-sm">
           <div className="py-3 text-white pl-4 w-full  bg-gradient-to-r from-[#006666] to-[#00FFFF]">
-            Wager ADA
+            Wager SOL
           </div>
 
           <div className="mt-5 grid grid-cols-3 gap-2 w-full">
@@ -537,7 +508,7 @@ function WheelzPicker({
               >
                 <div className="">
                   <p>{item.name}</p>
-                  <p>ADA</p>
+                  <p>SOL</p>
                 </div>
               </button>
             ))}
@@ -546,12 +517,13 @@ function WheelzPicker({
 
         <div className="mt-5 text-sm">
           <div className="py-3 text-white pl-4 w-full  bg-gradient-to-r from-[#660066] to-[#FF00FF]">
-            Wager $XMAX
+            Wager $XMAX Coming Soon
           </div>
 
           <div className="mt-5 grid grid-cols-3 gap-2 w-full">
             {xmaxWager.map((item, i) => (
               <button
+                disabled
                 onClick={() => changeWager(item.wheel)}
                 className={`border  py-6 btn btn-md rounded-none text-white
                                                 ${
