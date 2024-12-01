@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <link rel="shortcut icon" href="/wheelz/wheelz-image.svg" />
-        <title>XMAXCOINADA</title>
+        <title>XMAXCASINO</title>
       </Head>
       <Wallet>
         <main
