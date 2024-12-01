@@ -12,6 +12,7 @@ import Prize from "./prize";
 import swal from "sweetalert";
 import { ConnectButtonWheel } from "../ConnectWallet";
 import { ClaimPrizeMobile } from "../claim-prize";
+import useBalance from "@/hooks/useBalance";
 
 export enum WHEELZ {
   ten = "ten",
@@ -56,6 +57,8 @@ export default function MagicWheelz() {
 
   const address = useAddressCus();
 
+  const { balance } = useBalance();
+
   const { mutate } = useSWRConfig();
 
   const sendTransaction = async () => {
@@ -79,6 +82,15 @@ export default function MagicWheelz() {
           default:
             amount = 0.1 * LAMPORTS_PER_SOL;
             break;
+        }
+
+        if (Number(balance) <= amount) {
+          swal(
+            "Error",
+            "Insufficient balance to complete transaction.",
+            "error"
+          );
+          return;
         }
 
         return "txHash";
