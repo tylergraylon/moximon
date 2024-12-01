@@ -4,15 +4,12 @@ import goldStain from "../../../public/gold-stain.svg";
 import wheelerz from "../../../public/wheelerz.svg";
 import Link from "next/link";
 import { MobileMenu } from "../homepage/header";
-import { Asset } from "@meshsdk/core";
 import { formatNumberToKM } from "@/utils/utils";
 import { useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
 import useBalance from "@/hooks/useBalance";
 import ClaimPrize from "../claim-prize";
 import CasinoHead from "../homepage/casino-head";
 import { useState } from "react";
-
-export type AssetExtended = (Asset & { policyId: string })[] | undefined;
 
 export default function Header() {
   return (

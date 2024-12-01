@@ -11,8 +11,6 @@
   "dependencies": {
     "@blockfrost/blockfrost-js": "^5.5.0",
     "@emurgo/cardano-serialization-lib-nodejs": "^11.5.0",
-    "@meshsdk/core": "^1.5.10",
-    "@meshsdk/react": "^1.1.8",
     "@prisma/client": "^5.7.0",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-base-ui": "^0.1.2",

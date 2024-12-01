@@ -80,7 +80,8 @@ export function ClaimPrizeMobile() {
               <p className="text-white">YOUR PRIZE</p>
             </span>
           </div>
-          <ClaimPrizeBody />
+          <p>Coming soon</p>
+          {/* <ClaimPrizeBody /> */}
         </div>
       </div>
     </div>

@@ -8,7 +8,6 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import axios from "axios";
 import useAddressCus from "@/utils/useAddress";
 import { GlobalWheelz, WheelzDetails } from "./boxes";
-import { AssetExtended } from "./header";
 import Prize from "./prize";
 import swal from "sweetalert";
 import { ConnectButtonWheel } from "../ConnectWallet";
