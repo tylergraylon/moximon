@@ -42,7 +42,7 @@ export const Wallet: FC<Props> = ({ children }) => {
       new SolflareWalletAdapter(),
       new AlphaWalletAdapter(),
       new LedgerWalletAdapter(),
-      // new PhantomWalletAdapter(),
+      new PhantomWalletAdapter(),
     ],
     []
   );
