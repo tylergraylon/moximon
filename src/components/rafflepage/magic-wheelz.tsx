@@ -362,14 +362,7 @@ export default function MagicWheelz() {
                                          -bottom-9 rounded-tl-3xl rounded-tr-3xl`}
             >
               <span className="text-center text-xl select-none">
-                {connected && address ? (
-                  "SPIN"
-                ) : (
-                  <ConnectButtonWheel
-                    isModalOpen={isModalOpen}
-                    setIsModalOpen={setIsModalOpen}
-                  />
-                )}
+                {connected && address ? "SPIN" : <ConnectButtonWheel />}
               </span>
             </button>
           </div>

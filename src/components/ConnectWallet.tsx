@@ -39,7 +39,13 @@ const WalletList = [
 
 const concord = "jhguhfguhdgfggdf";
 
-export default function ConnectWallet({ mobile }: { mobile?: boolean }) {
+export default function ConnectWallet({
+  mobile,
+  wheel,
+}: {
+  mobile?: boolean;
+  wheel?: boolean;
+}) {
   const [hydrate, setHydrate] = useState(false);
   const { publicKey, sendTransaction } = useWallet();
 
@@ -51,7 +57,10 @@ export default function ConnectWallet({ mobile }: { mobile?: boolean }) {
   return (
     <WalletMultiButton
       className="bg-transparent"
-      style={{ background: "#66000000", border: "1px solid white " }}
+      style={{
+        background: "#66000000",
+        border: !wheel ? "1px solid white " : "",
+      }}
     >
       {!publicKey
         ? "Connect Wallet"
@@ -62,51 +71,6 @@ export default function ConnectWallet({ mobile }: { mobile?: boolean }) {
   );
 }
 
-export const ConnectButtonWheel = ({
-  isModalOpen,
-  setIsModalOpen,
-}: {
-  isModalOpen: boolean;
-  setIsModalOpen: (is: boolean) => void;
-}) => {
-  const { connecting, connected } = useWallet();
-
-  return (
-    <div className="">
-      <label className="btn btn-sm sm:btn-md bg-transparent  rounded-none text-white min-w-[150px]">
-        {(isModalOpen && !connected) || connecting ? (
-          <svg
-            className="spinner-ring [--spinner-color:var(--blue-12)] spinner-sm"
-            viewBox="25 25 50 50"
-            strokeWidth="5"
-          >
-            <circle cx="50" cy="50" r="20" />
-          </svg>
-        ) : (
-          <span className="text-xs lg:text-sm text-white">Connect Wallet</span>
-        )}
-      </label>
-
-      <input
-        className="modal-state"
-        id="modal-10"
-        checked={isModalOpen}
-        type="checkbox"
-        onChange={(e) => {
-          setIsModalOpen(e.target.checked);
-        }}
-      />
-      <div className="modal w-screen ">
-        <label className="modal-overlay" htmlFor="modal-10"></label>
-        <div className="modal-content flex flex-col gap-5 w-96 sm:w-[25.8rem]">
-          <label
-            htmlFor="modal-10"
-            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-          >
-            ✕
-          </label>
-        </div>
-      </div>
-    </div>
-  );
+export const ConnectButtonWheel = ({}: {}) => {
+  return <ConnectWallet wheel />;
 };
