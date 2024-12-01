@@ -29,7 +29,7 @@ type Props = {
 export const Wallet: FC<Props> = ({ children }) => {
   //input your RPC as your endpoint value
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Testnet;
+  const network = WalletAdapterNetwork.Devnet;
 
   // You can also provide a custom RPC endpoint.
 
