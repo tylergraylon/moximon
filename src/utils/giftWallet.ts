@@ -1,5 +1,5 @@
 import { blockFrostApiKey } from "./services";
-import { oneLoveLace } from "./services";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 export enum WHEELZ {
   ten = "ten",
@@ -14,185 +14,116 @@ export const prizes = {
   [WHEELZ.ten]: [
     {
       name: "1X SOL",
-      amount: `${5 * oneLoveLace}`,
+      amount: 0.1 * 1 * LAMPORTS_PER_SOL,
     },
     {
       name: "2X SOL",
-      amount: `${10 * oneLoveLace}`,
+      amount: 0.1 * 2 * LAMPORTS_PER_SOL,
     },
     {
       name: "5 SOL",
-      amount: `${15 * oneLoveLace}`,
+      amount: 0.1 * 5 * LAMPORTS_PER_SOL,
     },
     {
-      name: "10X SOL",
-      amount: `${50 * oneLoveLace}`,
+      name: "1X SOL",
+      amount: 0.1 * 1 * LAMPORTS_PER_SOL,
     },
     {
       name: "2 SOL",
-      amount: `${200 * oneLoveLace}`,
+      amount: 2 * LAMPORTS_PER_SOL,
     },
     {
       name: "3X SOL",
-      amount: `${15 * oneLoveLace}`,
+      amount: 0.1 * 3 * LAMPORTS_PER_SOL,
     },
+
     {
-      name: "5000 $XMAX",
-      amount: `${5000}`,
-    },
-    {
-      name: "10 SOL",
-      amount: `${100 * oneLoveLace}`,
+      name: "1 SOL",
+      amount: 1 * LAMPORTS_PER_SOL,
     },
   ],
   [WHEELZ.fifty]: [
     {
-      name: "30 SOL",
-      amount: `${30 * oneLoveLace}`,
+      name: "3 SOL",
+      amount: 3 * LAMPORTS_PER_SOL,
     },
     {
       name: "4 SOL",
-      amount: `${400 * oneLoveLace}`,
+      amount: 4 * LAMPORTS_PER_SOL,
     },
     {
       name: "2 SOL",
-      amount: `${200 * oneLoveLace}`,
+      amount: 2 * LAMPORTS_PER_SOL,
     },
-    {
-      name: "10000 $XMAX",
-      amount: `${10000}`,
-    },
+
     {
       name: "5X SOL",
-      amount: `${25 * oneLoveLace * 5}`,
+      amount: 0.25 * 5 * LAMPORTS_PER_SOL,
     },
     {
       name: "2X SOL",
-      amount: `${25 * oneLoveLace * 5}`,
+      amount: 0.25 * 2 * LAMPORTS_PER_SOL,
     },
     {
       name: "3X SOL",
-      amount: `${25 * oneLoveLace * 3}`,
+      amount: 0.25 * 3 * LAMPORTS_PER_SOL,
     },
     {
       name: "5X SOL",
-      amount: `${25 * oneLoveLace * 15}`,
+      amount: 0.25 * 5 * LAMPORTS_PER_SOL,
     },
     {
       name: "1X SOL",
-      amount: `${25 * oneLoveLace}`,
+      amount: 0.25 * 1 * LAMPORTS_PER_SOL,
     },
   ],
   [WHEELZ.hundred]: [
     {
       name: "8 SOL",
-      amount: `${400 * oneLoveLace}`,
+      amount: 8 * LAMPORTS_PER_SOL,
     },
     {
       name: "1X SOL",
-      amount: `${50 * oneLoveLace * 10}`,
+      amount: 0.5 * 1 * LAMPORTS_PER_SOL,
     },
     {
       name: "3X SOL",
-      amount: `${50 * oneLoveLace * 3}`,
+      amount: 0.5 * 3 * LAMPORTS_PER_SOL,
     },
     {
       name: "1X SOL",
-      amount: `${50 * oneLoveLace}`,
+      amount: 0.5 * 1 * LAMPORTS_PER_SOL,
     },
     {
       name: "2X SOL",
-      amount: `${50 * oneLoveLace * 3}`,
+      amount: 0.5 * 2 * LAMPORTS_PER_SOL,
     },
-    {
-      name: "20000 $XMAX",
-      amount: `${20000}`,
-    },
+
     {
       name: "4 SOL",
-      amount: `${400 * oneLoveLace}`,
+      amount: 4 * LAMPORTS_PER_SOL,
     },
     {
       name: "2 SOL",
-      amount: `${200 * oneLoveLace}`,
+      amount: 2 * LAMPORTS_PER_SOL,
     },
   ],
   [WHEELZ.fivehundred]: [
     {
       name: "5 SOL",
-      amount: `${500 * oneLoveLace}`,
-    },
-    {
-      name: "5 SOL",
-      amount: `${500 * oneLoveLace}`,
-    },
-    {
-      name: "10X $XMAX",
-      amount: `${500 * 10}`,
-    },
-    {
-      name: "3 SOL",
-      amount: `${300 * oneLoveLace}`,
-    },
-    {
-      name: "1X $XMAX",
-      amount: `${500 * 1}`,
-    },
-    {
-      name: "300 $XMAX",
-      amount: `${300}`,
+      amount: 5 * LAMPORTS_PER_SOL,
     },
   ],
   [WHEELZ.onethousand]: [
     {
-      name: "15X $XMAX",
-      amount: `${1000 * 15}`,
-    },
-    {
-      name: "500 SOL",
-      amount: `${500 * oneLoveLace}`,
-    },
-    {
-      name: "800 SOL",
-      amount: `${800 * oneLoveLace}`,
-    },
-    {
-      name: "1X $XMAX",
-      amount: `${1000 * 1}`,
-    },
-    {
-      name: "15000 $XMAX",
-      amount: `${15000}`,
-    },
-    {
-      name: "100 SOL",
-      amount: `${100 * oneLoveLace}`,
+      name: "5 SOL",
+      amount: 5 * LAMPORTS_PER_SOL,
     },
   ],
   [WHEELZ.onethousandfive]: [
     {
-      name: "20000 $XMAX",
-      amount: `${20000}`,
-    },
-    {
-      name: "700 SOL",
-      amount: `${700 * oneLoveLace}`,
-    },
-    {
-      name: "1000 SOL",
-      amount: `${1000 * oneLoveLace}`,
-    },
-    {
-      name: "200 SOL",
-      amount: `${200 * oneLoveLace}`,
-    },
-    {
-      name: "20X $XMAX",
-      amount: `${20 * 1500}`,
-    },
-    {
-      name: "1X $XMAX",
-      amount: `${1 * 1500}`,
+      name: "5 SOL",
+      amount: 5 * LAMPORTS_PER_SOL,
     },
   ],
 };

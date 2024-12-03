@@ -2,8 +2,9 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/utils/db";
 import { CLAIMED, Prizes } from "@prisma/client";
 import { WHEELZ, prizes as prizesLib } from "@/utils/giftWallet";
-import { oneLoveLace } from "@/utils/services";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { sharePrizes } from "./games";
+import { sendSolFunds } from "@/utils/sender";
 
 type Data = {
   message?: string;
@@ -28,7 +29,7 @@ export default async function handler(
         where: {
           address: address as string,
           name: {
-            endsWith: "ADA",
+            endsWith: "SOL",
           },
           claimed: CLAIMED.NO,
         },
@@ -41,7 +42,7 @@ export default async function handler(
         where: {
           address: address as string,
           name: {
-            endsWith: "ADA",
+            endsWith: "SOL",
           },
           claimed: CLAIMED.YES,
         },
@@ -78,8 +79,8 @@ export default async function handler(
 
       if (prizesAdaNotClaimed.length > 0)
         prizesAdaNotClaimed = [
-          extractAmountAda({
-            sym: "ADA",
+          extractAmountSol({
+            sym: "SOL",
             prizes: prizesAdaNotClaimed,
             extract: "X",
           }),
@@ -87,8 +88,8 @@ export default async function handler(
 
       if (prizesAdaClaimed.length > 0)
         prizesAdaClaimed = [
-          extractAmountAda({
-            sym: "ADA",
+          extractAmountSol({
+            sym: "SOL",
             prizes: prizesAdaClaimed,
             extract: "X",
           }),
@@ -118,7 +119,7 @@ export default async function handler(
           NOT: [
             {
               name: {
-                endsWith: "ADA",
+                endsWith: "SOL",
               },
             },
             {
@@ -153,12 +154,12 @@ export default async function handler(
         return res.status(400).json({ message: "Bad request" });
       }
 
-      if (name.endsWith("ADA")) {
+      if (name.endsWith("SOL")) {
         const prizesAdaNotClaimed = await db.prizes.findMany({
           where: {
             address: address,
             name: {
-              endsWith: "ADA",
+              endsWith: "SOL",
             },
             claimed: CLAIMED.NO,
           },
@@ -167,8 +168,8 @@ export default async function handler(
           },
         });
 
-        const prizesAdaNotClaimedACC = extractAmountAda({
-          sym: "ADA",
+        const prizesAdaNotClaimedACC = extractAmountSol({
+          sym: "SOL",
           prizes: prizesAdaNotClaimed,
           extract: "X",
         });
@@ -181,25 +182,12 @@ export default async function handler(
           ? prizesLib[wager as WHEELZ].find(
               (item) => item.name === prizesAdaNotClaimedACC.name
             )?.amount
-          : Number(prizesAdaNotClaimedACC.name.split(" ")[0]) * oneLoveLace;
+          : Number(prizesAdaNotClaimedACC.name.split(" ")[0]) *
+            LAMPORTS_PER_SOL;
 
         console.log("AMOUNT 000PPP CHECK AM", amount);
 
-        const trans = await sharePrizes({
-          address,
-          outcome,
-          name,
-          wager: wager as WHEELZ,
-          amount: `${amount}`,
-        });
-
-        if (!trans) {
-          console.log("Transaction failed");
-
-          return res.status(400).json({ message: "Transaction failed" });
-        }
-
-        await db.prizes.updateMany({
+        const update = await db.prizes.updateMany({
           where: {
             address: address,
             name: {
@@ -211,60 +199,20 @@ export default async function handler(
             claimed: CLAIMED.YES,
           },
         });
-      } else if (name.endsWith("XMAX")) {
-        const prizesXmaxNotClaimed = await db.prizes.findMany({
-          where: {
-            address: address,
-            name: {
-              endsWith: "XMAX",
-            },
-            claimed: CLAIMED.NO,
-          },
-          orderBy: {
-            createdAt: "desc",
-          },
-        });
 
-        const prizesXmaxNotClaimedACC = extractAmountAda({
-          sym: "ADA",
-          prizes: prizesXmaxNotClaimed,
-          extract: "$XMAX",
-        });
+        if (update.count < 1)
+          return res.status(400).json({ message: "Already Claimed" });
 
-        if (prizesXmaxNotClaimedACC.name !== name) {
-          return res.status(400).json({ message: "Bad request" });
-        }
-
-        const amount = prizesXmaxNotClaimedACC.name.includes("$XMAX")
-          ? prizesLib[wager as WHEELZ].find(
-              (item) => item.name === prizesXmaxNotClaimedACC.name
-            )?.amount
-          : Number(prizesXmaxNotClaimedACC.name.split(" ")[0]);
-
-        const trans = await sharePrizes({
+        const trans = await sendSolFunds({
           address,
-          outcome,
-          name,
-          wager: wager as WHEELZ,
-          amount: `${amount}`,
+          amount: amount,
         });
 
         if (!trans) {
+          console.log("Transaction failed");
+
           return res.status(400).json({ message: "Transaction failed" });
         }
-
-        await db.prizes.updateMany({
-          where: {
-            address: address,
-            name: {
-              endsWith: "XMAX",
-            },
-            claimed: CLAIMED.NO,
-          },
-          data: {
-            claimed: CLAIMED.YES,
-          },
-        });
       } else {
         const prizesOther = await db.prizes.findFirst({
           where: {
@@ -303,7 +251,7 @@ export default async function handler(
   }
 }
 
-const extractAmountAda = ({
+const extractAmountSol = ({
   sym,
   prizes,
   extract,
@@ -312,8 +260,8 @@ const extractAmountAda = ({
   extract: string;
   prizes: Prizes[];
 }) => {
-  return prizes.reduce((acc: any, cv: any) => {
-    let accAda: number = 0;
+  return prizes.reduce((acc: any, cv: Prizes) => {
+    let accSol: number = 0;
 
     const amount = prizesLib[cv.wager as WHEELZ].find(
       (item) => item.name === cv.name
@@ -325,16 +273,17 @@ const extractAmountAda = ({
       );
 
       if (accAmount)
-        accAda =
-          Number(accAmount.amount) / oneLoveLace +
-          Number(amount.amount) / oneLoveLace;
+        accSol =
+          Number(accAmount.amount) / LAMPORTS_PER_SOL +
+          Number(amount.amount) / LAMPORTS_PER_SOL;
     } else if (!acc.name.includes(extract) && amount)
-      accAda =
-        Number(acc.name.split(" ")[0]) + Number(amount.amount) / oneLoveLace;
+      accSol =
+        Number(acc.name.split(" ")[0]) +
+        Number(amount.amount) / LAMPORTS_PER_SOL;
 
     return {
       ...acc,
-      name: `${accAda} ${sym}`,
+      name: `${accSol.toFixed(2)} ${sym}`,
     };
   });
 };

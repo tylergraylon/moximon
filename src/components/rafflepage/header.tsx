@@ -45,9 +45,9 @@ export default function Header() {
                             </Link>
                         </div> */}
 
-            {/* <div className="navbar-item hidden xl:block">
+            <div className="navbar-item hidden xl:block">
               <ClaimPrize />
-            </div> */}
+            </div>
 
             <div className="divider divider-vertical mx-0 h-10"></div>
             <FundsShow />

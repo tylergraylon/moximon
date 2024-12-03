@@ -2,9 +2,17 @@ import { useRef, useState, useEffect, RefObject } from "react";
 import { AdaWheelz } from "./jfhkjhvygcbvjh";
 import Image from "next/image";
 import { useSWRConfig } from "swr";
-import { gamesKey, prizesKey } from "@/utils/utils";
-import { useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
-import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { gamesKey, paymentAddress, prizesKey } from "@/utils/utils";
+import {
+  useConnection,
+  useWallet as useSolanaWallet,
+} from "@solana/wallet-adapter-react";
+import {
+  LAMPORTS_PER_SOL,
+  PublicKey,
+  SystemProgram,
+  Transaction,
+} from "@solana/web3.js";
 import axios from "axios";
 import useAddressCus from "@/utils/useAddress";
 import { GlobalWheelz, WheelzDetails } from "./boxes";
@@ -52,7 +60,7 @@ export default function MagicWheelz() {
 
   const wheel = useRef<HTMLDivElement>(null);
 
-  const { connected } = useSolanaWallet();
+  const { connected, publicKey, sendTransaction } = useSolanaWallet();
   // const assets = useAssets() as AssetExtended;
 
   const address = useAddressCus();
@@ -61,7 +69,9 @@ export default function MagicWheelz() {
 
   const { mutate } = useSWRConfig();
 
-  const sendTransaction = async () => {
+  const { connection } = useConnection();
+
+  const sendTransactionX = async () => {
     try {
       if (
         wheelz === WHEELZ.ten ||
@@ -84,7 +94,9 @@ export default function MagicWheelz() {
             break;
         }
 
-        if (Number(balance) <= amount) {
+        if (Number(balance) * LAMPORTS_PER_SOL <= amount) {
+          console.log("balances amount", Number(balance), amount);
+
           swal(
             "Error",
             "Insufficient balance to complete transaction.",
@@ -92,6 +104,35 @@ export default function MagicWheelz() {
           );
           return;
         }
+
+        const hash = await connection.getLatestBlockhash({
+          commitment: "finalized",
+        });
+
+        const tx = new Transaction({
+          blockhash: hash.blockhash,
+          lastValidBlockHeight: hash.lastValidBlockHeight,
+          feePayer: publicKey,
+        });
+
+        tx.add(
+          SystemProgram.transfer({
+            fromPubkey: publicKey!,
+            toPubkey: new PublicKey(paymentAddress),
+            lamports: amount,
+          })
+          // SystemProgram.transfer({
+          //   fromPubkey: publicKey,
+          //   toPubkey: new PublicKey(bs58.decode(chargeAddress)),
+          //   lamports: 0.01 * LAMPORTS_PER_SOL,
+          // })
+        );
+
+        const data = await sendTransaction(tx, connection, {
+          preflightCommitment: "confirmed",
+        });
+        // console.log("transac data", data);
+        return data;
 
         return "txHash";
       } else if (
@@ -157,7 +198,7 @@ export default function MagicWheelz() {
       const spin_wheel = wheel.current;
 
       if (connected && address) {
-        const transac = await sendTransaction();
+        const transac = await sendTransactionX();
 
         if (spin_wheel && transac) {
           spin_wheel.classList.add("wheel-spinner-timer");
